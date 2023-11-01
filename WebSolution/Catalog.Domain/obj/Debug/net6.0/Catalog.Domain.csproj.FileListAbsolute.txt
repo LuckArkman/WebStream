@@ -1,0 +1,11 @@
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\bin\Debug\net6.0\Catalog.Domain.deps.json
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\bin\Debug\net6.0\Catalog.Domain.dll
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\bin\Debug\net6.0\Catalog.Domain.pdb
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\obj\Debug\net6.0\Catalog.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\obj\Debug\net6.0\Catalog.Domain.AssemblyInfoInputs.cache
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\obj\Debug\net6.0\Catalog.Domain.AssemblyInfo.cs
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\obj\Debug\net6.0\Catalog.Domain.csproj.CoreCompileInputs.cache
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\obj\Debug\net6.0\Catalog.Domain.dll
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\obj\Debug\net6.0\refint\Catalog.Domain.dll
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\obj\Debug\net6.0\Catalog.Domain.pdb
+E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\obj\Debug\net6.0\ref\Catalog.Domain.dll

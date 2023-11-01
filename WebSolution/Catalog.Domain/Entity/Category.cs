@@ -1,3 +1,5 @@
+using Catalog.Domain.Exceptions;
+
 namespace Catalog.Domain.Entity;
 
 public class Category
@@ -10,6 +12,14 @@ public class Category
         IsActive = isActive;
         createTime = DateTime.Now;
 
+        Validate();
+
+    }
+
+    void Validate()
+    {
+        if (string.IsNullOrWhiteSpace(Name)) throw new EntityValidationException($"{nameof(Name)} shold not be empty or null");
+        if (Description == null) throw new EntityValidationException($"{nameof(Description)} shold not be empty or null");
     }
     public Guid Id { get; set; }
     public string Name { get; set; }

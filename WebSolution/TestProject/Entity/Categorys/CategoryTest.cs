@@ -1,5 +1,6 @@
 using Xunit;
 using Catalog.Domain.Entity;
+using Catalog.Domain.Exceptions;
 
 namespace TestProject.Entity.Categorys;
 
@@ -54,20 +55,33 @@ public class CategoryTest
         Assert.Equal(IsActive , category.IsActive);
     }
 
-    [Fact(DisplayName = nameof(InstantiateErrorNameIsEmpty))]
+    [Theory(DisplayName = nameof(InstantiateErrorNameIsEmpty))]
     [Trait("Domain", "Category - Aggregates")]
-
-    public void InstantiateErrorNameIsEmpty()
+    [InlineData("")]
+    [InlineData(null)]
+    [InlineData("  ")]
+    public void InstantiateErrorNameIsEmpty(string? name)
     {
-        Action action = () => Category("category name", null);
+        Action action = () => new Category(name!, "category Description");
         var exception = Assert.Throws<EntityValidationException>(action);
-        Assert.Equal("Description shoud not be empty or null", exception.message);
+        Assert.Equal("Name shold not be empty or null", exception.Message);
     }
 
+    [Fact(DisplayName = nameof(InstantiateErrorDescriptionIsEmpty))]
+    [Trait("Domain", "Category - Aggregates")]
+    public void InstantiateErrorDescriptionIsEmpty()
+    {
+        Action action = () => new Category("category name", null);
+        var exception = Assert.Throws<EntityValidationException>(action);
+        Assert.Equal("Description shold not be empty or null", exception.Message);
+    }
+
+    /*
     public void InstantiateErrorWhenNameIsLessThan3Characters()
     {
         Action action = () => Category("category name", null);
         var exception = Assert.Throws<EntityValidationException>(action);
         Assert.Equal("Description shoud not be empty or null", exception.message);
     }
+    */
 }

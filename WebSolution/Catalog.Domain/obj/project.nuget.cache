@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "n6vs0vxCj/x11GO50WrQQs5gMIRBJnp1NOITOJKfNjPas0+ab2cj0hmqt9FFK/JXmSuEG+ah0/bYprSSI/NrYQ==",
+  "dgSpecHash": "7HZaLIxK+QK1qd/E2onTQabbeOHUbjew1pgxw6IaTSzimi4i8lx1Ijhtt8XxNWVwQv4xKPWwVCQEGTTLNTh+7A==",
   "success": true,
-  "projectFilePath": "E:\\Azure Projects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/mauricio/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.20/microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512"
+  ],
   "logs": []
 }

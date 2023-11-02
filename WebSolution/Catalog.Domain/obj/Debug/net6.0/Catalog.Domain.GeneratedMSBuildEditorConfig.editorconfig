@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Catalog.Domain
-build_property.ProjectDir = E:\Azure Projects\Git\WebStream\WebSolution\Catalog.Domain\
+build_property.ProjectDir = /mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/

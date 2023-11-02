@@ -29,7 +29,7 @@ namespace Catalog.Domain.Entitys
                 throw new EntityValidationException($"{nameof(Description)} shold not be empty or null");
             if (Description.Length > 10000)
                 throw new EntityValidationException(
-                    $"{nameof(Description)} shoud be lass or equal  10000 characters Long");
+                    $"{nameof(Description)} shoud be lass or equal  10.000 characters Long");
         }
 
         public Guid Id { get; set; }
@@ -38,5 +38,17 @@ namespace Catalog.Domain.Entitys
         public bool IsActive { get; set; }
 
         public DateTime createTime { get; set; }
+
+        public void Activate()
+        {
+            IsActive = true;
+            Validate();
+        }
+
+        public void NotActivate()
+        {
+            IsActive = false;
+            Validate();
+        }
     }
 }

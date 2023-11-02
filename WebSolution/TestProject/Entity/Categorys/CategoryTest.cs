@@ -109,7 +109,41 @@ namespace TestProject.Entity.Categorys
 
             Action action = () => new Category("name", name);
             var exception = Assert.Throws<EntityValidationException>(action);
-            Assert.Equal("Description shoud be lass or equal  10000 characters Long", exception.Message);
+            Assert.Equal("Description shoud be lass or equal  10.000 characters Long", exception.Message);
+        }
+        
+        [Fact(DisplayName = nameof(InstantiateSetActive))]
+        [Trait("Domain", "Category - Aggregates")]
+        public void InstantiateSetActive()
+        {
+            //Arrange
+            var validData = new
+            {
+                Name = "category name",
+                Description = "category Description",
+            };
+            var dateTimeBefore = DateTime.Now;
+            //Act
+            var category = new Category(validData.Name, validData.Description, true);
+            category.Activate();
+            Assert.True(category.IsActive);
+        }
+        
+        [Fact(DisplayName = nameof(InstantiatesetNotActive))]
+        [Trait("Domain", "Category - Aggregates")]
+        public void InstantiatesetNotActive()
+        {
+            //Arrange
+            var validData = new
+            {
+                Name = "category name",
+                Description = "category Description",
+            };
+            var dateTimeBefore = DateTime.Now;
+            //Act
+            var category = new Category(validData.Name, validData.Description, true);
+            category.NotActivate();
+            Assert.False(category.IsActive);
         }
     }
 }

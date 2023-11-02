@@ -5533,43 +5533,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mauricio\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/home/mauricio/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Azure Projects\\Git\\WebStream\\WebSolution\\TestProject\\TestProject.csproj",
+      "projectUniqueName": "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/TestProject/TestProject.csproj",
       "projectName": "TestProject",
-      "projectPath": "E:\\Azure Projects\\Git\\WebStream\\WebSolution\\TestProject\\TestProject.csproj",
-      "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-      "outputPath": "E:\\Azure Projects\\Git\\WebStream\\WebSolution\\TestProject\\obj\\",
+      "projectPath": "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/TestProject/TestProject.csproj",
+      "packagesPath": "/home/mauricio/.nuget/packages/",
+      "outputPath": "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/TestProject/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/home/mauricio/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\Azure Projects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
-              "projectPath": "E:\\Azure Projects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj"
+            "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {
+              "projectPath": "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj"
             }
           }
         }
@@ -5616,12 +5605,18 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.20, 6.0.20]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
       }
     }
   }

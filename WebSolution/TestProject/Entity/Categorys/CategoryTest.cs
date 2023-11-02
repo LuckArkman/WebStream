@@ -76,12 +76,25 @@ public class CategoryTest
         Assert.Equal("Description shold not be empty or null", exception.Message);
     }
 
-    /*
-    public void InstantiateErrorWhenNameIsLessThan3Characters()
+    [Theory(DisplayName = nameof(InstantiateErrorWhenNameIsLessThan3Characters))]
+    [Trait("Domain", "Category - Aggregates")]
+    [InlineData("1")]
+    [InlineData("12")]
+    public void InstantiateErrorWhenNameIsLessThan3Characters(string? name)
     {
-        Action action = () => Category("category name", null);
+        Action action = () => new Category(name!, "category Description");
         var exception = Assert.Throws<EntityValidationException>(action);
-        Assert.Equal("Description shoud not be empty or null", exception.message);
+        Assert.Equal("Name shoud be lass 3 characters Long", exception.Message);
     }
-    */
+
+    [Fact(DisplayName = nameof(InstantiateErrorWhenNameIsGraterThan255Characters))]
+    [Trait("Domain", "Category - Aggregates")]
+    public void InstantiateErrorWhenNameIsGraterThan255Characters()
+    {
+        var name = string.Join(null,Enumerable.Range(0, 256).Select(_ => "a").ToArray());
+
+        Action action = () => new Category(name, "category Description");
+        var exception = Assert.Throws<EntityValidationException>(action);
+        Assert.Equal("Name shoud be lass or equal  255 characters Long", exception.Message);
+    }
 }

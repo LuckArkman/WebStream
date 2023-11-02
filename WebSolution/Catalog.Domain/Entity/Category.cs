@@ -19,6 +19,8 @@ public class Category
     void Validate()
     {
         if (string.IsNullOrWhiteSpace(Name)) throw new EntityValidationException($"{nameof(Name)} shold not be empty or null");
+        if (Name.Length < 3) throw new EntityValidationException($"{nameof(Name)} shoud be lass 3 characters Long");
+        if (Name.Length > 255) throw new EntityValidationException($"{nameof(Name)} shoud be lass or equal  255 characters Long");
         if (Description == null) throw new EntityValidationException($"{nameof(Description)} shold not be empty or null");
     }
     public Guid Id { get; set; }

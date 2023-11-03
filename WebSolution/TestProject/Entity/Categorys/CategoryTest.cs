@@ -39,14 +39,12 @@ namespace TestProject.Entity.Categorys
         [InlineData(false)]
         public void InstantiateIsActive(bool IsActive)
         {
-            //Arrange
             var validData = new
             {
                 Name = "category name",
                 Description = "category Description",
             };
             var dateTimeBefore = DateTime.Now;
-            //Act
             var category = new Category(validData.Name, validData.Description, IsActive);
             var dateTimeAfter = DateTime.Now;
             Assert.NotNull(category);

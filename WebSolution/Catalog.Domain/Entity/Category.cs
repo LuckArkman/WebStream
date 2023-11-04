@@ -32,7 +32,14 @@ namespace Catalog.Domain.Entitys
                     $"{nameof(Description)} shoud be lass or equal  10.000 characters Long");
         }
         
-        public string Name { get; set; }
+        public Category(string name, bool isActive, DateTime createTime) 
+        {
+            this.Name = name;
+    this.IsActive = isActive;
+    this.createTime = createTime;
+   
+        }
+                public string Name { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }
 

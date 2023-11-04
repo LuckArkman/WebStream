@@ -8,19 +8,19 @@ using FluentAssertions;
 
 namespace TestProject.Entity.Categorys
 {
-
+    [Collection(nameof(CategoryTestFixture))]
     public class CategoryTest
     {
+        readonly CategoryTestFixture _categoryTestFixture;
+
+        public CategoryTest(CategoryTestFixture categoryTestFixture) => _categoryTestFixture = categoryTestFixture;
+
         [Fact(DisplayName = nameof(Instantiate))]
         [Trait("Domain", "Category - Aggregates")]
         public void Instantiate()
         {
             //Arrange
-            var validData = new
-            {
-                Name = "category name",
-                Description = "category Description",
-            };
+            var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             var category = new Category(validData.Name, validData.Description);
             var dateTimeAfter = DateTime.Now;
@@ -40,11 +40,7 @@ namespace TestProject.Entity.Categorys
         [InlineData(false)]
         public void InstantiateIsActive(bool IsActive)
         {
-            var validData = new
-            {
-                Name = "category name",
-                Description = "category Description",
-            };
+            var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             var category = new Category(validData.Name, validData.Description, IsActive);
             var dateTimeAfter = DateTime.Now;
@@ -65,9 +61,9 @@ namespace TestProject.Entity.Categorys
         [InlineData("  ")]
         public void InstantiateErrorNameIsEmpty(string? name)
         {
-            var category = new Category("category name","category Description");
+            var category = _categoryTestFixture.GetValidCategory();
             Action action = () => category.Update(name!, "category Description");
-            action.Should().Throw<EntityValidationException>("Name shold not be empty or null");
+            action.Should().Throw<EntityValidationException>().WithMessage("Name shold not be empty or null");
         }
 
         [Fact(DisplayName = nameof(InstantiateErrorDescriptionIsEmpty))]
@@ -75,7 +71,7 @@ namespace TestProject.Entity.Categorys
         public void InstantiateErrorDescriptionIsEmpty()
         {
             Action action = () => new Category("category name", null);
-            action.Should().Throw<EntityValidationException>("Description shold not be empty or null");
+            action.Should().Throw<EntityValidationException>().WithMessage("Description shold not be empty or null");
         }
 
         [Theory(DisplayName = nameof(InstantiateErrorWhenNameIsLessThan3Characters))]
@@ -95,7 +91,7 @@ namespace TestProject.Entity.Categorys
             var name = string.Join(null, Enumerable.Range(0, 256).Select(_ => "a").ToArray());
 
             Action action = () => new Category(name, "category Description");
-            action.Should().Throw<EntityValidationException>("Name shoud be lass or equal  255 characters Long");
+            action.Should().Throw<EntityValidationException>().WithMessage("Name shoud be lass or equal  255 characters Long");
         }
 
         [Fact(DisplayName = nameof(InstantiateErrorWhenDescriptionIsGraterThan10000Characters))]
@@ -105,7 +101,7 @@ namespace TestProject.Entity.Categorys
             var name = string.Join(null, Enumerable.Range(0, 10001).Select(_ => "a").ToArray());
 
             Action action = () => new Category("name", name);
-            action.Should().Throw<EntityValidationException>("Description shoud be lass or equal  10.000 characters Long");
+            action.Should().Throw<EntityValidationException>().WithMessage("Description shoud be lass or equal  10.000 characters Long");
         }
         
         [Fact(DisplayName = nameof(InstantiateSetActive))]
@@ -113,11 +109,7 @@ namespace TestProject.Entity.Categorys
         public void InstantiateSetActive()
         {
             //Arrange
-            var validData = new
-            {
-                Name = "category name",
-                Description = "category Description",
-            };
+            var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             //Act
             var category = new Category(validData.Name, validData.Description, true);
@@ -130,11 +122,7 @@ namespace TestProject.Entity.Categorys
         public void InstantiatesetNotActive()
         {
             //Arrange
-            var validData = new
-            {
-                Name = "category name",
-                Description = "category Description",
-            };
+            var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             //Act
             var category = new Category(validData.Name, validData.Description, true);
@@ -147,14 +135,10 @@ namespace TestProject.Entity.Categorys
         public void InstantiateSetUpdate()
         {
             //Arrange
-            var validData = new
-            {
-                Name = "category name",
-                Description = "category Description",
-            };
+            var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             //Act
-            var category = new Category(validData.Name, validData.Description, true);
+            var category = _categoryTestFixture.GetValidCategory();
             var values = new
             {
                 Name = "New name",
@@ -170,14 +154,10 @@ namespace TestProject.Entity.Categorys
         public void InstantiateSetUpdateName()
         {
             //Arrange
-            var validData = new
-            {
-                Name = "category name",
-                Description = "category Description",
-            };
+            var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             //Act
-            var category = new Category(validData.Name, validData.Description, true);
+            var category = _categoryTestFixture.GetValidCategory();
             var values = new
             {
                 Name = "New name",
@@ -193,14 +173,10 @@ namespace TestProject.Entity.Categorys
         public void InstantiateSetUpdateDescription()
         {
             //Arrange
-            var validData = new
-            {
-                Name = "category name",
-                Description = "category Description",
-            };
+            var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             //Act
-            var category = new Category(validData.Name, validData.Description, true);
+            var category = _categoryTestFixture.GetValidCategory();
             var values = new
             {
                 Name = category.Name,
@@ -217,7 +193,7 @@ namespace TestProject.Entity.Categorys
         [InlineData("12")]
         public void InstantiateUpdateErrorWhenNameIsLessThan3Characters(string? name)
         {
-            var category = new Category("category name","category Description");
+            var category = _categoryTestFixture.GetValidCategory();
             Action action = () => category.Update(name!);
             var exception = Assert.Throws<EntityValidationException>(action);
             Assert.Equal("Name shoud be lass 3 characters Long", exception.Message);
@@ -228,9 +204,9 @@ namespace TestProject.Entity.Categorys
         public void InstantiateUpdateErrorWhenNameIsGraterThan255Characters()
         {
             var name = string.Join(null, Enumerable.Range(0, 256).Select(_ => "a").ToArray());
-            var category = new Category("category name","category Description");
+            var category = _categoryTestFixture.GetValidCategory();
             Action action = () => category.Update(name);
-            action.Should().Throw<EntityValidationException>("Name shoud be lass or equal  255 characters Long");
+            action.Should().Throw<EntityValidationException>().WithMessage("Name shoud be lass or equal  255 characters Long");
         }
 
         [Fact(DisplayName = nameof(InstantiateUpdateErrorWhenDescriptionIsGraterThan10000Characters))]
@@ -238,9 +214,9 @@ namespace TestProject.Entity.Categorys
         public void InstantiateUpdateErrorWhenDescriptionIsGraterThan10000Characters()
         {
             var name = string.Join(null, Enumerable.Range(0, 10001).Select(_ => "a").ToArray());
-            var category = new Category("category name","category Description");
+            var category = _categoryTestFixture.GetValidCategory();
             Action action = () => category.Update("category name", name);
-            action.Should().Throw<EntityValidationException>("Description shoud be lass or equal  10.000 characters Long");
+            action.Should().Throw<EntityValidationException>().WithMessage("Description shoud be lass or equal  10.000 characters Long");
         }
     }
 }

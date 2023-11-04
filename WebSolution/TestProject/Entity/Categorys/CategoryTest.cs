@@ -23,7 +23,7 @@ namespace TestProject.Entity.Categorys
             var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             var category = new Category(validData.Name, validData.Description);
-            var dateTimeAfter = DateTime.Now;
+            var dateTimeAfter = DateTime.Now.AddMilliseconds(1);
             category.Should().NotBeNull();
             category.Name.Should().Be(validData.Name);
             category.Description.Should().Be(validData.Description);
@@ -43,7 +43,7 @@ namespace TestProject.Entity.Categorys
             var validData = _categoryTestFixture.GetValidCategory();
             var dateTimeBefore = DateTime.Now;
             var category = new Category(validData.Name, validData.Description, IsActive);
-            var dateTimeAfter = DateTime.Now;
+            var dateTimeAfter = DateTime.Now.AddMilliseconds(1);
             category.Should().NotBeNull();
             category.Name.Should().Be(validData.Name);
             category.Description.Should().Be(validData.Description);
@@ -76,8 +76,7 @@ namespace TestProject.Entity.Categorys
 
         [Theory(DisplayName = nameof(InstantiateErrorWhenNameIsLessThan3Characters))]
         [Trait("Domain", "Category - Aggregates")]
-        [InlineData("1")]
-        [InlineData("12")]
+        [MemberData(nameof(GetNames), parameters: 10)]
         public void InstantiateErrorWhenNameIsLessThan3Characters(string? name)
         {
             Action action = () => new Category(name!, "category Description");
@@ -91,7 +90,8 @@ namespace TestProject.Entity.Categorys
             var name = string.Join(null, Enumerable.Range(0, 256).Select(_ => "a").ToArray());
 
             Action action = () => new Category(name, "category Description");
-            action.Should().Throw<EntityValidationException>().WithMessage("Name shoud be lass or equal  255 characters Long");
+            action.Should().Throw<EntityValidationException>()
+                .WithMessage("Name shoud be lass or equal  255 characters Long");
         }
 
         [Fact(DisplayName = nameof(InstantiateErrorWhenDescriptionIsGraterThan10000Characters))]
@@ -101,9 +101,10 @@ namespace TestProject.Entity.Categorys
             var name = string.Join(null, Enumerable.Range(0, 10001).Select(_ => "a").ToArray());
 
             Action action = () => new Category("name", name);
-            action.Should().Throw<EntityValidationException>().WithMessage("Description shoud be lass or equal  10.000 characters Long");
+            action.Should().Throw<EntityValidationException>()
+                .WithMessage("Description shoud be lass or equal  10.000 characters Long");
         }
-        
+
         [Fact(DisplayName = nameof(InstantiateSetActive))]
         [Trait("Domain", "Category - Aggregates")]
         public void InstantiateSetActive()
@@ -116,7 +117,7 @@ namespace TestProject.Entity.Categorys
             category.Activate();
             category.IsActive.Should().BeTrue();
         }
-        
+
         [Fact(DisplayName = nameof(InstantiatesetNotActive))]
         [Trait("Domain", "Category - Aggregates")]
         public void InstantiatesetNotActive()
@@ -129,7 +130,7 @@ namespace TestProject.Entity.Categorys
             category.NotActivate();
             category.IsActive.Should().BeFalse();
         }
-        
+
         [Fact(DisplayName = nameof(InstantiateSetUpdate))]
         [Trait("Domain", "Category - Aggregates")]
         public void InstantiateSetUpdate()
@@ -148,7 +149,7 @@ namespace TestProject.Entity.Categorys
             category.Name.Should().Be(values.Name);
             category.Description.Should().Be(values.Description);
         }
-        
+
         [Fact(DisplayName = nameof(InstantiateSetUpdateName))]
         [Trait("Domain", "Category - Aggregates")]
         public void InstantiateSetUpdateName()
@@ -167,7 +168,7 @@ namespace TestProject.Entity.Categorys
             category.Name.Should().Be(values.Name);
             category.Description.Should().Be(values.Description);
         }
-        
+
         [Fact(DisplayName = nameof(InstantiateSetUpdateDescription))]
         [Trait("Domain", "Category - Aggregates")]
         public void InstantiateSetUpdateDescription()
@@ -186,21 +187,30 @@ namespace TestProject.Entity.Categorys
             category.Name.Should().Be(values.Name);
             category.Description.Should().Be(values.Description);
         }
-        
+
         [Theory(DisplayName = nameof(InstantiateUpdateErrorWhenNameIsLessThan3Characters))]
         [Trait("Domain", "Category - Aggregates")]
-        [InlineData("1")]
-        [InlineData("12")]
+        [MemberData(nameof(GetNames), parameters: 10)]
         public void InstantiateUpdateErrorWhenNameIsLessThan3Characters(string? name)
         {
             var category = _categoryTestFixture.GetValidCategory();
-            Action action = () => category.Update(name!);
+            Action action = () => category.Update(name!, category.Description);
             var exception = Assert.Throws<EntityValidationException>(action);
             Assert.Equal("Name shoud be lass 3 characters Long", exception.Message);
         }
 
-        [Fact(DisplayName = nameof(InstantiateUpdateErrorWhenNameIsGraterThan255Characters))]
-        [Trait("Domain", "Category - Aggregates")]
+        public static IEnumerable<object[]> GetNames(int numberOfTests)
+        {
+            var fixture = new CategoryTestFixture();
+            for (int i = 0; i < 6; i++)
+            {
+                var IsOdd = i % 2 == 1;
+                yield return new object[]{fixture.GetValidCategoryName()[..(IsOdd ? 1 : 2)]};
+            }
+        }
+        
+    [Fact(DisplayName = nameof(InstantiateUpdateErrorWhenNameIsGraterThan255Characters))]
+    [Trait("Domain", "Category - Aggregates")]
         public void InstantiateUpdateErrorWhenNameIsGraterThan255Characters()
         {
             var name = string.Join(null, Enumerable.Range(0, 256).Select(_ => "a").ToArray());

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "JnaxRXBmt8gaIhbNa3rbuD6G0eAsEXznpFv1qE8YB3tyu1Q3EHjPXw9tFJPoFtofkj2fEjoSVO93sbEQOMi55w==",
+  "dgSpecHash": "B60y2p5b4ZhUoLCeiHVsZKnxuq65hPxYh4kiBix87gfxAX5pJJ1jb+zPjeOTVe8cY+/q/bXpOQunWonqCdHIUg==",
   "success": true,
   "projectFilePath": "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/TestProject/TestProject.csproj",
   "expectedPackageFiles": [
+    "/home/mauricio/.nuget/packages/bogus/34.0.2/bogus.34.0.2.nupkg.sha512",
     "/home/mauricio/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/fluentassertions/6.12.0/fluentassertions.6.12.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/microsoft.codecoverage/17.5.0/microsoft.codecoverage.17.5.0.nupkg.sha512",

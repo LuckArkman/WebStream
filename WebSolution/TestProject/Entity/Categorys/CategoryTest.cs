@@ -202,7 +202,7 @@ namespace TestProject.Entity.Categorys
         public static IEnumerable<object[]> GetNames(int numberOfTests)
         {
             var fixture = new CategoryTestFixture();
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 10; i++)
             {
                 var IsOdd = i % 2 == 1;
                 yield return new object[]{fixture.GetValidCategoryName()[..(IsOdd ? 1 : 2)]};

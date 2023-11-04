@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dRuxU4q2UyIQswKgC9ovXttgicaobOP9WBhzwX6P01tm2XudlejlFed54+PU2i7vcL0zH7yBtHt//GaF5s1z2Q==",
+  "dgSpecHash": "JnaxRXBmt8gaIhbNa3rbuD6G0eAsEXznpFv1qE8YB3tyu1Q3EHjPXw9tFJPoFtofkj2fEjoSVO93sbEQOMi55w==",
   "success": true,
   "projectFilePath": "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/TestProject/TestProject.csproj",
   "expectedPackageFiles": [
     "/home/mauricio/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",
+    "/home/mauricio/.nuget/packages/fluentassertions/6.12.0/fluentassertions.6.12.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/microsoft.codecoverage/17.5.0/microsoft.codecoverage.17.5.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/microsoft.net.test.sdk/17.5.0/microsoft.net.test.sdk.17.5.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
@@ -35,6 +36,7 @@
     "/home/mauricio/.nuget/packages/system.buffers/4.3.0/system.buffers.4.3.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.collections/4.3.0/system.collections.4.3.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.collections.concurrent/4.3.0/system.collections.concurrent.4.3.0.nupkg.sha512",
+    "/home/mauricio/.nuget/packages/system.configuration.configurationmanager/4.4.0/system.configuration.configurationmanager.4.4.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.console/4.3.0/system.console.4.3.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.diagnostics.diagnosticsource/4.3.0/system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
@@ -75,6 +77,7 @@
     "/home/mauricio/.nuget/packages/system.security.cryptography.encoding/4.3.0/system.security.cryptography.encoding.4.3.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.security.cryptography.openssl/4.3.0/system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.security.cryptography.primitives/4.3.0/system.security.cryptography.primitives.4.3.0.nupkg.sha512",
+    "/home/mauricio/.nuget/packages/system.security.cryptography.protecteddata/4.4.0/system.security.cryptography.protecteddata.4.4.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.security.cryptography.x509certificates/4.3.0/system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/system.text.encoding.extensions/4.3.0/system.text.encoding.extensions.4.3.0.nupkg.sha512",

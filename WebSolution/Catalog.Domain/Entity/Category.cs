@@ -1,14 +1,14 @@
 using System;
 using Catalog.Domain.Exceptions;
+using Catalog.Domain.SeedWork;
 
 namespace Catalog.Domain.Entitys
 {
 
-    public class Category
+    public class Category : AggregateRoot
     {
-        public Category(string _name, string _description, bool isActive = true)
+        public Category(string _name, string _description, bool isActive = true) : base()
         {
-            Id = Guid.NewGuid();
             Name = _name;
             Description = _description;
             IsActive = isActive;
@@ -31,8 +31,7 @@ namespace Catalog.Domain.Entitys
                 throw new EntityValidationException(
                     $"{nameof(Description)} shoud be lass or equal  10.000 characters Long");
         }
-
-        public Guid Id { get; set; }
+        
         public string Name { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }

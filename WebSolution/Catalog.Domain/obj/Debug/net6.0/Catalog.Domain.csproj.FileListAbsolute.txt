@@ -21,3 +21,5 @@ E:/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/obj/Debug/net6.0/ref/
 /mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/obj/Debug/net6.0/refint/Catalog.Domain.dll
 /mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/obj/Debug/net6.0/Catalog.Domain.pdb
 /mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/obj/Debug/net6.0/ref/Catalog.Domain.dll
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/bin/Debug/net6.0/Catalog.Domain.runtimeconfig.json
+/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Domain/obj/Debug/net6.0/Catalog.Domain.genruntimeconfig.cache

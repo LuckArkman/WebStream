@@ -2,22 +2,24 @@
 using System.Runtime.Serialization;
 using Catalog.Domain.Exceptions;
 
-namespace TestProject.Validation
+namespace Catalog.Domain.Validation
 {
     public class DomainValidation
     {
-        public static void NotNull(object value, string fieldName)
+        public static void NotNull(object? target, string fieldName)
         {
-            if(value is null)  throw new EntityValidationException($"{fieldName} shold not be empty or null");
+            if (target is null)
+                throw new EntityValidationException(
+                    $"{fieldName} should not be null");
         }
-
+    
         public static void NotNullOrEmpty(string? target, string fieldName)
         {
             if (String.IsNullOrWhiteSpace(target))
                 throw new EntityValidationException(
                     $"{fieldName} should not be empty or null");
         }
-        
+
         public static void MinLength(string target, int minLength, string fieldName)
         {
             if (target.Length < minLength)
@@ -28,5 +30,7 @@ namespace TestProject.Validation
             if (target.Length > maxLength)
                 throw new EntityValidationException($"{fieldName} should be less or equal {maxLength} characters long");
         }
+        
+        
     }
 }

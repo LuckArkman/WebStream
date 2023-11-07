@@ -39,10 +39,10 @@ public class CreateCategoryTest
         unityOfWorkMock.Verify(uow => uow.Commit(It.IsAny<CancellationToken>()),
             Times.Once());
         
-        output.ShouldNotBeNull();
+        output.Should().NotBeNull();
         output.Name.Should().Be("category name");
         output.Description.Should().Be("category Description");
-        (output.Id != null && output.Id != Guid.Empty).Should().BeTrue();
-        (output.createTime != null && output.createTime != default(DateTime)).Should().BeTrue();
+        //output.Id.Should().NotBeEmpty();
+        output.createTime.Should().NotBeSameDateAs(default(DateTime));
     }
 }

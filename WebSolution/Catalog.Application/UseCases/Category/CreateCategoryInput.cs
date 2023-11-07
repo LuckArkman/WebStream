@@ -2,17 +2,16 @@ namespace Catalog.Application.UseCases.Category;
 
 public class CreateCategoryInput
 {
-    public CreateCategoryInput(Guid id,string name, string description, bool isActive, DateTime createdAt)
+    public CreateCategoryInput(Guid? id,string name, string? description, bool isActive, DateTime createdAt)
     {
-        this.Id = id;
-        this.Name = name;
+        Id = id ?? Guid.NewGuid();
+        Name = name;
         Description = description ?? "";
-        this.IsActive = isActive;
-        this.createTime = createdAt;
+        IsActive = isActive;
+        createTime = createdAt;
 
     }
-    
-    public Guid Id { get; set; }
+    public Guid? Id { get; set; }
     public string Name { get; set; }
     public string? Description { get; set; }
     public bool IsActive { get; set; }

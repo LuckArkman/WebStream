@@ -26,18 +26,6 @@ namespace Catalog.Domain.Entitys
             DomainValidation.MaxLength(Name, 255, nameof(Name));
             DomainValidation.NotNull(Description, nameof(Description));
             DomainValidation.MaxLength(Description, 10000, nameof(Description));
-            /*
-            if (string.IsNullOrWhiteSpace(Name))
-                throw new EntityValidationException($"{nameof(Name)} shold not be empty or null");
-            if (Name.Length < 3) throw new EntityValidationException($"{nameof(Name)} shoud be lass 3 characters Long");
-            if (Name.Length > 255)
-                throw new EntityValidationException($"{nameof(Name)} shoud be lass or equal  255 characters Long");
-            if (Description == null)
-                throw new EntityValidationException($"{nameof(Description)} shold not be null");
-            if (Description.Length > 10000)
-                throw new EntityValidationException(
-                    $"{nameof(Description)} shoud be lass or equal  10.000 characters Long");
-            */
         }
         
         public Category(string name, bool isActive, DateTime createTime) 

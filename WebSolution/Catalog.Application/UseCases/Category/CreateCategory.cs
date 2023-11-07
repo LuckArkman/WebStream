@@ -5,8 +5,8 @@ namespace Catalog.Application.UseCases.Category;
 
 public class CreateCategory : ICreateCategory
 {
-    private readonly IunityOfWork _unityOfWork;
-    private readonly ICategoryRepository _categoryRepository;
+    public readonly IunityOfWork _unityOfWork;
+    public readonly ICategoryRepository _categoryRepository;
 
     public CreateCategory(ICategoryRepository categoryRepository, IunityOfWork unityOfWork)
     {
@@ -18,8 +18,8 @@ public class CreateCategory : ICreateCategory
     public async Task<CreateCategoryOutput> Handle(CreateCategoryInput input, CancellationToken cancellationToken)
     {
         var category = new Domain.Entitys.Category(input.Name, input.Description, input.IsActive);
-        _categoryRepository.Insert(category, cancellationToken);
-        _unityOfWork.Commit(cancellationToken);
+        await _categoryRepository.Insert(category, cancellationToken);
+        await _unityOfWork.Commit(cancellationToken);
         return new CreateCategoryOutput(category.Id, category.Name, category.Description, category.IsActive, category.createTime);
     }
 }

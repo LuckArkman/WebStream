@@ -6,5 +6,8 @@
   &lt;Or&gt;
     &lt;Category&gt;Domain [Category - Aggregates]&lt;/Category&gt;
     &lt;Category&gt;Domain [DomainValidation - Validation]&lt;/Category&gt;
+    &lt;Category&gt;Domain [CreateCategory - CreateCategoryTest]&lt;/Category&gt;
+    &lt;Category&gt;Domain [CreateCategoryTest]&lt;/Category&gt;
+    &lt;Category&gt;Domain [CreateCategory - Use Cases]&lt;/Category&gt;
   &lt;/Or&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

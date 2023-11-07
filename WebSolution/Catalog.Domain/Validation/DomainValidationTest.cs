@@ -1,7 +1,6 @@
 using Bogus;
 using Catalog.Domain.Exceptions;
 using FluentAssertions;
-using TestProject.Validation;
 using Xunit;
 
 namespace Catalog.Domain.Validation

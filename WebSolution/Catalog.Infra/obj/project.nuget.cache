@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "o0dNL2UmeWaTLpRMBUxJ05Q0kXYGJpVgpS773GBGr4x5ADtx0IgIjwsnUwbmJ90yiqgoC57DyY1Il8Gh6UHRvQ==",
+  "success": true,
+  "projectFilePath": "/mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj",
+  "expectedPackageFiles": [
+    "/home/mauricio/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.20/microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}

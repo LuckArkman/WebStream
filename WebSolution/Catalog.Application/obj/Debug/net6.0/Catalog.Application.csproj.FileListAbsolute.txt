@@ -13,3 +13,18 @@
 /mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/refint/Catalog.Application.dll
 /mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.pdb
 /mnt/0EDEAFDCDEAFB9FB/Azure Projects/Git/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/ref/Catalog.Application.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Application.deps.json
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Application.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Application.pdb
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Domain.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Domain.pdb
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.csproj.AssemblyReference.cache
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.GeneratedMSBuildEditorConfig.editorconfig
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.AssemblyInfoInputs.cache
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.AssemblyInfo.cs
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.csproj.CoreCompileInputs.cache
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.csproj.CopyComplete
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/refint/Catalog.Application.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.pdb
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/ref/Catalog.Application.dll

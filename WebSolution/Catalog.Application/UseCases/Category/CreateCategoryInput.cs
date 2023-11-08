@@ -1,6 +1,8 @@
+using MediatR;
+
 namespace Catalog.Application.UseCases.Category;
 
-public class CreateCategoryInput
+public class CreateCategoryInput : IRequest<CreateCategoryOutput>
 {
     public CreateCategoryInput(Guid? id, string name, string? description = null, bool isActive = true, DateTime? createdAt = null)
     {

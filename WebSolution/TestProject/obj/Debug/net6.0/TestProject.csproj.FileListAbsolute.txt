@@ -326,3 +326,6 @@ E:/Azure Projects/Git/WebStream/WebSolution/TestProject/obj/Debug/net6.0/ref/Tes
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/obj/Debug/net6.0/TestProject.pdb
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/obj/Debug/net6.0/TestProject.genruntimeconfig.cache
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/obj/Debug/net6.0/ref/TestProject.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/bin/Debug/net6.0/MediatR.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/bin/Debug/net6.0/MediatR.Contracts.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll

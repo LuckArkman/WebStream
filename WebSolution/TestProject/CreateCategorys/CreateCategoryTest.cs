@@ -2,11 +2,8 @@ using Catalog.Domain.Entitys;
 using FluentAssertions;
 using Moq;
 using Xunit;
-using System.Threading;
-using Catalog.Application.Interfaces;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
-using Catalog.Domain.Repository;
 using TestProject.Entity.Categorys;
 
 namespace TestProject.CreateCategorys;
@@ -24,7 +21,6 @@ public class CreateCategoryTest
     {
         var categoryMock = _fixture.GetcategoryMock();
         var unityOfWorkMock = _fixture.GetunityOfWorkMock();
-
         var useCase = new CreateCategory(
             categoryMock.Object,
             unityOfWorkMock.Object
@@ -49,7 +45,11 @@ public class CreateCategoryTest
     }
     [Theory(DisplayName = nameof(CreateCategoryThrowWhenInstantiate))]
     [Trait("CreateCategoryTest", "CreateCategory - Use Cases")]
-    [MemberData(nameof(GetInvalidInputs))]
+    [MemberData(
+        nameof(CreateCategoryDataGenerator.GetInvalidInputs), 
+        24,
+        MemberType = typeof(CreateCategoryDataGenerator)
+    )]
     public async void CreateCategoryThrowWhenInstantiate(CreateCategoryInput input, string exception)
     {
         var categoryMock = _fixture.GetcategoryMock();
@@ -137,67 +137,5 @@ public class CreateCategoryTest
         output.IsActive.Should().Be(input.IsActive);
         output.Id.Should().NotBeEmpty();
         output.createTime.Should().NotBeSameDateAs(default(DateTime));
-    }
-
-    public static IEnumerable<object[]> GetInvalidInputs()
-    {
-        var _fixture = new CreateCategoryTestFixture();
-        var invalidInput = new List<object[]>();
-        var inputNullName = _fixture.GetInput();
-        while (inputNullName.Name != null)
-        {
-            inputNullName.Name = null;
-
-        }
-        invalidInput.Add(new object[]
-        {
-            inputNullName,
-            "Name should not be empty or null"
-        });
-        var input = _fixture.GetInput();
-        while (input.Name.Length > 3)
-        {
-            input.Name = "12";
-
-        }
-        invalidInput.Add(new object[]
-        {
-            input,
-            "Name should be at least 3 characters long"
-        });
-        var inputName = _fixture.GetInput();
-        while (inputName.Name.Length < 255)
-        {
-            inputName.Name = $"{inputName.Name} {_fixture.faker.Commerce.ProductName()}";
-        }
-        invalidInput.Add(new object[]
-        {
-            inputName,
-            "Name should be less or equal 255 characters Long"
-        });
-        
-        var inputDesc = _fixture.GetInput();
-        while (inputDesc.Description != null)
-        {
-            inputDesc.Description = null;
-        }
-        invalidInput.Add(new object[]
-        {
-            inputDesc,
-            "Description should not be null"
-        });
-        
-        var inputDescMax = _fixture.GetInput();
-        while (inputDescMax.Description.Length < 10000)
-        {
-            inputDescMax.Description = $"{inputDescMax.Description} {_fixture.faker.Commerce.ProductDescription()}";
-        }
-        invalidInput.Add(new object[]
-        {
-            inputDescMax,
-            "Description should be less or equal 10000 characters long"
-        });
-        
-        return invalidInput;
     }
 }

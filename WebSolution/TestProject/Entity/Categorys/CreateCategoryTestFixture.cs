@@ -32,6 +32,56 @@ public class CreateCategoryTestFixture : BaseFixture
         }
         return categoryDescription;
     }
+    
+    public CreateCategoryInput GetInvalidNullName()
+    {
+        var input = GetInput();
+        while (input.Name != null)
+        {
+            input.Name = null;
+
+        }
+        return input;
+    }
+
+    public CreateCategoryInput GetInvalidName()
+    {
+        var input = GetInput();
+        while (input.Name.Length > 3)
+        {
+            input.Name = "12";
+
+        }
+        return input;
+    }
+    
+    public CreateCategoryInput GetInvalidLongName()
+    {
+        var input = GetInput();
+        while (input.Name.Length < 255)
+        {
+            input.Name = $"{input.Name} {faker.Commerce.ProductName()}";
+        }
+        return input;
+    }
+    public CreateCategoryInput GetInvalidNullDesc()
+    {
+        var input = GetInput();
+        while (input.Description != null)
+        {
+            input.Description = null;
+        }
+        return input;
+    }
+    public CreateCategoryInput GetInvalidLongDesc()
+    {
+        var input = GetInput();
+        while (input.Description.Length < 10000)
+        {
+            input.Description = $"{input.Description} {faker.Commerce.ProductDescription()}";
+        }
+        return input;
+    }
 
     public bool GetRamdomBool() => (new Random()).NextDouble() < 0.5;
 

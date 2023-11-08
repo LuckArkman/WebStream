@@ -190,7 +190,7 @@ namespace TestProject.Entity.Categorys
 
         [Theory(DisplayName = nameof(InstantiateUpdateErrorWhenNameIsLessThan3Characters))]
         [Trait("Domain", "Category - Aggregates")]
-        [MemberData(nameof(GetNames), parameters: 10)]
+        [MemberData(nameof(GetNames), parameters: 50)]
         public void InstantiateUpdateErrorWhenNameIsLessThan3Characters(string? name)
         {
             var category = _categoryTestFixture.GetValidCategory();
@@ -202,7 +202,7 @@ namespace TestProject.Entity.Categorys
         public static IEnumerable<object[]> GetNames(int numberOfTests)
         {
             var fixture = new CategoryTestFixture();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < numberOfTests; i++)
             {
                 var IsOdd = i % 2 == 1;
                 yield return new object[]{fixture.GetValidCategoryName()[..(IsOdd ? 1 : 2)]};

@@ -13,6 +13,17 @@ public class CreateCategoryOutput
         this.createTime = createdAt;
 
     }
+
+    public static CreateCategoryOutput FromCategory(Domain.Entitys.Category category)
+    {
+        return new CreateCategoryOutput(
+            category.Id,
+            category.Name,
+            category.Description,
+            category.IsActive,
+            category.createTime
+        );
+    }
     public Guid? Id { get; set; }
     public string Name { get; set; }
     public string? Description { get; set; }

@@ -1,3 +1,4 @@
+using Catalog.Application.Common;
 using Catalog.Application.Interfaces;
 using Catalog.Domain.Repository;
 
@@ -14,13 +15,13 @@ public class CreateCategory : ICreateCategory
         this._unityOfWork = unityOfWork;
     }
     
-    public async Task<CreateCategoryOutput> Handle(CreateCategoryInput input, CancellationToken cancellationToken)
+    public async Task<CategoryModelOutput> Handle(CreateCategoryInput input, CancellationToken cancellationToken)
     {
         var category = new Domain.Entitys.Category(input.Name, input.Description, input.IsActive);
         
         await _categoryRepository.Insert(category, cancellationToken);
         await _unityOfWork.Commit(cancellationToken);
         
-        return CreateCategoryOutput.FromCategory(category);
+        return CategoryModelOutput.FromCategory(category);
     }
 }

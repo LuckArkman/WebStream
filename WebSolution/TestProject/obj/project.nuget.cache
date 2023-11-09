@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kJ/yPHTN8lJYANcv35Uvd3KEeoSA4luQx69YHqVroLNFK/sxuFfktIzgnU2euwZBUMqv+QKn4eJmMN7FUgPwZg==",
+  "dgSpecHash": "68nYVjCYCy1LtEBL7Nb/IalLvuq6+Mi0x64j704pIMCq5rwaHaWcx9Xx+UKrugesR252Iim9sfm5VoFdFhg0Bg==",
   "success": true,
   "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/TestProject.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/home/mauricio/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/fluentassertions/6.12.0/fluentassertions.6.12.0.nupkg.sha512",
+    "/home/mauricio/.nuget/packages/fluentvalidation/11.8.0/fluentvalidation.11.8.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/microsoft.codecoverage/17.7.2/microsoft.codecoverage.17.7.2.nupkg.sha512",

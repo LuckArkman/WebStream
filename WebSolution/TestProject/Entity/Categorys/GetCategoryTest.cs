@@ -1,5 +1,5 @@
 using Catalog.Application.GetCategoryTest.Categorys;
-using Catalog.Domain.Repository;
+using Catalog.Domain.Exceptions;
 using FluentAssertions;
 using Moq;
 using TestProject.Entity.GetCategory;
@@ -34,8 +34,8 @@ public class GetCategoryTest
         var output = await useCase.Handle(input, CancellationToken.None);
             
         _categoryMock.Verify(x => x.Get(
-            It.IsAny<Guid>(),
-            It.IsAny<CancellationToken>()),
+                It.IsAny<Guid>(),
+                It.IsAny<CancellationToken>()),
             Times.Once);
         
         output.Should().NotBeNull();
@@ -47,4 +47,29 @@ public class GetCategoryTest
 
     }
     
+    [Fact(DisplayName = nameof(NotFoundCategory))]
+    [Trait("GetCategoryTest", "CreateCategory - Use Cases")]
+    public async Task NotFoundCategory()
+    {
+        var _categoryMock = _fixture.GetcategoryMock();
+        var unityOfWorkMock = _fixture.GetunityOfWorkMock();
+        var newGuid = Guid.NewGuid();
+        _categoryMock.Setup(x => x.Get(
+            It.IsAny<Guid>(),
+            It.IsAny<CancellationToken>())
+        ).ThrowsAsync(new NotFoundException($"Category {newGuid} not Found"));
+        
+        
+        var input = new GetCategoryInput(newGuid);
+        var useCase = new GetCategoryUseCase(_categoryMock.Object);
+        
+        var Task = async () => await useCase.Handle(input, CancellationToken.None);
+        
+        Task.Should().ThrowAsync<NotFoundException>($"Category {newGuid} not Found");
+            
+        _categoryMock.Verify(x => x.Get(
+                It.IsAny<Guid>(),
+                It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
 }

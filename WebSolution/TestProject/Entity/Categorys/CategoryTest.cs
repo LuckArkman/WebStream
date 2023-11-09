@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using Xunit;
 using Catalog.Domain.Entitys;
 using Catalog.Domain.Exceptions;

@@ -12,6 +12,7 @@
           "Catalog.Application": "1.0.0",
           "Catalog.Domain": "1.0.0",
           "FluentAssertions": "6.12.0",
+          "FluentValidation": "11.8.0",
           "MediatR": "12.1.1",
           "Microsoft.NET.Test.Sdk": "17.7.2",
           "Moq": "4.20.69",
@@ -51,6 +52,14 @@
           "lib/net6.0/FluentAssertions.dll": {
             "assemblyVersion": "6.12.0.0",
             "fileVersion": "6.12.0.0"
+          }
+        }
+      },
+      "FluentValidation/11.8.0": {
+        "runtime": {
+          "lib/net6.0/FluentValidation.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.8.0.0"
           }
         }
       },
@@ -1144,6 +1153,7 @@
       "Catalog.Application/1.0.0": {
         "dependencies": {
           "Catalog.Domain": "1.0.0",
+          "FluentValidation": "11.8.0",
           "MediatR": "12.1.1",
           "Moq": "4.20.69"
         },
@@ -1155,6 +1165,7 @@
         "dependencies": {
           "Bogus": "34.0.2",
           "FluentAssertions": "6.12.0",
+          "FluentValidation": "11.8.0",
           "MediatR": "12.1.1",
           "xunit": "2.6.1"
         },
@@ -1197,6 +1208,13 @@
       "sha512": "sha512-ZXhHT2YwP9lajrwSKbLlFqsmCCvFJMoRSK9t7sImfnCyd0OB3MhgxdoMcVqxbq1iyxD6mD2fiackWmBb7ayiXQ==",
       "path": "fluentassertions/6.12.0",
       "hashPath": "fluentassertions.6.12.0.nupkg.sha512"
+    },
+    "FluentValidation/11.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TiEaaYqSIAS+wXQv46LRm8Mca092XYNePD0n231Hqlkmm5FuToZoWnjI1ef/vJUxBzqR7/k2vaVQXxijNgVKRQ==",
+      "path": "fluentvalidation/11.8.0",
+      "hashPath": "fluentvalidation.11.8.0.nupkg.sha512"
     },
     "MediatR/12.1.1": {
       "type": "package",

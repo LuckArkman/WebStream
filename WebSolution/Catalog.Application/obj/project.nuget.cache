@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "fuwr5xzo/ScnmIU5XIHruWgTNQOe5FYtlMbpfF0PSpewUMw9E2WXiWN6H0WgrQvY2i0gppAxHdTz6iihW/57fw==",
+  "dgSpecHash": "rYkXmcvlX5CHUGKlzXbX3QCdyFX2jSVpXvMJ4drsrZArTkSTPUIVa4xRekJLKhZGNu0dTHG6C0nB+tphX9tjyg==",
   "success": true,
   "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj",
   "expectedPackageFiles": [
     "/home/mauricio/.nuget/packages/bogus/34.0.2/bogus.34.0.2.nupkg.sha512",
     "/home/mauricio/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/fluentassertions/6.12.0/fluentassertions.6.12.0.nupkg.sha512",
+    "/home/mauricio/.nuget/packages/fluentvalidation/11.8.0/fluentvalidation.11.8.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",

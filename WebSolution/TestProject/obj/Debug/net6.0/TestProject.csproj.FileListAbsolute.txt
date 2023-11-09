@@ -329,3 +329,4 @@ E:/Azure Projects/Git/WebStream/WebSolution/TestProject/obj/Debug/net6.0/ref/Tes
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/bin/Debug/net6.0/MediatR.dll
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/bin/Debug/net6.0/MediatR.Contracts.dll
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/bin/Debug/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/TestProject/bin/Debug/net6.0/FluentValidation.dll

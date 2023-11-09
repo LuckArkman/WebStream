@@ -10,10 +10,10 @@ public class GetCategoryUseCase: IRequestHandler<GetCategoryInput, GetCategoryOu
     private readonly ICategoryRepository _category;
     public GetCategoryUseCase(ICategoryRepository categoryMock) => _category = categoryMock;
 
-    public Task<GetCategoryOutPut> Handle(GetCategoryInput request, CancellationToken cancellationToken)
+    public async Task<GetCategoryOutPut> Handle(GetCategoryInput request, CancellationToken cancellationToken)
     {
-        var category = _category.Get(request.Id, cancellationToken);
-        return null;
+        var category = await _category.Get(request.Id, cancellationToken);
+        return GetCategoryOutPut.FromCategory(category);
 
     }
 }

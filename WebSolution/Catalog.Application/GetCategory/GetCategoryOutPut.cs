@@ -1,10 +1,10 @@
-using System.Globalization;
+using Catalog.Application.UseCases.Category;
 
-namespace Catalog.Application.UseCases.Category;
+namespace Catalog.Application.GetCategoryTest.Categorys;
 
-public class CreateCategoryOutput
+public class GetCategoryOutPut
 {
-    public CreateCategoryOutput(Guid? id,string name, string description, bool isActive, DateTime createdAt)
+    public GetCategoryOutPut(Guid? id,string name, string description, bool isActive, DateTime createdAt)
     {
         Id = id ?? Guid.NewGuid();
         this.Name = name;
@@ -13,10 +13,10 @@ public class CreateCategoryOutput
         this.createTime = createdAt;
 
     }
-
-    public static CreateCategoryOutput FromCategory(Domain.Entitys.Category category)
+    
+    public static GetCategoryOutPut FromCategory(Domain.Entitys.Category category)
     {
-        return new CreateCategoryOutput(
+        return new (
             category.Id,
             category.Name,
             category.Description,

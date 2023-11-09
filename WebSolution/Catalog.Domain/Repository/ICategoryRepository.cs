@@ -15,6 +15,4 @@ public interface ICategoryRepository : IGenericRepository<Category>
         List<Guid> ids,
         CancellationToken cancellationToken
     );
-
-    void Get(Guid Id, CancellationToken cancellationToken);
 }

@@ -1,3 +1,5 @@
+using Catalog.Application.GetCategoryTest.Categorys;
+using Catalog.Domain.Repository;
 using FluentAssertions;
 using Moq;
 using TestProject.Entity.GetCategory;
@@ -21,14 +23,14 @@ public class GetCategoryTest
         var unityOfWorkMock = _fixture.GetunityOfWorkMock();
         var _category = _fixture.GetValidCategory();
         
-        await _categoryMock.Setup(x => x.Get(
+        _categoryMock.Setup(x => x.Get(
             It.IsAny<Guid>(),
             It.IsAny<CancellationToken>())
-        ).Returns(_category);
+        ).ReturnsAsync(_category);
         
         
         var input = new GetCategoryInput(_category.Id);
-        var useCase = new GetCategory(_categoryMock);
+        var useCase = new GetCategoryUseCase(_categoryMock.Object);
         var output = await useCase.Handle(input, CancellationToken.None);
             
         _categoryMock.Verify(x => x.Get(

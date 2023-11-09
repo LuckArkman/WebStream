@@ -1875,7 +1875,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Catalog.Domain": "1.0.0",
-          "MediatR": "12.1.1"
+          "MediatR": "12.1.1",
+          "Moq": "4.20.69"
         },
         "compile": {
           "bin/placeholder/Catalog.Application.dll": {}

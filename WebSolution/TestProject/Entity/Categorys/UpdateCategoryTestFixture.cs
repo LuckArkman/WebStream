@@ -1,4 +1,5 @@
 using Catalog.Application.Interfaces;
+using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Entitys;
 using Catalog.Domain.Repository;
 using Moq;
@@ -38,6 +39,14 @@ public class UpdateCategoryTestFixture : BaseFixture
     public Category GetValidCategory() => new (GetValidCategoryName(),GetValidCategoryDescription());
     
     public Category GetTestValidCategory() => new (GetValidCategoryName(),GetValidCategoryDescription(), GetRamdomBool());
+    
+    public UpdateCategoryInput GetValidInput(Guid? id)
+        => new (
+        id ?? Guid.NewGuid(), 
+        GetValidCategoryName(),
+        GetValidCategoryDescription(),
+    GetRamdomBool()
+    );
     
     
     

@@ -24,6 +24,7 @@ public class UpdateCategory : IUpdateCategory
             if (!request.IsActive)category.Activate();
             if (request.IsActive)category.NotActivate();
         }
+        
 
         await _categoryRepository.Update(category, cancellationToken);
         await _unityOfWork.Commit(cancellationToken);

@@ -9,4 +9,6 @@ public interface IGenericRepository<TAggregate> : IRepository  where TAggregate 
     
     public Task Delete(TAggregate tAggregate, CancellationToken cancellationToken);
     
+    public Task Update(TAggregate tAggregate, CancellationToken cancellationToken);
+    
 }

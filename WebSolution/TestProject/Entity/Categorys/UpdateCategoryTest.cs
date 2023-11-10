@@ -1,5 +1,6 @@
 using Catalog.Application.GetCategoryTest.Categorys;
 using Catalog.Application.UseCases.Category;
+using FluentAssertions;
 using Moq;
 using Xunit;
 
@@ -29,14 +30,14 @@ public class UpdateCategoryTest
             _categoryvalid.Id,
             _fixture.GetValidCategoryName(),
             _fixture.GetValidCategoryDescription(),
-            !_categoryvalid.IsActive);
+            !_fixture.GetRamdomBool());
         var UseCase = new UpdateCategory(
             categoryMock.Object,
             unityOfWorkMock.Object);
 
-        var output = await UseCase.Handle(input);
+        var output = await UseCase.Handle(input, CancellationToken.None);
 
-        output.Should().NotBetNull();
+        output.Should().NotBeNull();
         output.Name.Should().Be(input.Name);
         output.Description.Should().Be(input.Description);
         output.IsActive.Should().Be(input.IsActive);
@@ -45,20 +46,12 @@ public class UpdateCategoryTest
             _categoryvalid.Id, It.IsAny<CancellationToken>()),
             Times.Once);
 
-        categoryMock.Verify();(x => x.Update(
+        categoryMock.Verify(x => x.Update(
                 _categoryvalid, It.IsAny<CancellationToken>()),
             Times.Once);
         
         unityOfWorkMock.Verify(x => x.Commit(
                 It.IsAny<CancellationToken>()),
             Times.Once);
-        
-
-
-
-
-
-
-
     }
 }

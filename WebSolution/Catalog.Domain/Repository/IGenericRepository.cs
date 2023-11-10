@@ -7,4 +7,6 @@ public interface IGenericRepository<TAggregate> : IRepository  where TAggregate 
     public Task Insert( TAggregate tAggregate, CancellationToken cancellationToken);
     public Task<TAggregate> Get( Guid Id, CancellationToken cancellationToken);
     
+    public Task Delete(TAggregate tAggregate, CancellationToken cancellationToken);
+    
 }

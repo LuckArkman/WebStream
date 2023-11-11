@@ -17,7 +17,7 @@ public class UpdateCategoryInput : IRequest<CategoryModelOutput>
     {
         Id = id;
         Name = name;
-        Description = description ?? "";
+        Description = description;
         IsActive = isActive;
         this.createTime = createTime ?? DateTime.Now;
     }

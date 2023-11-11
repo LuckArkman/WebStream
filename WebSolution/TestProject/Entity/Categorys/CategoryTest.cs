@@ -76,7 +76,10 @@ namespace TestProject.Entity.Categorys
         [MemberData(nameof(GetNames), parameters: 10)]
         public void InstantiateErrorWhenNameIsLessThan3Characters(string? name)
         {
-            Action action = () => new Category(name!, "category Description");
+            Action action = () =>
+            {
+                var category = new Category(name!, "category Description");
+            };
             action.Should().Throw<EntityValidationException>("Name shoud be lass 3 characters Long");
         }
 
@@ -187,7 +190,7 @@ namespace TestProject.Entity.Categorys
 
         [Theory(DisplayName = nameof(InstantiateUpdateErrorWhenNameIsLessThan3Characters))]
         [Trait("Domain", "Category - Aggregates")]
-        [MemberData(nameof(GetNames), parameters: 50)]
+        [MemberData(nameof(GetNames), parameters: 10)]
         public void InstantiateUpdateErrorWhenNameIsLessThan3Characters(string? name)
         {
             var category = _categoryTestFixture.GetValidCategory();

@@ -1,4 +1,3 @@
-using Catalog.Application.GetCategoryTest.Categorys;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Entitys;
 using Catalog.Domain.Exceptions;
@@ -22,21 +21,15 @@ public class UpdateCategoryTest
         10,
         MemberType = typeof(UpdateCategoryDataGenerator)
     )]
-    public async Task UpdateCategory(Category _categoryvalid, UpdateCategoryInput _input)
+    public async Task UpdateCategory(Category _categoryValid, UpdateCategoryInput _input)
     {
         var categoryMock = _fixture.GetcategoryMock();
         var unityOfWorkMock = _fixture.GetunityOfWorkMock();
-        var input = new UpdateCategoryInput(
-            _input.Id,
-            _input.Name,
-            _input.Description,
-            _input.IsActive,
-            _input.createTime
-        );
+        var input = _input;
         
         categoryMock.Setup(x => x.Get(
-            _categoryvalid.Id, It.IsAny<CancellationToken>())
-        ).ReturnsAsync(_categoryvalid);
+            _categoryValid.Id, It.IsAny<CancellationToken>())
+        ).ReturnsAsync(_categoryValid);
         var UseCase = new UpdateCategory(
             categoryMock.Object,
             unityOfWorkMock.Object);
@@ -45,14 +38,14 @@ public class UpdateCategoryTest
 
         output.Should().NotBeNull();
         output.Name.Should().Be(input.Name);
-        output.Description.Should().Be(_categoryvalid.Description);
+        output.Description.Should().Be(_categoryValid.Description);
         
         categoryMock.Verify(x => x.Get(
-                _categoryvalid.Id, It.IsAny<CancellationToken>()),
+                _categoryValid.Id, It.IsAny<CancellationToken>()),
             Times.Once);
 
         categoryMock.Verify(x => x.Update(
-                _categoryvalid, It.IsAny<CancellationToken>()),
+                _categoryValid, It.IsAny<CancellationToken>()),
             Times.Once);
         
         unityOfWorkMock.Verify(x => x.Commit(
@@ -83,6 +76,47 @@ public class UpdateCategoryTest
         
         categoryMock.Verify(x => x.Get(
                 input.Id, It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
+    [Theory(DisplayName = nameof(UpdateCategoryWhithOutIsActive))]
+    [Trait("UpdateCategoryTest", "UpdateCategory - Use Cases")]
+    [MemberData(nameof(UpdateCategoryDataGenerator.GetCategoriesUpdate),
+        10,
+        MemberType = typeof(UpdateCategoryDataGenerator)
+    )]
+    public async Task UpdateCategoryWhithOutIsActive(Category _categoryValid, UpdateCategoryInput _input)
+    {
+        var categoryMock = _fixture.GetcategoryMock();
+        var unityOfWorkMock = _fixture.GetunityOfWorkMock();
+        var input = new UpdateCategoryInput(
+            _input.Id,
+            _input.Name,
+            _input.Description
+            );
+        
+        categoryMock.Setup(x => x.Get(
+            _categoryValid.Id, It.IsAny<CancellationToken>())
+        ).ReturnsAsync(_categoryValid);
+        var UseCase = new UpdateCategory(
+            categoryMock.Object,
+            unityOfWorkMock.Object);
+        
+        var output = await UseCase.Handle(input, CancellationToken.None);
+
+        output.Should().NotBeNull();
+        output.Name.Should().Be(input.Name);
+        output.Description.Should().Be(_categoryValid.Description);
+        
+        categoryMock.Verify(x => x.Get(
+                _categoryValid.Id, It.IsAny<CancellationToken>()),
+            Times.Once);
+
+        categoryMock.Verify(x => x.Update(
+                _categoryValid, It.IsAny<CancellationToken>()),
+            Times.Once);
+        
+        unityOfWorkMock.Verify(x => x.Commit(
+                It.IsAny<CancellationToken>()),
             Times.Once);
     }
     

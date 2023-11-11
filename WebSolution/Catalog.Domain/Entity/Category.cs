@@ -8,10 +8,10 @@ namespace Catalog.Domain.Entitys
 
     public class Category : AggregateRoot
     {
-        public Category(string _name, string _description, bool isActive = true) : base()
+        public Category(string _name, string? _description, bool isActive = true) : base()
         {
             Name = _name;
-            Description = _description;
+            Description = _description ?? "";
             IsActive = isActive;
             createTime = DateTime.Now;
 

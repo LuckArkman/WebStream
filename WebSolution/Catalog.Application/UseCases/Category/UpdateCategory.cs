@@ -19,10 +19,14 @@ public class UpdateCategory : IUpdateCategory
             cancellationToken);
         category.Update(request.Name,
             request.Description);
-        if (request.IsActive != category.IsActive)
+        if (request.IsActive != null && request.IsActive != category.IsActive)
         {
-            if (!request.IsActive)category.Activate();
-            if (request.IsActive)category.NotActivate();
+            if (!(bool)request.IsActive){
+                category.Activate();
+            }            
+            else{
+                category.NotActivate();
+            }
         }
         
 

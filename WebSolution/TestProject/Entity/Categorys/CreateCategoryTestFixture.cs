@@ -32,17 +32,6 @@ public class CreateCategoryTestFixture : BaseFixture
         }
         return categoryDescription;
     }
-    
-    public CreateCategoryInput GetInvalidNullName()
-    {
-        var input = GetInput();
-        while (input.Name != null)
-        {
-            input.Name = null;
-
-        }
-        return input;
-    }
 
     public CreateCategoryInput GetInvalidName()
     {

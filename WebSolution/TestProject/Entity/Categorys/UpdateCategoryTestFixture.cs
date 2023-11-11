@@ -1,3 +1,4 @@
+using Bogus;
 using Catalog.Application.Interfaces;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Entitys;
@@ -33,31 +34,6 @@ public class UpdateCategoryTestFixture : BaseFixture
         }
         return categoryDescription;
     }
-    
-    public bool GetRamdomBool() => (new Random()).NextDouble() < 0.5;
-    
-    public Category GetValidCategory() => new (GetValidCategoryName(),GetValidCategoryDescription());
-    
-    public Category GetTestValidCategory() => new (GetValidCategoryName(),GetValidCategoryDescription(), GetRamdomBool());
-    
-    public UpdateCategoryInput GetValidInput(Guid? id)
-        => new (
-        id ?? Guid.NewGuid(), 
-        GetValidCategoryName(),
-        GetValidCategoryDescription(),
-    GetRamdomBool()
-    );
-    
-    public UpdateCategoryInput GetInvalidNullName()
-    {
-        var input = GetInput();
-        while (input.Name != null)
-        {
-            input.Name = null;
-
-        }
-        return input;
-    }
 
     public UpdateCategoryInput GetInvalidName()
     {
@@ -79,21 +55,47 @@ public class UpdateCategoryTestFixture : BaseFixture
         }
         return input;
     }
-    public UpdateCategoryInput GetInvalidNullDesc()
-    {
-        var input = GetInput();
-        while (input.Description != null)
-        {
-            input.Description = null;
-        }
-        return input;
-    }
+
     public UpdateCategoryInput GetInvalidLongDesc()
     {
         var input = GetInput();
         while (input.Description.Length < 10000)
         {
             input.Description = $"{input.Description} {faker.Commerce.ProductDescription()}";
+        }
+        return input;
+    }
+
+    public bool GetRamdomBool() => (new Random()).NextDouble() < 0.5;
+    
+    public Category GetValidCategory() => new (GetValidCategoryName(),GetValidCategoryDescription());
+    
+    public Category GetTestValidCategory() => new (GetValidCategoryName(),GetValidCategoryDescription(), GetRamdomBool());
+    
+    public UpdateCategoryInput GetValidInput(Guid? id = null)
+        => new (
+        id ?? Guid.NewGuid(), 
+        GetValidCategoryName(),
+        GetValidCategoryDescription(),
+    GetRamdomBool()
+    );
+
+    public UpdateCategoryInput GetInvalidShortName()
+    {
+        var input = GetInput();
+        while (input.Name.Length > 3)
+        {
+            input.Name = "12";
+
+        }
+        return input;
+    }
+    public UpdateCategoryInput GetInvalidNullDesc()
+    {
+        var input = GetInput();
+        while (input.Description != null)
+        {
+            input.Description = null;
         }
         return input;
     }
@@ -104,7 +106,4 @@ public class UpdateCategoryTestFixture : BaseFixture
         GetRamdomBool(),
         DateTime.Now
     );
-    
-    
-    
 }

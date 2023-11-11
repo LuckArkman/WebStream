@@ -161,6 +161,34 @@ public class UpdateCategoryTest
                 It.IsAny<CancellationToken>()),
             Times.Once);
     }
+
+    [Theory(DisplayName = nameof(UpdateCategoryInvalidData))]
+    [Trait("UpdateCategoryTest", "UpdateCategory - Use Cases")]
+    [MemberData(nameof(UpdateCategoryDataGenerator.GetInvalidInputs),
+        12,
+        MemberType = typeof(UpdateCategoryDataGenerator)
+    )]
+    public async Task UpdateCategoryInvalidData(UpdateCategoryInput _input, string msg)
+    {
+        var categoryMock = _fixture.GetcategoryMock();
+        var unityOfWorkMock = _fixture.GetunityOfWorkMock();
+        var category = _fixture.GetTestValidCategory();
+        _input.Id = category.Id;
+        categoryMock.Setup(x => x.Get(
+            category.Id, It.IsAny<CancellationToken>())
+        ).ReturnsAsync(category);
+        var UseCase = new UpdateCategory(
+            categoryMock.Object,
+            unityOfWorkMock.Object);
+        
+        var task = async () => await UseCase.Handle(_input, CancellationToken.None);
+
+        await task.Should().ThrowAsync<EntityValidationException>().WithMessage(msg);
+        
+        categoryMock.Verify(x => x.Get(
+                category.Id, It.IsAny<CancellationToken>()),
+            Times.Once);
+    }  
     
     
 }

@@ -48,6 +48,63 @@ public class UpdateCategoryTestFixture : BaseFixture
     GetRamdomBool()
     );
     
+    public UpdateCategoryInput GetInvalidNullName()
+    {
+        var input = GetInput();
+        while (input.Name != null)
+        {
+            input.Name = null;
+
+        }
+        return input;
+    }
+
+    public UpdateCategoryInput GetInvalidName()
+    {
+        var input = GetInput();
+        while (input.Name.Length > 3)
+        {
+            input.Name = "12";
+
+        }
+        return input;
+    }
+    
+    public UpdateCategoryInput GetInvalidLongName()
+    {
+        var input = GetInput();
+        while (input.Name.Length < 255)
+        {
+            input.Name = $"{input.Name} {faker.Commerce.ProductName()}";
+        }
+        return input;
+    }
+    public UpdateCategoryInput GetInvalidNullDesc()
+    {
+        var input = GetInput();
+        while (input.Description != null)
+        {
+            input.Description = null;
+        }
+        return input;
+    }
+    public UpdateCategoryInput GetInvalidLongDesc()
+    {
+        var input = GetInput();
+        while (input.Description.Length < 10000)
+        {
+            input.Description = $"{input.Description} {faker.Commerce.ProductDescription()}";
+        }
+        return input;
+    }
+    
+    public UpdateCategoryInput GetInput() => new(Guid.Empty,
+        GetValidCategoryName(),
+        GetValidCategoryDescription(),
+        GetRamdomBool(),
+        DateTime.Now
+    );
+    
     
     
 }

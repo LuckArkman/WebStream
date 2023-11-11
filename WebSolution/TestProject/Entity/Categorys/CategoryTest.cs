@@ -67,7 +67,8 @@ namespace TestProject.Entity.Categorys
         [Trait("Domain", "Category - Aggregates")]
         public void InstantiateErrorDescriptionIsEmpty()
         {
-            Action action = () => new Category("category name", null);
+            var validCategory = _categoryTestFixture.GetValidCategory();
+            var action = () => new Category(validCategory.Name);
             action.Should().Throw<EntityValidationException>().WithMessage("Description should not be null");
         }
 

@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{FCD76AED-7F9F-40CB-8DF9-456163A5DEC1}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestProject/Entity/Categorys/UpdateCategoryTest.cs">
+    <Files>
+      <File FileName="TestProject/Entity/Categorys/UpdateCategoryTest.cs" Line="5" Column="11" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebSolution" expanded="True">
+            <Node name="Catalog.Application" expanded="True">
+              <Node name="UseCases" expanded="True">
+                <Node name="Category" expanded="True" />
+              </Node>
+            </Node>
+            <Node name="TestProject" expanded="True">
+              <Node name="CreateCategorys" expanded="True" />
+              <Node name="Entity" expanded="True">
+                <Node name="Categorys" expanded="True">
+                  <Node name="UpdateCategoryTest.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.TestProject PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

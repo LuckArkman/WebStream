@@ -15,4 +15,9 @@ public interface ICategoryRepository : IGenericRepository<Category>
         List<Guid> ids,
         CancellationToken cancellationToken
     );
+
+    public Task Update(
+        Category _category,
+        CancellationToken cancellationToken
+    );
 }

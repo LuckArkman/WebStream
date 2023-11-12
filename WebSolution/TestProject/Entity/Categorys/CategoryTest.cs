@@ -1,6 +1,3 @@
-using System;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
 using Xunit;
 using Catalog.Domain.Entitys;
 using Catalog.Domain.Exceptions;
@@ -70,7 +67,8 @@ namespace TestProject.Entity.Categorys
         [Trait("Domain", "Category - Aggregates")]
         public void InstantiateErrorDescriptionIsEmpty()
         {
-            Action action = () => new Category("category name", null);
+            var validCategory = _categoryTestFixture.GetValidCategory();
+            var action = () => new Category(validCategory.Name);
             action.Should().Throw<EntityValidationException>().WithMessage("Description should not be null");
         }
 
@@ -79,7 +77,10 @@ namespace TestProject.Entity.Categorys
         [MemberData(nameof(GetNames), parameters: 10)]
         public void InstantiateErrorWhenNameIsLessThan3Characters(string? name)
         {
-            Action action = () => new Category(name!, "category Description");
+            Action action = () =>
+            {
+                var category = new Category(name!, "category Description");
+            };
             action.Should().Throw<EntityValidationException>("Name shoud be lass 3 characters Long");
         }
 
@@ -202,7 +203,7 @@ namespace TestProject.Entity.Categorys
         public static IEnumerable<object[]> GetNames(int numberOfTests)
         {
             var fixture = new CategoryTestFixture();
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < numberOfTests; i++)
             {
                 var IsOdd = i % 2 == 1;
                 yield return new object[]{fixture.GetValidCategoryName()[..(IsOdd ? 1 : 2)]};

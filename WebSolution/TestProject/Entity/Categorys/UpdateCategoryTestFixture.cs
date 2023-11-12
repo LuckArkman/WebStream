@@ -24,7 +24,7 @@ public class UpdateCategoryTestFixture : BaseFixture
             categoryName = categoryName[..255];
         }
         return categoryName;
-    }
+    }    
 
     public string GetValidCategoryDescription(){
         var categoryDescription = faker.Commerce.ProductDescription();
@@ -71,7 +71,7 @@ public class UpdateCategoryTestFixture : BaseFixture
     public Category GetValidCategory() => new (GetValidCategoryName(),GetValidCategoryDescription());
     
     public Category GetTestValidCategory() => new (GetValidCategoryName(),GetValidCategoryDescription(), GetRamdomBool());
-    
+
     public UpdateCategoryInput GetValidInput(Guid? id = null)
         => new (
         id ?? Guid.NewGuid(), 

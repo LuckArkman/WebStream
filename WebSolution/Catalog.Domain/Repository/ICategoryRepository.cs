@@ -1,9 +1,10 @@
 using Catalog.Domain.Entitys;
+using Catalog.Domain.SeedWork;
 using Moq;
 
 namespace Catalog.Domain.Repository;
 
-public interface ICategoryRepository : IGenericRepository<Category>
+public interface ICategoryRepository : IGenericRepository<Category>, ISearchableRepository<Category>
 {
     
     public Task<IReadOnlyList<Guid>> GetIdsListByIds(
@@ -20,4 +21,6 @@ public interface ICategoryRepository : IGenericRepository<Category>
         Category _category,
         CancellationToken cancellationToken
     );
+
+    
 }

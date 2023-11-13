@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "8DE0EN/H7rB2C0onYG2JBjJxNfMKhhPtfkUJgUoun3vksDS6bSFDoKSYuuWgFt7dWQsIcXr6FjR7oZ6wENpmMA==",
+  "success": true,
+  "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj",
+  "expectedPackageFiles": [
+    "/home/mauricio/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.20/microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512"
+  ],
+  "logs": []
+}

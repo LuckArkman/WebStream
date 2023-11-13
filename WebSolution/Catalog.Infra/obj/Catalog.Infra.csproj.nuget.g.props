@@ -12,4 +12,7 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/home/mauricio/.nuget/packages/" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)xunit.core/2.6.1/build/xunit.core.props" Condition="Exists('$(NuGetPackageRoot)xunit.core/2.6.1/build/xunit.core.props')" />
+  </ImportGroup>
 </Project>

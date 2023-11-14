@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using Catalog.Domain.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 using FluentAssertions;
@@ -30,6 +31,26 @@ namespace Catalog.Infra.Repositories
             _dbCategory.IsActive.Should().Be(_category.IsActive);
             _dbCategory.createTime.Should().Be(_category.createTime);
 
-        }        
+        } 
+        
+        [Fact(DisplayName = nameof(GetCategoryThrowIfNotFound))]
+        [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
+        public async Task GetCategoryThrowIfNotFound()
+        {
+            Guid Id = Guid.NewGuid();
+            var _dbContext = _fixture.CreateDBContext();
+            var _categoryex = _fixture.GetExCategory();
+            var _category = _fixture.GetExCategoryList(15);
+            _category.Add(_categoryex);
+            await _dbContext.AddRangeAsync(_category);
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
+            var _categoryRepository = new CategoryRepository(_dbContext);
+
+            var _task = async () =>
+                await _categoryRepository.Get(
+                    Id, CancellationToken.None);
+            await _task.Should().ThrowAsync<NotFoundException>().WithMessage($"Category '{Id}' not found.");
+
+        } 
     }
 }

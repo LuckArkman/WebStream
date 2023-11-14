@@ -1,3 +1,4 @@
+using System.Collections;
 using Catalog.Data.Configurations;
 using Catalog.Domain.Entitys;
 using Catalog.Infra.Base;
@@ -44,5 +45,9 @@ namespace Catalog.Infra.Repositories
             }
             return categoryDescription;
         }
+
+        public List<Category> GetExCategoryList(int length = 10)
+            => Enumerable.Range(0, length).Select(_ =>GetValidCategory()).ToList();
+
     }
 }

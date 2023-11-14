@@ -1,6 +1,7 @@
 using Catalog.Application.Interfaces;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Entitys;
+using Catalog.Domain.Enum;
 using Catalog.Domain.Repository;
 using Moq;
 using TestProject.Entity.Common;
@@ -115,6 +116,17 @@ namespace TestProject.Entity.Categorys
             DateTime.Now
         );
 
-
+        public ListCategoriesInput GetExampleInput()
+        {
+            var random = new Random();
+            return new ListCategoriesInput(
+                page: random.Next(1, 10),
+                perPage: random.Next(15, 100),
+                search: faker.Commerce.ProductName(),
+                sort: faker.Commerce.ProductName(),
+                dir: random.Next(0, 10) > 5 ?
+                    SearchOrder.Asc : SearchOrder.Desc
+            );
+        }
     }
 }

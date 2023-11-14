@@ -146,7 +146,6 @@ public class UpdateCategoryTest
 
         output.Should().NotBeNull();
         output.Name.Should().Be(input.Name);
-        output.Description.Should().Be(input.Description);
         output.Description.Should().Be(_categoryValid.Description);
         
         categoryMock.Verify(x => x.Get(

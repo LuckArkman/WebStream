@@ -1,6 +1,6 @@
+using Catalog.Data.Configurations;
 using Catalog.Domain.Entitys;
 using Catalog.Infra.Base;
-using Catalog.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.Infra.Repositories

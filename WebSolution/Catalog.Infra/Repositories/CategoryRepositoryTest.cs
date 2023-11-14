@@ -1,5 +1,4 @@
 using System.Collections.ObjectModel;
-using Catalog.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 using Xunit;
 using FluentAssertions;
@@ -24,12 +23,12 @@ namespace Catalog.Infra.Repositories
             await _categoryRepository.Insert(_category, CancellationToken.None);
             await _dbContext.SaveChangeAsync(CancellationToken.None);
 
-            var _dbCategory = await _dbContext.Categories.Find(_category.Id);
+            var _dbCategory = await _dbContext.Categories.FindAsync(_category.Id);
             _dbCategory.Should().NotBeNull();
-            _dbCategory.Should().Be(_category.Name);
-            _dbCategory.Should().Be(_category.Description);
-            _dbCategory.Should().Be(_category.IsActive);
-            _dbCategory.Should().Be(_category.createTime);
+            _dbCategory.Name.Should().Be(_category.Name);
+            _dbCategory.Description.Should().Be(_category.Description);
+            _dbCategory.IsActive.Should().Be(_category.IsActive);
+            _dbCategory.createTime.Should().Be(_category.createTime);
 
         }        
     }

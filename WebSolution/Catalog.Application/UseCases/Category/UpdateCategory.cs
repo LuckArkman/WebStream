@@ -28,8 +28,6 @@ public class UpdateCategory : IUpdateCategory
                 category.NotActivate();
             }
         }
-        
-
         await _categoryRepository.Update(category, cancellationToken);
         await _unityOfWork.Commit(cancellationToken);
         return CategoryModelOutput.FromCategory(category);

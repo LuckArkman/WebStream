@@ -8,10 +8,16 @@ namespace Catalog.Infra.Repositories
 {
     public class CategoryRepositoryTestFixture : BaseFixture
     {
-        public CatalogDbContext CreateDBContext()
-        => new (new DbContextOptionsBuilder<CatalogDbContext>()
-        .UseInMemoryDatabase("Integration-tests-db")
-        .Options);
+        public CatalogDbContext CreateDBContext(bool value = false)
+        {
+            
+            var context = new CatalogDbContext(new DbContextOptionsBuilder<CatalogDbContext>()
+                .UseInMemoryDatabase("Integration-tests-db")
+                .Options);
+            if (!value) context.Database.EnsureDeleted();
+            return context;
+        }
+        
 
         public Category GetExCategory()
         {
@@ -49,5 +55,7 @@ namespace Catalog.Infra.Repositories
         public List<Category> GetExCategoryList(int length = 10)
             => Enumerable.Range(0, length).Select(_ =>GetValidCategory()).ToList();
 
+        public void CleanInMemoryDatabase()
+        => CreateDBContext().Database.EnsureDeleted();
     }
 }

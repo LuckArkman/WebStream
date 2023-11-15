@@ -88,25 +88,20 @@ namespace Catalog.Infra.Repositories
         public async Task DeleteCategory()
         {
             Guid Id = Guid.NewGuid();
-            var newCategpory = _fixture.GetExCategory();
             var _dbContext = _fixture.CreateDBContext();
             var _categoryex = _fixture.GetExCategory();
             var _category = _fixture.GetExCategoryList(15);
             
+            _category.Add(_categoryex);
             await _dbContext.AddRangeAsync(_category);
             await _dbContext.SaveChangeAsync(CancellationToken.None);
             
             var _categoryRepository = new CategoryRepository(_dbContext);
-            _categoryex.Update(newCategpory.Name, newCategpory.Description);
-            await _categoryRepository.Delete(_categoryex, CancellationToken.None);
+            _categoryRepository.Delete(_categoryex, CancellationToken.None);
             await _dbContext.SaveChangeAsync(CancellationToken.None);
-            var _dbCategory = await _dbContext.Categories.FindAsync(_categoryex.Id);
+            var _dbCategory = await _fixture.CreateDBContext().Categories.FindAsync(_categoryex.Id);
             
-            _dbCategory.Should().NotBeNull();
-            _dbCategory.Name.Should().Be(newCategpory.Name);
-            _dbCategory.Description.Should().Be(newCategpory.Description);
-            _dbCategory.IsActive.Should().Be(_categoryex.IsActive);
-            _dbCategory.createTime.Should().Be(_categoryex.createTime);
+            _dbCategory.Should().BeNull();
         } 
     }
 }

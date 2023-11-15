@@ -20,7 +20,8 @@ public class CategoryRepository : ICategoryRepository
 
     public async Task<Category> Get(Guid Id, CancellationToken cancellationToken)
     {
-       var category = await Categories.FindAsync(new object[] { Id }
+       var category = await Categories.AsNoTracking().FirstOrDefaultAsync(
+           x => x.Id == Id
             , cancellationToken);
 
        if (category == null)NotFoundException.ThrowIfNull(category,$"Category '{Id}' not found.");
@@ -28,9 +29,7 @@ public class CategoryRepository : ICategoryRepository
     }
 
     public Task Delete(Category tAggregate, CancellationToken cancellationToken)
-    {
-        return null;
-    }
+    =>Task .FromResult(Categories.Remove(tAggregate));
 
     public Task Update(Category _category, CancellationToken cancellationToken)
     => Task.FromResult(Categories.Update(_category));

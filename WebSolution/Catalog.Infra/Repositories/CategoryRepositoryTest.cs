@@ -52,5 +52,61 @@ namespace Catalog.Infra.Repositories
             await _task.Should().ThrowAsync<NotFoundException>().WithMessage($"Category '{Id}' not found.");
 
         } 
+        
+        [Fact(DisplayName = nameof(UpdateCategory))]
+        [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
+        public async Task UpdateCategory()
+        {
+            Guid Id = Guid.NewGuid();
+            var newCategpory = _fixture.GetExCategory();
+            var _dbContext = _fixture.CreateDBContext();
+            var _categoryex = _fixture.GetExCategory();
+            var _category = _fixture.GetExCategoryList(15);
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
+            await _dbContext.AddRangeAsync(_category);
+            
+            
+            var _categoryRepository = new CategoryRepository(_dbContext);
+           _categoryex.Update(newCategpory.Name, newCategpory.Description);
+            
+            await _categoryRepository.Update(_categoryex, CancellationToken.None);
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
+            
+            var _dbCategory = await _dbContext.Categories.FindAsync(
+                _categoryex.Id);
+            
+            _dbCategory.Should().NotBeNull();
+            _dbCategory!.Name.Should().Be(newCategpory.Name);
+            _dbCategory.Description.Should().Be(newCategpory.Description);
+            _dbCategory.IsActive.Should().Be(_categoryex.IsActive);
+            _dbCategory.createTime.Should().Be(_categoryex.createTime);
+
+        } 
+        
+        [Fact(DisplayName = nameof(DeleteCategory))]
+        [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
+        public async Task DeleteCategory()
+        {
+            Guid Id = Guid.NewGuid();
+            var newCategpory = _fixture.GetExCategory();
+            var _dbContext = _fixture.CreateDBContext();
+            var _categoryex = _fixture.GetExCategory();
+            var _category = _fixture.GetExCategoryList(15);
+            
+            await _dbContext.AddRangeAsync(_category);
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
+            
+            var _categoryRepository = new CategoryRepository(_dbContext);
+            _categoryex.Update(newCategpory.Name, newCategpory.Description);
+            await _categoryRepository.Delete(_categoryex, CancellationToken.None);
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
+            var _dbCategory = await _dbContext.Categories.FindAsync(_categoryex.Id);
+            
+            _dbCategory.Should().NotBeNull();
+            _dbCategory.Name.Should().Be(newCategpory.Name);
+            _dbCategory.Description.Should().Be(newCategpory.Description);
+            _dbCategory.IsActive.Should().Be(_categoryex.IsActive);
+            _dbCategory.createTime.Should().Be(_categoryex.createTime);
+        } 
     }
 }

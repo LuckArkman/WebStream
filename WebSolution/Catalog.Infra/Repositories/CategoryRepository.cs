@@ -32,10 +32,8 @@ public class CategoryRepository : ICategoryRepository
         return null;
     }
 
-    Task ICategoryRepository.Update(Category _category, CancellationToken cancellationToken)
-    {
-        return null;
-    }
+    public Task Update(Category _category, CancellationToken cancellationToken)
+    => Task.FromResult(Categories.Update(_category));
 
     public Task<IReadOnlyList<Guid>> GetIdsListByIds(List<Guid> ids, CancellationToken cancellationToken)
     {
@@ -43,11 +41,6 @@ public class CategoryRepository : ICategoryRepository
     }
 
     public Task<IReadOnlyList<Guid>> GetListByIds(List<Guid> ids, CancellationToken cancellationToken)
-    {
-        return null;
-    }
-
-    Task IGenericRepository<Category>.Update(Category tAggregate, CancellationToken cancellationToken)
     {
         return null;
     }

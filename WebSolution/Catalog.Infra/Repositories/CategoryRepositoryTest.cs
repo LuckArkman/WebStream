@@ -261,6 +261,47 @@ namespace Catalog.Infra.Repositories
                 obj.createTime.Should().Be(item.createTime);
             }
         }
+        
+        [Theory(DisplayName = nameof(SearchOrdenedCategory))]
+        [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
+        [InlineData("name","asc")]
+        public async Task SearchOrdenedCategory(
+            string search,
+            string type
+        )
+        {
+            Guid Id = Guid.NewGuid();
+            var _dbContext = _fixture.CreateDBContext(true);
+            var _categoryex = _fixture.GetExCategory();
+            var _category = _fixture.GetExCategoryList(10);
+            var _searchOrder = type.ToLower() == "asc" ? SearchOrder.Asc : SearchOrder.Desc;
+            var _search = new SearchInput(
+                            10,
+                            20,
+                            "",
+                            type,
+                            _searchOrder);
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
+            await _dbContext.AddRangeAsync(_category);
+            var _categoryRepository = new CategoryRepository(_dbContext);
+            var _output = await _categoryRepository.Search(_search, CancellationToken.None);
+            var expected = _fixture.GetCloneCategoryList(_category, type, _searchOrder);
+            
+            _output.Should().NotBeNull();
+            _output.Items.Should().NotBeNull();
+            _output.CurrentPage.Should().Be(_search.Page);
+            _output.PerPage.Should().Be(_search.PerPage);
+            foreach (Category item in _output.Items)
+            {
+                var obj = _category.Find(x
+                    => x.Id == item.Id);
+                obj.Should().NotBeNull();
+                obj.Name.Should().Be(item.Name);
+                obj.Description.Should().Be(item.Description);
+                obj.IsActive.Should().Be(item.IsActive);
+                obj.createTime.Should().Be(item.createTime);
+            }
+        }
 
         public void Dispose()
         {

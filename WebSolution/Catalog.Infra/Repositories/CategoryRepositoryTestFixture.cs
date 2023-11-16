@@ -1,6 +1,7 @@
 using System.Collections;
 using Catalog.Data.Configurations;
 using Catalog.Domain.Entitys;
+using Catalog.Domain.Enum;
 using Catalog.Infra.Base;
 using Microsoft.EntityFrameworkCore;
 
@@ -54,6 +55,20 @@ namespace Catalog.Infra.Repositories
 
         public List<Category> GetExCategoryList(int length = 10)
             => Enumerable.Range(0, length).Select(_ =>GetValidCategory()).ToList();
+
+        public List<Category> GetCloneCategoryList(List<Category> _categories, string order, SearchOrder orderBy)
+        {
+            var listClone = new List<Category>(_categories);
+            var listIEnumerable = (order, orderBy) switch
+            {
+                ("name", SearchOrder.Asc) => listClone.OrderBy(x => x.Name),
+                ("name", SearchOrder.Desc) => listClone.OrderByDescending(x => x.Name),
+               _ => listClone.OrderBy(x => x.Name)
+
+            };
+            return listIEnumerable.ToList();
+
+        }
 
         public List<Category> GetExCategoriesList(List<string> name)
             => name.Select(n =>

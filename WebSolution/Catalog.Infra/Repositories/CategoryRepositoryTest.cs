@@ -138,12 +138,35 @@ namespace Catalog.Infra.Repositories
                 var obj = _category.Find(x
                     => x.Id == item.Id);
                 obj.Should().NotBeNull();
-                 obj.Name.Should().Be(item.Name);
+                obj.Name.Should().Be(item.Name);
                 obj.Description.Should().Be(item.Description);
                 obj.IsActive.Should().Be(item.IsActive);
                 obj.createTime.Should().Be(item.createTime);
             }
 
+        } 
+        
+        [Fact(DisplayName = nameof(SearchEmptyCategory))]
+        [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
+        public async Task SearchEmptyCategory()
+        {
+            Guid Id = Guid.NewGuid();
+            var _dbContext = _fixture.CreateDBContext(true);
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(false));
+            var _searchInput = new SearchInput(
+                1,
+                20,
+                "",
+                "",
+                SearchOrder.Asc);
+
+            var _output = await _categoryRepository.Search(_searchInput, CancellationToken.None);
+            
+            _output.Should().NotBeNull();
+            _output.Items.Should().NotBeNull();
+            _output.CurrentPage.Should().Be(_searchInput.Page);
+            _output.PerPage.Should().Be(_searchInput.PerPage);
+            _output.Items.Should().HaveCount(0);
         } 
         public void Dispose()
         {

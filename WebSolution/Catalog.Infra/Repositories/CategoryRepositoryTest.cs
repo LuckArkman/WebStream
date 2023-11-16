@@ -175,7 +175,7 @@ namespace Catalog.Infra.Repositories
             int page,
             int perPage,
             int items
-            )
+        )
         {
             Guid Id = Guid.NewGuid();
             var _dbContext = _fixture.CreateDBContext(true);
@@ -189,6 +189,58 @@ namespace Catalog.Infra.Repositories
                 page,
                 perPage,
                 "",
+                "",
+                SearchOrder.Asc);
+
+            var _output = await _categoryRepository.Search(_search, CancellationToken.None);
+
+            _output.Should().NotBeNull();
+            _output.Items.Should().NotBeNull();
+            _output.CurrentPage.Should().Be(_search.Page);
+            _output.PerPage.Should().Be(_search.PerPage);
+            foreach (Category item in _output.Items)
+            {
+                var obj = _category.Find(x
+                    => x.Id == item.Id);
+                obj.Should().NotBeNull();
+                obj.Name.Should().Be(item.Name);
+                obj.Description.Should().Be(item.Description);
+                obj.IsActive.Should().Be(item.IsActive);
+                obj.createTime.Should().Be(item.createTime);
+            }
+        }
+        
+        [Theory(DisplayName = nameof(SearchItemCategory))]
+        [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
+        [InlineData("Action",1,1,1)]
+        [InlineData("Horror",1,1,1)]
+        [InlineData("Comedy",1,1,1)]
+        [InlineData("Sci-fi",1,1,1)]
+        public async Task SearchItemCategory(
+            string search,
+            int page,
+            int perPage,
+            int items
+        )
+        {
+            Guid Id = Guid.NewGuid();
+            var _dbContext = _fixture.CreateDBContext(true);
+            var _categoryex = _fixture.GetExCategory();
+            var _category = _fixture.GetExCategoriesList(new List<string>()
+            {
+                "Action",
+                "Horror",
+                "Comedy",
+                "Sci-fi",
+            });
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
+            await _dbContext.AddRangeAsync(_category);
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(false));
+
+            var _search = new SearchInput(
+                page,
+                perPage,
+                search,
                 "",
                 SearchOrder.Asc);
 

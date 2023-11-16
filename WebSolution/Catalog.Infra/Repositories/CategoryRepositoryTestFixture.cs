@@ -55,6 +55,14 @@ namespace Catalog.Infra.Repositories
         public List<Category> GetExCategoryList(int length = 10)
             => Enumerable.Range(0, length).Select(_ =>GetValidCategory()).ToList();
 
+        public List<Category> GetExCategoriesList(List<string> name)
+            => name.Select(n =>
+            {
+                var category = GetValidCategory();
+                category.Update(n);
+                return category;
+            }).ToList();
+
         public void CleanInMemoryDatabase()
         => CreateDBContext().Database.EnsureDeleted();
     }

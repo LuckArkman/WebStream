@@ -143,7 +143,6 @@ namespace Catalog.Infra.Repositories
                 obj.IsActive.Should().Be(item.IsActive);
                 obj.createTime.Should().Be(item.createTime);
             }
-
         } 
         
         [Fact(DisplayName = nameof(SearchEmptyCategory))]
@@ -167,7 +166,50 @@ namespace Catalog.Infra.Repositories
             _output.CurrentPage.Should().Be(_searchInput.Page);
             _output.PerPage.Should().Be(_searchInput.PerPage);
             _output.Items.Should().HaveCount(0);
-        } 
+        }
+
+        [Theory(DisplayName = nameof(SearchListCategory))]
+        [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
+        [InlineData(7,1,5,5)]
+        public async Task SearchListCategory(int categoriesgenerated,
+            int page,
+            int perPage,
+            int items
+            )
+        {
+            Guid Id = Guid.NewGuid();
+            var _dbContext = _fixture.CreateDBContext(true);
+            var _categoryex = _fixture.GetExCategory();
+            var _category = _fixture.GetExCategoryList(categoriesgenerated);
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
+            await _dbContext.AddRangeAsync(_category);
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(false));
+
+            var _search = new SearchInput(
+                page,
+                perPage,
+                "",
+                "",
+                SearchOrder.Asc);
+
+            var _output = await _categoryRepository.Search(_search, CancellationToken.None);
+
+            _output.Should().NotBeNull();
+            _output.Items.Should().NotBeNull();
+            _output.CurrentPage.Should().Be(_search.Page);
+            _output.PerPage.Should().Be(_search.PerPage);
+            foreach (Category item in _output.Items)
+            {
+                var obj = _category.Find(x
+                    => x.Id == item.Id);
+                obj.Should().NotBeNull();
+                obj.Name.Should().Be(item.Name);
+                obj.Description.Should().Be(item.Description);
+                obj.IsActive.Should().Be(item.IsActive);
+                obj.createTime.Should().Be(item.createTime);
+            }
+        }
+
         public void Dispose()
         {
             _fixture.CleanInMemoryDatabase();

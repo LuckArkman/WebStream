@@ -11,16 +11,16 @@ public class CategoryRepository : ICategoryRepository
 {
     CatalogDbContext _catalogDb;
     
-    DbSet<Category> Categories => _catalogDb.Set<Category>();
+    DbSet<Category> _categories => _catalogDb.Set<Category>();
     public CategoryRepository(CatalogDbContext dbContext)
     => _catalogDb = dbContext;
 
     public async Task Insert(Category category, CancellationToken none)
-    => await Categories.AddAsync(category, none);
+    => await _categories.AddAsync(category, none);
 
     public async Task<Category> Get(Guid Id, CancellationToken cancellationToken)
     {
-       var category = await Categories.AsNoTracking().FirstOrDefaultAsync(
+       var category = await _categories.AsNoTracking().FirstOrDefaultAsync(
            x => x.Id == Id
             , cancellationToken);
 
@@ -29,10 +29,10 @@ public class CategoryRepository : ICategoryRepository
     }
 
     public Task Delete(Category tAggregate, CancellationToken cancellationToken)
-    =>Task .FromResult(Categories.Remove(tAggregate));
+    =>Task .FromResult(_categories.Remove(tAggregate));
 
     public Task Update(Category _category, CancellationToken cancellationToken)
-    => Task.FromResult(Categories.Update(_category));
+    => Task.FromResult(_categories.Update(_category));
 
     public Task<IReadOnlyList<Guid>> GetIdsListByIds(List<Guid> ids, CancellationToken cancellationToken)
     {
@@ -46,9 +46,10 @@ public class CategoryRepository : ICategoryRepository
 
     public async Task<SearchOutput<Category>> Search(SearchInput input, CancellationToken cancellationToken)
     {
-        var total = await Categories.CountAsync();
-        var items = await Categories.ToListAsync();
-        return new SearchOutput<Category>(
+        var skip = (input.Page - 1) * input.PerPage;
+        var total = await _categories.CountAsync();
+        var items = await _categories.AsNoTracking().Skip(skip).ToListAsync();
+        return new (
             input.Page,
             input.PerPage,
             total,

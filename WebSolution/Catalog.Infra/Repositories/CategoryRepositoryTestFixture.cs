@@ -9,12 +9,6 @@ namespace Catalog.Infra.Repositories
 {
     public class CategoryRepositoryTestFixture : BaseFixture
     {
-        public CatalogDbContext CreateDBContext()
-        => new CatalogDbContext(new DbContextOptionsBuilder<CatalogDbContext>()
-                .UseInMemoryDatabase("Integration-tests-db")
-                .Options);
-        
-
         public Category GetExCategory()
         {
             return new(faker.Commerce.Categories(1)[0], faker.Commerce.ProductDescription(), GetRamdomBool());

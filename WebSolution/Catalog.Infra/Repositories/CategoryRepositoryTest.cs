@@ -321,7 +321,7 @@ namespace Catalog.Infra.Repositories
                 searchOrder
             );
             output.Should().NotBeNull();
-            output.Items.Should().NotBeNull();
+            output.Items.Should().NotBeEmpty();
             output.CurrentPage.Should().Be(searchInput.Page);
             output.PerPage.Should().Be(searchInput.PerPage);
             output.Total.Should().Be(exampleCategoriesList.Count);

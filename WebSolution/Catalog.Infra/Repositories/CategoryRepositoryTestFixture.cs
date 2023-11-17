@@ -1,5 +1,7 @@
+using System.Collections;
 using Catalog.Data.Configurations;
 using Catalog.Domain.Entitys;
+using Catalog.Domain.Enum;
 using Catalog.Infra.Base;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,9 +10,10 @@ namespace Catalog.Infra.Repositories
     public class CategoryRepositoryTestFixture : BaseFixture
     {
         public CatalogDbContext CreateDBContext()
-        => new (new DbContextOptionsBuilder<CatalogDbContext>()
-        .UseInMemoryDatabase("Integration-tests-db")
-        .Options);
+        => new CatalogDbContext(new DbContextOptionsBuilder<CatalogDbContext>()
+                .UseInMemoryDatabase("Integration-tests-db")
+                .Options);
+        
 
         public Category GetExCategory()
         {
@@ -44,5 +47,47 @@ namespace Catalog.Infra.Repositories
             }
             return categoryDescription;
         }
+
+        public List<Category> GetExCategoryList(int length = 10)
+            => Enumerable.Range(0, length).Select(_ =>GetValidCategory()).ToList();
+
+        public List<Category> GetCloneCategoryList(List<Category> _categories, string order, SearchOrder orderBy)
+        {
+            var listClone = new List<Category>(_categories);
+            var listIEnumerable = (order, orderBy) switch
+            {
+                ("name", SearchOrder.Asc) => listClone.OrderBy(x => x.Name),
+                ("name", SearchOrder.Desc) => listClone.OrderByDescending(x => x.Name),
+                _ => listClone.OrderBy(x => x.Name)
+
+            };
+            return listIEnumerable.ToList();
+
+        }
+        
+        public List<Category> GetCloneOrderCategoryList(List<Category> _categories, string orderBy, SearchOrder order)
+        {
+            var listClone = new List<Category>(_categories);
+            var listIEnumerable = (orderBy, order) switch
+            {
+                ("name", SearchOrder.Asc) => listClone.OrderBy(x => x.Name),
+                ("name", SearchOrder.Desc) => listClone.OrderByDescending(x => x.Name),
+                _ => listClone.OrderBy(x => x.Name)
+
+            };
+            return listIEnumerable.ToList();
+
+        }
+
+        public List<Category> GetExCategoriesList(List<string> name)
+            => name.Select(n =>
+            {
+                var category = GetValidCategory();
+                category.Update(n);
+                return category;
+            }).ToList();
+
+        public void CleanInMemoryDatabase()
+        => CreateDBContext().Database.EnsureDeleted();
     }
 }

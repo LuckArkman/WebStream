@@ -9,15 +9,10 @@ namespace Catalog.Infra.Repositories
 {
     public class CategoryRepositoryTestFixture : BaseFixture
     {
-        public CatalogDbContext CreateDBContext(bool value = false)
-        {
-            
-            var context = new CatalogDbContext(new DbContextOptionsBuilder<CatalogDbContext>()
+        public CatalogDbContext CreateDBContext()
+        => new CatalogDbContext(new DbContextOptionsBuilder<CatalogDbContext>()
                 .UseInMemoryDatabase("Integration-tests-db")
                 .Options);
-            if (!value) context.Database.EnsureDeleted();
-            return context;
-        }
         
 
         public Category GetExCategory()
@@ -63,7 +58,21 @@ namespace Catalog.Infra.Repositories
             {
                 ("name", SearchOrder.Asc) => listClone.OrderBy(x => x.Name),
                 ("name", SearchOrder.Desc) => listClone.OrderByDescending(x => x.Name),
-               _ => listClone.OrderBy(x => x.Name)
+                _ => listClone.OrderBy(x => x.Name)
+
+            };
+            return listIEnumerable.ToList();
+
+        }
+        
+        public List<Category> GetCloneOrderCategoryList(List<Category> _categories, string orderBy, SearchOrder order)
+        {
+            var listClone = new List<Category>(_categories);
+            var listIEnumerable = (orderBy, order) switch
+            {
+                ("name", SearchOrder.Asc) => listClone.OrderBy(x => x.Name),
+                ("name", SearchOrder.Desc) => listClone.OrderByDescending(x => x.Name),
+                _ => listClone.OrderBy(x => x.Name)
 
             };
             return listIEnumerable.ToList();

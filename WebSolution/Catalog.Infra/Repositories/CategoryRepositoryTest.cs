@@ -20,7 +20,7 @@ namespace Catalog.Infra.Repositories
         [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
         public async Task Insert()
         {
-            var _dbContext = _fixture.CreateDBContext(false);
+            var _dbContext = _fixture.CreateDBContext();
             var _category = _fixture.GetExCategory();
             var _categoryRepository = new CategoryRepository(_dbContext);
 
@@ -41,13 +41,13 @@ namespace Catalog.Infra.Repositories
         public async Task GetCategoryThrowIfNotFound()
         {
             Guid Id = Guid.NewGuid();
-            var _dbContext = _fixture.CreateDBContext(false);
+            var _dbContext = _fixture.CreateDBContext();
             var _categoryex = _fixture.GetExCategory();
             var _category = _fixture.GetExCategoryList(15);
             _category.Add(_categoryex);
             await _dbContext.AddRangeAsync(_category);
             await _dbContext.SaveChangeAsync(CancellationToken.None);
-            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(true));
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext());
 
             var _task = async () =>
                 await _categoryRepository.Get(
@@ -62,7 +62,7 @@ namespace Catalog.Infra.Repositories
         {
             Guid Id = Guid.NewGuid();
             var newCategpory = _fixture.GetExCategory();
-            var _dbContext = _fixture.CreateDBContext(true);
+            var _dbContext = _fixture.CreateDBContext();
             var _categoryex = _fixture.GetExCategory();
             var _category = _fixture.GetExCategoryList(15);
             await _dbContext.SaveChangeAsync(CancellationToken.None);
@@ -91,7 +91,7 @@ namespace Catalog.Infra.Repositories
         public async Task DeleteCategory()
         {
             Guid Id = Guid.NewGuid();
-            var _dbContext = _fixture.CreateDBContext(false);
+            var _dbContext = _fixture.CreateDBContext();
             var _categoryex = _fixture.GetExCategory();
             var _category = _fixture.GetExCategoryList(15);
             
@@ -99,7 +99,7 @@ namespace Catalog.Infra.Repositories
             await _dbContext.AddRangeAsync(_category);
             await _dbContext.SaveChangeAsync(CancellationToken.None);
             
-            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(true));
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext());
             _categoryRepository.Delete(_categoryex, CancellationToken.None);
             await _dbContext.SaveChangeAsync(CancellationToken.None);
             var _dbCategory = await _fixture.CreateDBContext().Categories.FindAsync(_categoryex.Id);
@@ -113,12 +113,12 @@ namespace Catalog.Infra.Repositories
         public async Task SearchCategory()
         {
             Guid Id = Guid.NewGuid();
-            var _dbContext = _fixture.CreateDBContext(true);
+            var _dbContext = _fixture.CreateDBContext();
             var _categoryex = _fixture.GetExCategory();
             var _category = _fixture.GetExCategoryList(15); 
             await _dbContext.SaveChangeAsync(CancellationToken.None);
             await _dbContext.AddRangeAsync(_category);
-            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(false));
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext());
             
             var _search = new SearchInput(
                 1,
@@ -150,8 +150,8 @@ namespace Catalog.Infra.Repositories
         public async Task SearchEmptyCategory()
         {
             Guid Id = Guid.NewGuid();
-            var _dbContext = _fixture.CreateDBContext(true);
-            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(false));
+            var _dbContext = _fixture.CreateDBContext();
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext());
             var _searchInput = new SearchInput(
                 1,
                 20,
@@ -178,12 +178,12 @@ namespace Catalog.Infra.Repositories
         )
         {
             Guid Id = Guid.NewGuid();
-            var _dbContext = _fixture.CreateDBContext(true);
+            var _dbContext = _fixture.CreateDBContext();
             var _categoryex = _fixture.GetExCategory();
             var _category = _fixture.GetExCategoryList(categoriesgenerated);
             await _dbContext.SaveChangeAsync(CancellationToken.None);
             await _dbContext.AddRangeAsync(_category);
-            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(false));
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext());
 
             var _search = new SearchInput(
                 page,
@@ -224,7 +224,7 @@ namespace Catalog.Infra.Repositories
         )
         {
             Guid Id = Guid.NewGuid();
-            var _dbContext = _fixture.CreateDBContext(true);
+            var _dbContext = _fixture.CreateDBContext();
             var _categoryex = _fixture.GetExCategory();
             var _category = _fixture.GetExCategoriesList(new List<string>()
             {
@@ -235,7 +235,7 @@ namespace Catalog.Infra.Repositories
             });
             await _dbContext.SaveChangeAsync(CancellationToken.None);
             await _dbContext.AddRangeAsync(_category);
-            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext(false));
+            var _categoryRepository = new CategoryRepository(_fixture.CreateDBContext());
 
             var _search = new SearchInput(
                 page,
@@ -270,20 +270,13 @@ namespace Catalog.Infra.Repositories
             string type
         )
         {
-            Guid Id = Guid.NewGuid();
-            var _dbContext = _fixture.CreateDBContext(true);
-            var _categoryex = _fixture.GetExCategory();
+            var _dbContext = _fixture.CreateDBContext();
             var _category = _fixture.GetExCategoryList(10);
-            var _searchOrder = type.ToLower() == "asc" ? SearchOrder.Asc : SearchOrder.Desc;
-            var _search = new SearchInput(
-                            10,
-                            20,
-                            "",
-                            type,
-                            _searchOrder);
-            await _dbContext.SaveChangeAsync(CancellationToken.None);
             await _dbContext.AddRangeAsync(_category);
+            await _dbContext.SaveChangeAsync(CancellationToken.None);
             var _categoryRepository = new CategoryRepository(_dbContext);
+            var _searchOrder = type.ToLower() == "asc" ? SearchOrder.Asc : SearchOrder.Desc;
+            var _search = new SearchInput(10, 20, "", type, _searchOrder);
             var _output = await _categoryRepository.Search(_search, CancellationToken.None);
             var expected = _fixture.GetCloneCategoryList(_category, type, _searchOrder);
             
@@ -300,6 +293,46 @@ namespace Catalog.Infra.Repositories
                 obj.Description.Should().Be(item.Description);
                 obj.IsActive.Should().Be(item.IsActive);
                 obj.createTime.Should().Be(item.createTime);
+            }
+        }
+        
+        [Theory(DisplayName = nameof(SearchItemOrdenedCategory))]
+        [Trait("CategoryRepositoryTest", "CategoryRepositoryTest - Infra")]
+        [InlineData("name","asc")]
+        public async Task SearchItemOrdenedCategory(
+            string search,
+            string order
+        )
+        {
+            var dbContext = _fixture.CreateDBContext();
+            var exampleCategoriesList =
+                _fixture.GetExCategoryList(10);
+            await dbContext.AddRangeAsync(exampleCategoriesList);
+            await dbContext.SaveChangesAsync(CancellationToken.None);
+            var categoryRepository = new CategoryRepository(dbContext);
+            var searchOrder = order.ToLower() == "asc" ? SearchOrder.Asc : SearchOrder.Desc;
+            var searchInput = new SearchInput(1, 20, "", search, searchOrder);
+
+            var output = await categoryRepository.Search(searchInput, CancellationToken.None);
+
+            var expectedOrderedList = _fixture.GetCloneCategoryList(
+                exampleCategoriesList,
+                search,
+                searchOrder
+            );
+            output.Should().NotBeNull();
+            output.Items.Should().NotBeNull();
+            output.CurrentPage.Should().Be(searchInput.Page);
+            output.PerPage.Should().Be(searchInput.PerPage);
+            output.Total.Should().Be(exampleCategoriesList.Count);
+            output.Items.Should().HaveCount(exampleCategoriesList.Count);
+            for(int indice = 0; indice < expectedOrderedList.Count; indice++)
+            {
+                var expectedItem = expectedOrderedList[indice];
+                var outputItem = output.Items[indice];
+                expectedItem.Should().NotBeNull();
+                outputItem.Should().NotBeNull();
+                outputItem.Name.Should().Be(expectedItem!.Name);
             }
         }
 

@@ -1,5 +1,6 @@
 using Catalog.Data.Configurations;
 using Catalog.Domain.Entitys;
+using Catalog.Domain.Enum;
 using Catalog.Domain.Exceptions;
 using Catalog.Domain.Repository;
 using Catalog.Domain.SeedWork;
@@ -44,23 +45,42 @@ public class CategoryRepository : ICategoryRepository
         return null;
     }
 
-    public async Task<SearchOutput<Category>> Search(SearchInput input, CancellationToken cancellationToken)
+    public async Task<SearchOutput<Category>> Search(
+        SearchInput input, 
+        CancellationToken cancellationToken)
     {
-        var skip = (input.Page - 1) * input.PerPage;
+        var toSkip = (input.Page - 1) * input.PerPage;
         var query = _categories.AsNoTracking();
-        if (!string.IsNullOrWhiteSpace(input.Search))
+        query = AddOrderToQuery(query, input.OrderBy, input.Order);
+        if(!String.IsNullOrWhiteSpace(input.Search))
             query = query.Where(x => x.Name.Contains(input.Search));
-        
-        
         var total = await query.CountAsync();
-        var items = await query.AsNoTracking().Skip(skip)
-            .Take(input.PerPage).ToListAsync();
-        return new (
-            input.Page,
-            input.PerPage,
-            total,
-            items
-        );
-
+        var items = await query
+            .Skip(toSkip)
+            .Take(input.PerPage)
+            .ToListAsync();
+        return new(input.Page, input.PerPage, total, items);
+    }
+    
+    private IQueryable<Category> AddOrderToQuery(
+        IQueryable<Category> query,
+        string orderProperty,
+        SearchOrder order
+    )
+    { 
+        var orderedQuery = (orderProperty.ToLower(), order) switch
+        {
+            ("name", SearchOrder.Asc) => query.OrderBy(x => x.Name)
+                .ThenBy(x => x.Id),
+            ("name", SearchOrder.Desc) => query.OrderByDescending(x => x.Name)
+                .ThenByDescending(x => x.Id),
+            ("id", SearchOrder.Asc) => query.OrderBy(x => x.Id),
+            ("id", SearchOrder.Desc) => query.OrderByDescending(x => x.Id),
+            ("createdat", SearchOrder.Asc) => query.OrderBy(x => x.createTime),
+            ("createdat", SearchOrder.Desc) => query.OrderByDescending(x => x.createTime),
+            _ => query.OrderBy(x => x.Name)
+                .ThenBy(x => x.Id)
+        };
+        return orderedQuery;
     }
 }

@@ -10,10 +10,19 @@ namespace Catalog.Infra.Base
 
         protected Faker faker { get; set; }
         
-        public CatalogDbContext CreateDBContext()
-            => new CatalogDbContext(new DbContextOptionsBuilder<CatalogDbContext>()
-                .UseInMemoryDatabase("Integration-tests-db")
-                .Options);
+        public CatalogDbContext CreateDBContext(bool preserveData = false, string _Id = "")
+        {
+            
+            var context = new CatalogDbContext(
+                new DbContextOptionsBuilder<CatalogDbContext>()
+                    .UseInMemoryDatabase($"integration-tests-db{_Id}")
+                    .Options
+            );
+            if (preserveData == false) context.Database.EnsureDeleted();
+            return context;
+        }
+        
+        public void CleanInMemoryDatabase() => CreateDBContext().Database.EnsureDeleted();
 
     }
 }

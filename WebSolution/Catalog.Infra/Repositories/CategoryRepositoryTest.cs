@@ -338,7 +338,7 @@ namespace Catalog.Infra.Repositories
 
         public void Dispose()
         {
-            _fixture.CleanInMemoryDatabase();
+            //_fixture.CleanInMemoryDatabase();
         }
     }
 }

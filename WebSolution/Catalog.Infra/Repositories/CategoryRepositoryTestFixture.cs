@@ -13,6 +13,13 @@ namespace Catalog.Infra.Repositories
         {
             return new(faker.Commerce.Categories(1)[0], faker.Commerce.ProductDescription(), GetRamdomBool());
         }
+        public List<Category> GetExCategoriesList(List<string> name)
+            => name.Select(n =>
+            {
+                var category = GetValidCategory();
+                category.Update(n);
+                return category;
+            }).ToList();
         
         public bool GetRamdomBool() => (new Random()).NextDouble() < 0.5;
     
@@ -73,15 +80,5 @@ namespace Catalog.Infra.Repositories
 
         }
 
-        public List<Category> GetExCategoriesList(List<string> name)
-            => name.Select(n =>
-            {
-                var category = GetValidCategory();
-                category.Update(n);
-                return category;
-            }).ToList();
-
-        public void CleanInMemoryDatabase()
-        => CreateDBContext().Database.EnsureDeleted();
     }
 }

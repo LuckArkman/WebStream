@@ -17,4 +17,7 @@
     <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
     <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common" />
+  </ItemGroup>
 </Project>

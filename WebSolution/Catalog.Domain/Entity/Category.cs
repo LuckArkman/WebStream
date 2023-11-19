@@ -52,12 +52,6 @@ namespace Catalog.Domain.Entitys
             IsActive = false;
             Validate();
         }
-        
-        public void Update()
-        {
-            IsActive = false;
-            Validate();
-        }
 
         public void Update(string _name, string? _description = null)
         {

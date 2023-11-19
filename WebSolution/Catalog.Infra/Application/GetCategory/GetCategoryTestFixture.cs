@@ -1,8 +1,8 @@
-using Catalog.Infra.Base;
+using Catalog.Infra.Common;
 
 namespace Catalog.Infra.Application.GetCategory;
 
-public class GetCategoryTestFixture :BaseFixture
+public class GetCategoryTestFixture :CategoryUseCaseBaseFixture
 {
     
 }

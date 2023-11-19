@@ -1,4 +1,5 @@
 using Catalog.Domain.Entitys;
+using Catalog.Domain.Exceptions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.Data.Configurations;
@@ -14,5 +15,15 @@ public class CatalogDbContext : DbContext
     public async Task SaveChangeAsync(CancellationToken _cancellationToken)
     {
         await Task.CompletedTask;
+    }
+    
+    public async Task<Category> Get(Guid id, CancellationToken cancellationToken)
+    {
+        var category = await Categories.AsNoTracking().FirstOrDefaultAsync(
+            x => x.Id == id,
+            cancellationToken
+        );
+        NotFoundException.ThrowIfNull(category, $"Category '{id}' not found.");
+        return category!;
     }
 }

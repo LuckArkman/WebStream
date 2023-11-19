@@ -2,6 +2,8 @@ using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Entitys;
 using UseCases = Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
+using Catalog.Infra.Base;
+using Catalog.Infra.Repositories;
 using FluentAssertions;
 using Moq;
 using Xunit;
@@ -20,26 +22,25 @@ public class CreateCategoryTest
     [Trait("CreateCategoryTest", "CreateCategoryTest - Infra")]
     public async void CreateCategory()
     {
-        var repositoryMock = _fixture.GetcategoryMock();
-        var unitOfWorkMock = _fixture.GetunityOfWorkMock();
-        var useCase = new UseCases.CreateCategory(
-            repositoryMock.Object, unitOfWorkMock.Object
+        var _Id = Guid.NewGuid().ToString();
+        var _categoryDB = _fixture.CreateDBContext(false, _Id);
+        var _categoryRepository = new CategoryRepository(_categoryDB);
+        var _unityOfWord = new UnityOfWork(_categoryDB);
+        var useCase = new CreateCategory(
+            _categoryRepository,
+            _unityOfWord
         );
         var input = _fixture.GetInput();
 
         var output = await useCase.Handle(input, CancellationToken.None);
-
-        repositoryMock.Verify(
-            repository => repository.Insert(
-                It.IsAny<Category>(),
-                It.IsAny<CancellationToken>()
-            ),
-            Times.Once
-        );
-        unitOfWorkMock.Verify(
-            uow => uow.Commit(It.IsAny<CancellationToken>()),
-            Times.Once
-        );
+        
+        var _dbCategory = await _categoryDB.Categories.FindAsync(output.Id);
+        _dbCategory.Should().NotBeNull();
+        _dbCategory.Name.Should().Be(output.Name);
+        _dbCategory.Description.Should().Be(output.Description);
+        _dbCategory.IsActive.Should().Be(output.IsActive);
+        _dbCategory.createTime.Should().Be(output.createTime);
+        
         output.Should().NotBeNull();
         output.Name.Should().Be(input.Name);
         output.Description.Should().Be(input.Description);
@@ -52,10 +53,17 @@ public class CreateCategoryTest
     [Trait("CreateCategoryTest", "CreateCategoryTest - Infra")]
     public async void CreateCategoryWithOnlyName()
     {
+        var _Id = Guid.NewGuid().ToString();
+        var _categoryDB = _fixture.CreateDBContext(false, _Id);
+        var _unityOfWord = new UnityOfWork(_categoryDB);
+        var _category = _fixture.GetValidCategory();
+        _categoryDB.Categories.Add(_category);
+        _categoryDB.SaveChanges();
+        var _categoryRepository = new CategoryRepository(_categoryDB);
         var repositoryMock = _fixture.GetcategoryMock();
         var unitOfWorkMock = _fixture.GetunityOfWorkMock();
-        var useCase = new UseCases.CreateCategory(
-            repositoryMock.Object, unitOfWorkMock.Object
+        var useCase = new CreateCategory(
+            _categoryRepository, unitOfWorkMock.Object
         );
         var input = new CreateCategoryInput(
             Guid.NewGuid(),
@@ -64,17 +72,6 @@ public class CreateCategoryTest
 
         var output = await useCase.Handle(input, CancellationToken.None);
 
-        repositoryMock.Verify(
-            repository => repository.Insert(
-                It.IsAny<Category>(),
-                It.IsAny<CancellationToken>()
-            ),
-            Times.Once
-        );
-        unitOfWorkMock.Verify(
-            uow => uow.Commit(It.IsAny<CancellationToken>()),
-            Times.Once
-        );
         output.Should().NotBeNull();
         output.Name.Should().Be(input.Name);
         output.Description.Should().Be("");
@@ -87,10 +84,18 @@ public class CreateCategoryTest
     [Trait("CreateCategoryTest", "CreateCategoryTest - Infra")]
     public async void CreateCategoryWithOnlyNameAndDescription()
     {
+        var _Id = Guid.NewGuid().ToString();
+        var _categoryDB = _fixture.CreateDBContext(false, _Id);
+        var _unityOfWord = new UnityOfWork(_categoryDB);
+        var _category = _fixture.GetValidCategory();
+        _categoryDB.Categories.Add(_category);
+        _categoryDB.SaveChanges();
+        
+        var _categoryRepository = new CategoryRepository(_categoryDB);
         var repositoryMock = _fixture.GetcategoryMock();
         var unitOfWorkMock = _fixture.GetunityOfWorkMock();
-        var useCase = new UseCases.CreateCategory(
-            repositoryMock.Object, unitOfWorkMock.Object
+        var useCase = new CreateCategory(
+            _categoryRepository, unitOfWorkMock.Object
         );
         var input = new CreateCategoryInput(
             Guid.NewGuid(),
@@ -100,17 +105,6 @@ public class CreateCategoryTest
 
         var output = await useCase.Handle(input, CancellationToken.None);
 
-        repositoryMock.Verify(
-            repository => repository.Insert(
-                It.IsAny<Category>(),
-                It.IsAny<CancellationToken>()
-            ),
-            Times.Once
-        );
-        unitOfWorkMock.Verify(
-            uow => uow.Commit(It.IsAny<CancellationToken>()),
-            Times.Once
-        );
         output.Should().NotBeNull();
         output.Name.Should().Be(input.Name);
         output.Description.Should().Be(input.Description);
@@ -131,9 +125,13 @@ public class CreateCategoryTest
         string exceptionMessage
     )
     {
-        var useCase = new UseCases.CreateCategory(
-            _fixture.GetcategoryMock().Object,
-            _fixture.GetunityOfWorkMock().Object
+        var _Id = Guid.NewGuid().ToString();
+        var _categoryDB = _fixture.CreateDBContext(false, _Id);
+        var _categoryRepository = new CategoryRepository(_categoryDB);
+        var _unityOfWord = new UnityOfWork(_categoryDB);
+        var useCase = new CreateCategory(
+            _categoryRepository,
+            _unityOfWord
         );
 
         Func<Task> task = async () => await useCase.Handle(input, CancellationToken.None);

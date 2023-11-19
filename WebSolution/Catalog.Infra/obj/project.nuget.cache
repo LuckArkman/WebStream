@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hQuioQreqsNtjKxBqip+Bh7VlF3oCFYdmBtwO3UWwoPcM2y1Mf/b+InNjxUrpMX6rbmswQsON9oTWcMxJN2u1A==",
+  "dgSpecHash": "CRS9f19xh3c2J3ABBHB3707WZegP+offaVlPiaWkrSret4d9RPrZA2OLX0P80m6NaryhOVUjKNfTIvqUZ9xkQw==",
   "success": true,
   "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj",
   "expectedPackageFiles": [
     "/home/mauricio/.nuget/packages/bogus/34.0.2/bogus.34.0.2.nupkg.sha512",
     "/home/mauricio/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/coverlet.collector/3.2.0/coverlet.collector.3.2.0.nupkg.sha512",
-    "/home/mauricio/.nuget/packages/fluentassertions/7.0.0-alpha.3/fluentassertions.7.0.0-alpha.3.nupkg.sha512",
+    "/home/mauricio/.nuget/packages/fluentassertions/6.12.0/fluentassertions.6.12.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/fluentvalidation/11.8.0/fluentvalidation.11.8.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",

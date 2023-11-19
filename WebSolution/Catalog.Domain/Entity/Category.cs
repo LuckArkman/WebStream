@@ -8,9 +8,9 @@ namespace Catalog.Domain.Entitys
 
     public class Category : AggregateRoot
     {
-        public Category(string _name, string? _description = null, bool isActive = true) : base()
+        public Category(string? _name = null, string? _description = null, bool isActive = true) : base()
         {
-            Name = _name;
+            Name = _name ?? "";
             Description = _description;
             IsActive = isActive;
             createTime = DateTime.Now;

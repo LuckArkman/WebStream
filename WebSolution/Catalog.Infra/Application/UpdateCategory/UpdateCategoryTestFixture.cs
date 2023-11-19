@@ -1,5 +1,6 @@
 using Bogus;
 using Catalog.Application.UseCases.Category;
+using Catalog.Domain.Entitys;
 using Catalog.Infra.Common;
 
 namespace Catalog.Infra.Application.UpdateCategory;
@@ -32,6 +33,9 @@ public class UpdateCategoryTestFixture
         invalidInputTooLongName.Name = tooLongNameForCategory;
         return invalidInputTooLongName;
     }
+    
+    public List<Category> GetExCategoryList(int length = 10)
+        => Enumerable.Range(0, length).Select(_ =>GetValidCategory()).ToList();
 
     public UpdateCategoryInput GetInvalidInputTooLongDescription()
     {

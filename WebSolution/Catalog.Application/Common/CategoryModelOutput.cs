@@ -1,3 +1,5 @@
+using Catalog.Domain.Entitys;
+
 namespace Catalog.Application.Common;
 
 public class CategoryModelOutput
@@ -17,7 +19,7 @@ public class CategoryModelOutput
     public bool IsActive { get; set; }
     public DateTime? createTime { get; set; }
     
-    public static CategoryModelOutput FromCategory(Domain.Entitys.Category category)
+    public static CategoryModelOutput FromCategory(Category category)
         => new (
             category.Id,
             category.Name,

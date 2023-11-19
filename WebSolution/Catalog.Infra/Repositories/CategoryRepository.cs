@@ -30,7 +30,7 @@ public class CategoryRepository : ICategoryRepository
     }
 
     public Task Delete(Category tAggregate, CancellationToken cancellationToken)
-    =>Task .FromResult(_categories.Remove(tAggregate));
+    =>Task.FromResult(_categories.Remove(tAggregate));
 
     public Task Update(Category _category, CancellationToken cancellationToken) => Task.FromResult(_categories.Update(_category));
 

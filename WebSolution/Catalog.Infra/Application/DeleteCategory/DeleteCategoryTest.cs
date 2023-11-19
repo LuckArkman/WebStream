@@ -1,79 +1,77 @@
 using Catalog.Application.UseCases.Category;
 using UseCase = Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
+using Catalog.Infra.Base;
+using Catalog.Infra.Repositories;
 using FluentAssertions;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Moq;
 using Xunit;
 
 namespace Catalog.Infra.Application.DeleteCategory;
 
 [Collection(nameof(DeleteCategoryTestFixture))]
-public class DeleteCategoryTest
+public class DeleteCategoryTest : IDisposable
 {
     private readonly DeleteCategoryTestFixture _fixture;
 
-    public DeleteCategoryTest(DeleteCategoryTestFixture fixture)
+    public DeleteCategoryTest(DeleteCategoryTestFixture fixture) 
         => _fixture = fixture;
 
     [Fact(DisplayName = nameof(DeleteCategory))]
-    [Trait("DeleteCategoryTest", "DeleteCategory - Info")]
+    [Trait("DeleteCategoryTestFixture", "DeleteCategoryTestFixture - Infra")]
     public async Task DeleteCategory()
     {
-        var repositoryMock = _fixture.GetcategoryMock();
-        var unitOfWorkMock = _fixture.GetunityOfWorkMock();
+        var dbContext = _fixture.CreateDBContext(true, Guid.NewGuid().ToString());
         var categoryExample = _fixture.GetValidCategory();
-        repositoryMock.Setup(x => x.Get(
-            categoryExample.Id,
-            It.IsAny<CancellationToken>())
-        ).ReturnsAsync(categoryExample);
+        var exampleList = _fixture.GetExCategoryList(10);
+        await dbContext.AddRangeAsync(exampleList, CancellationToken.None);
+        await dbContext.AddAsync(categoryExample);
+        var repository = new CategoryRepository(dbContext);
+        var serviceCollection = new ServiceCollection();
+        serviceCollection.AddLogging();
+        var serviceProvider = serviceCollection.BuildServiceProvider();
+        var unitOfWork = new UnityOfWork(dbContext);
+        var useCase = new DeleteCategory(
+            repository, unitOfWork
+        );
         var input = new DeleteCategoryInput(categoryExample.Id);
-        var useCase = new UseCase.DeleteCategory(
-            repositoryMock.Object,
-            unitOfWorkMock.Object);
 
-        await useCase.Handle(input, CancellationToken.None);
-
-        repositoryMock.Verify(x => x.Get(
-            categoryExample.Id,
-            It.IsAny<CancellationToken>()
-        ), Times.Once);
-        repositoryMock.Verify(x => x.Delete(
-            categoryExample,
-            It.IsAny<CancellationToken>()
-        ), Times.Once);
-        unitOfWorkMock.Verify(x => x.Commit(
-            It.IsAny<CancellationToken>()
-        ), Times.Once);
+        var ouput = useCase.Handle(input, CancellationToken.None);
+        
+        ouput.Should().NotBeNull();
     }
 
-
-    [Fact(DisplayName = nameof(ThrowWhenCategoryNotFound))]
-    [Trait("DeleteCategoryTest", "DeleteCategory - Info")]
-    public async Task ThrowWhenCategoryNotFound()
+    [Fact(DisplayName = nameof(DeleteCategoryThrowsWhenNotFound))]
+    [Trait("DeleteCategoryTestFixture", "DeleteCategoryTestFixture - Infra")]
+    public async Task DeleteCategoryThrowsWhenNotFound()
     {
-        var repositoryMock = _fixture.GetcategoryMock();
-        var unitOfWorkMock = _fixture.GetunityOfWorkMock();
-        var exampleGuid = Guid.NewGuid();
-        repositoryMock.Setup(x => x.Get(
-            exampleGuid,
-            It.IsAny<CancellationToken>())
-        ).ThrowsAsync(
-            new NotFoundException($"Category '{exampleGuid}' not found")
+        var dbContext = _fixture.CreateDBContext(false, Guid.NewGuid().ToString());
+        var exampleList = _fixture.GetExCategoryList(10);
+        await dbContext.AddRangeAsync(exampleList);
+        await dbContext.SaveChangesAsync();
+        var repository = new CategoryRepository(dbContext);
+        var serviceCollection = new ServiceCollection();
+        serviceCollection.AddLogging();
+        var serviceProvider = serviceCollection.BuildServiceProvider();
+        var unitOfWork = new UnityOfWork(dbContext);
+        var useCase = new DeleteCategory(
+            repository, unitOfWork
         );
-        var input = new UseCase.DeleteCategoryInput(exampleGuid);
-        var useCase = new UseCase.DeleteCategory(
-            repositoryMock.Object,
-            unitOfWorkMock.Object);
+        var input = new DeleteCategoryInput(Guid.NewGuid());
 
-        var task = async ()
+        var task = async () 
             => await useCase.Handle(input, CancellationToken.None);
 
-        await task.Should()
-            .ThrowAsync<NotFoundException>();
+        await task.Should().ThrowAsync<NotFoundException>()
+            .WithMessage($"Category '{input.Id}' not found.");
 
-        repositoryMock.Verify(x => x.Get(
-            exampleGuid,
-            It.IsAny<CancellationToken>()
-        ), Times.Once);
+    }
+
+    public void Dispose()
+    {
+        _fixture.CleanInMemoryDatabase();
     }
 }

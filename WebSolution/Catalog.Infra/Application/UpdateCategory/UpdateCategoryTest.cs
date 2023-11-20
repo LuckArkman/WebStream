@@ -86,14 +86,15 @@ public class UpdateCategoryTest
         var unitOfWork = new UnityOfWork(_dbContext);
         var useCase = new UpdateCategory(repository, unitOfWork);
         
-        var output = await useCase.Handle(input, CancellationToken.None);
+        var output = async ()
+        =>await useCase.Handle(input, CancellationToken.None);
         var dbCategory = await _dbContext.Categories.FindAsync(input.Id);
         dbCategory.Should().NotBeNull();
         dbCategory!.Name.Should().Be(input.Name);
         dbCategory.Description.Should().Be(input.Description);
         dbCategory.IsActive.Should().Be(exampleCategory.IsActive);
         dbCategory.createTime.Should().Be(input.createTime);
-        input.Should().NotBeNull();
+        output.Should().NotBeNull();
         exampleCategory.Name.Should().Be(input.Name);
         exampleCategory.Description.Should().Be(input.Description);
         exampleCategory.IsActive.Should().Be((bool)input.IsActive!);

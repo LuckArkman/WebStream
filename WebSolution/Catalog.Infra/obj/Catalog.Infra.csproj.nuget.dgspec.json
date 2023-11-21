@@ -318,6 +318,10 @@
               "target": "Package",
               "version": "[34.0.2, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[6.0.25, )"
@@ -329,6 +333,10 @@
             "Moq": {
               "target": "Package",
               "version": "[4.20.69, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.7.0, )"
             },
             "xunit.assert": {
               "target": "Package",

@@ -133,3 +133,5 @@
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/obj/Debug/net6.0/Catalog.Infra.pdb
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/obj/Debug/net6.0/Catalog.Infra.genruntimeconfig.cache
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/obj/Debug/net6.0/ref/Catalog.Infra.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/bin/Debug/net6.0/RabbitMQ.Client.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/bin/Debug/net6.0/System.Threading.Channels.dll

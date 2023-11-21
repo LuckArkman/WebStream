@@ -4,16 +4,16 @@ namespace Catalog.Application.Common;
 
 public class CategoryModelOutput
 {
-    public CategoryModelOutput(Guid? id, string name, string? description = null, bool isActive = true, DateTime? createdAt = null)
+    public CategoryModelOutput(Guid id, string name, string? description = null, bool isActive = true, DateTime? createdAt = null)
     {
-        Id = id ?? Guid.NewGuid();
+        Id = id;
         Name = name;
         Description = description ?? "";
         IsActive = isActive;
         createTime = createdAt ?? DateTime.Now;
 
     }
-    public Guid? Id { get; set; }
+    public Guid Id { get; set; }
     public string Name { get; set; }
     public string? Description { get; set; }
     public bool IsActive { get; set; }

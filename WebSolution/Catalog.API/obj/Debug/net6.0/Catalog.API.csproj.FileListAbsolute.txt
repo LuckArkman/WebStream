@@ -1,0 +1,6 @@
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.API/bin/Debug/net6.0/CoverletSourceRootsMapping
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.API/obj/Debug/net6.0/Catalog.API.csproj.AssemblyReference.cache
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.API/obj/Debug/net6.0/Catalog.API.GeneratedMSBuildEditorConfig.editorconfig
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.API/obj/Debug/net6.0/Catalog.API.AssemblyInfoInputs.cache
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.API/obj/Debug/net6.0/Catalog.API.AssemblyInfo.cs
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.API/obj/Debug/net6.0/Catalog.API.csproj.CoreCompileInputs.cache

@@ -311,7 +311,7 @@ namespace Catalog.Infra.Repositories
             await dbContext.SaveChangesAsync(CancellationToken.None);
             var categoryRepository = new CategoryRepository(dbContext);
             var searchOrder = order.ToLower() == "asc" ? SearchOrder.Asc : SearchOrder.Desc;
-            var searchInput = new SearchInput(1, 20, "", search, searchOrder);
+            var searchInput = new SearchInput(1, 20, "", search.ToLower(), searchOrder);
 
             var output = await categoryRepository.Search(searchInput, CancellationToken.None);
 

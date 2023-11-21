@@ -26,6 +26,9 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
+              "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj": {
+                "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj"
+              },
               "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {
                 "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj"
               }
@@ -125,7 +128,7 @@
           "dependencies": {
             "FluentAssertions": {
               "target": "Package",
-              "version": "[7.0.0-alpha.3, )"
+              "version": "[6.12.0, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -315,6 +318,10 @@
               "target": "Package",
               "version": "[34.0.2, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[6.0.25, )"
@@ -326,6 +333,10 @@
             "Moq": {
               "target": "Package",
               "version": "[4.20.69, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.7.0, )"
             },
             "xunit.assert": {
               "target": "Package",

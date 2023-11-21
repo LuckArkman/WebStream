@@ -28,3 +28,13 @@
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/refint/Catalog.Application.dll
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/Catalog.Application.pdb
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/obj/Debug/net6.0/ref/Catalog.Application.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Data.deps.json
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Data.runtimeconfig.json
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/NUnit3.TestAdapter.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/NUnit3.TestAdapter.pdb
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/nunit.engine.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/nunit.engine.api.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/nunit.engine.core.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/testcentric.engine.metadata.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Data.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/bin/Debug/net6.0/Catalog.Data.pdb

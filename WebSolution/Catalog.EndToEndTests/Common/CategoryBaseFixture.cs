@@ -20,7 +20,7 @@ public class CategoryBaseFixture : BaseFixture
     {
         var categoryName = "";
         while (categoryName.Length < 3)
-            categoryName = Faker.Commerce.Categories(1)[0];
+            categoryName = faker.Commerce.Categories(1)[0];
         if (categoryName.Length > 255)
             categoryName = categoryName[..255];
         return categoryName;
@@ -29,7 +29,7 @@ public class CategoryBaseFixture : BaseFixture
     public string GetValidCategoryDescription()
     {
         var categoryDescription =
-            Faker.Commerce.ProductDescription();
+            faker.Commerce.ProductDescription();
         if (categoryDescription.Length > 10_000)
             categoryDescription =
                 categoryDescription[..10_000];
@@ -40,21 +40,21 @@ public class CategoryBaseFixture : BaseFixture
         => new Random().NextDouble() < 0.5;
 
     public string GetInvalidNameTooShort()
-        => Faker.Commerce.ProductName().Substring(0, 2);
+        => faker.Commerce.ProductName().Substring(0, 2);
 
     public string GetInvalidNameTooLong()
     {
-        var tooLongNameForCategory = Faker.Commerce.ProductName();
+        var tooLongNameForCategory = faker.Commerce.ProductName();
         while (tooLongNameForCategory.Length <= 255)
-            tooLongNameForCategory = $"{tooLongNameForCategory} {Faker.Commerce.ProductName()}";
+            tooLongNameForCategory = $"{tooLongNameForCategory} {faker.Commerce.ProductName()}";
         return tooLongNameForCategory;
     }
 
     public string GetInvalidDescriptionTooLong()
     {
-        var tooLongDescriptionForCategory = Faker.Commerce.ProductDescription();
+        var tooLongDescriptionForCategory = faker.Commerce.ProductDescription();
         while (tooLongDescriptionForCategory.Length <= 10_000)
-            tooLongDescriptionForCategory = $"{tooLongDescriptionForCategory} {Faker.Commerce.ProductDescription()}";
+            tooLongDescriptionForCategory = $"{tooLongDescriptionForCategory} {faker.Commerce.ProductDescription()}";
         return tooLongDescriptionForCategory;
     }
 

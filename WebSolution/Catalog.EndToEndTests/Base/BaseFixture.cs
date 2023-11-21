@@ -10,7 +10,7 @@ namespace Catalog.EndToEndTests.Base;
 
 public class BaseFixture: IDisposable
 {
-    protected Faker Faker { get; set; }
+    protected Faker faker { get; set; }
 
     public CustomWebApplicationFactory<Program> WebAppFactory { get; set; }
     public HttpClient HttpClient { get; set; }
@@ -19,7 +19,7 @@ public class BaseFixture: IDisposable
 
     public BaseFixture()
     {
-        Faker = new Faker("pt_BR");
+        faker = new Faker("pt_BR");
         WebAppFactory = new CustomWebApplicationFactory<Program>();
         HttpClient = WebAppFactory.CreateClient();
         var configuration = WebAppFactory.Services

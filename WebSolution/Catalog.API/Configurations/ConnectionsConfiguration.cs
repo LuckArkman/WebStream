@@ -6,6 +6,7 @@ namespace Catalog.API.Configurations;
 
 public static class ConnectionsConfiguration
 {
+    /*
     public static IServiceCollection AddAppConections(
         this IServiceCollection services,
         IConfiguration configuration
@@ -43,4 +44,5 @@ public static class ConnectionsConfiguration
         dbContext.Database.Migrate();
         return app;
     }
+    */
 }

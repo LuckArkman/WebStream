@@ -25,30 +25,24 @@ namespace Catalog.EndToEndTests.API.Category.CreateCategory
         {
             var input = _fixture.getExampleInput();
 
-            var (response, output) = await _fixture.ApiClient.Post<ApiResponse<CategoryModelOutput>>(
-                "/categories",
-                input
-            );
+            var (response,output) = await _fixture.ApiClient.Post<CategoryModelOutput>(
+                "/categories",input);
 
             response.Should().NotBeNull();
-            response!.StatusCode.Should().Be(HttpStatusCode.Created);
+            response.StatusCode.Should().Be(HttpStatusCode.Created);
             output.Should().NotBeNull();
-            output!.Data.Should().NotBeNull();
-            output.Data.Name.Should().Be(input.Name);
-            output.Data.Description.Should().Be(input.Description);
-            output.Data.IsActive.Should().Be(input.IsActive);
-            output.Data.Id.Should().NotBeEmpty();
-            output.Data.createTime.Should()
-                .NotBeSameDateAs(default);
-            var dbCategory = await _fixture
-                .Persistence.GetById(output.Data.Id);
+            output.Name.Should().Be(input.Name);
+            output.Description.Should().Be(input.Description);
+            output.IsActive.Should().Be(input.IsActive);
+            output.Id.Should().NotBeEmpty();
+            output.createTime.Should().NotBeSameDateAs(default);
+            var dbCategory = await _fixture.Persistence.GetById(output.Id);
             dbCategory.Should().NotBeNull();
             dbCategory!.Name.Should().Be(input.Name);
             dbCategory.Description.Should().Be(input.Description);
             dbCategory.IsActive.Should().Be(input.IsActive);
             dbCategory.Id.Should().NotBeEmpty();
-            dbCategory.createTime.Should()
-                .NotBeSameDateAs(default);
+            dbCategory.createTime.Should().NotBeSameDateAs(default);
         }
         /*
         [Theory(DisplayName = nameof(ErrorWhenCantInstantiateAggregate))]

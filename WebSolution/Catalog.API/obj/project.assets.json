@@ -533,11 +533,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj",
+      "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj",
       "projectName": "Catalog.API",
-      "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj",
+      "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj",
       "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.API\\obj\\",
+      "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -1,17 +1,113 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj": {}
+    "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj": {
+    "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj",
-        "projectName": "Catalog.Application",
-        "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj",
+        "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj",
+        "projectName": "Catalog.API",
+        "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj",
         "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application\\obj\\",
+        "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "default"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.25, 6.0.25]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj",
+        "projectName": "Catalog.Application",
+        "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj",
+        "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
+        "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -35,11 +131,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj"
               },
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj"
               }
             }
           }
@@ -108,14 +204,14 @@
         }
       }
     },
-    "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
+    "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj",
+        "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj",
         "projectName": "Catalog.Data",
-        "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj",
+        "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj",
         "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\obj\\",
+        "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -139,8 +235,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj"
               }
             }
           }
@@ -229,14 +325,14 @@
         }
       }
     },
-    "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
+    "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj",
+        "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj",
         "projectName": "Catalog.Domain",
-        "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj",
+        "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj",
         "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\obj\\",
+        "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -330,14 +426,14 @@
         }
       }
     },
-    "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj": {
+    "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj",
+        "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj",
         "projectName": "Catalog.EndToEndTests",
-        "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj",
+        "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj",
         "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.EndToEndTests\\obj\\",
+        "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -361,14 +457,17 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj"
               },
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj"
               },
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj"
+              },
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj"
               }
             }
           }
@@ -497,14 +596,14 @@
         }
       }
     },
-    "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj": {
+    "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj",
+        "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj",
         "projectName": "Catalog.Infra",
-        "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj",
+        "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj",
         "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Infra\\obj\\",
+        "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -528,14 +627,14 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj"
               },
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj"
               },
-              "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
-                "projectPath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj"
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DHUUg7b0uh9RfhEapADmUpxvFyCT8T0KSYuWxsdJqRqRlFfwg4iAN9+YgY02hO1gB0ZOXnEVaXLdjab0sEMfcA==",
+  "dgSpecHash": "idPAVqqqGNo66wt2AxIium9nvHNQR8wvo6bArQkEFHKJzdTBU8yhPUR5T4mF4c/DDs2ETg1pDMXwWeV42/uFJg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj",
+  "projectFilePath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

@@ -1,5 +1,3 @@
-using System.Net.Http.Headers;
-using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using Catalog.EndToEndTests.Common;
@@ -17,27 +15,7 @@ public class ApiClient
     private const string _adminUser = "admin";
     private const string _adminPassword = "123456";
 
-    public ApiClient(HttpClient httpClient,
-        KeycloakAuthenticationOptions keycloakOptions)
-    {
-        _httpClient = httpClient;
-        _defaultSerializeOptions = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = new JsonSnakeCasePolicy(),
-            PropertyNameCaseInsensitive = true
-        };
-        _keycloakOptions = keycloakOptions;
-        AddAuthorizationHeader();
-    }
-
-    private void AddAuthorizationHeader()
-    {
-        var accessToken = GetAccessTokenAsync(_adminUser, _adminPassword)
-            .GetAwaiter().GetResult();
-        _httpClient.DefaultRequestHeaders
-            .Authorization = new AuthenticationHeaderValue(
-                "Bearer", accessToken);
-    }
+    public ApiClient(HttpClient httpClient) => _httpClient = httpClient;
 
     public async Task<string> GetAccessTokenAsync(string user, string password)
     {
@@ -164,7 +142,7 @@ public class ApiClient
             where TOutput: class
     {
         var fileContent = new StreamContent(file.FileStream);
-        fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+        //fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
 
         using var content = new MultipartFormDataContent
         {

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Catalog.Data.Configurations;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
+using System.Net.Http;
 
 namespace Catalog.EndToEndTests.Base;
 
@@ -13,7 +13,7 @@ public class BaseFixture: IDisposable
     protected Faker faker { get; set; }
 
     public CustomWebApplicationFactory<Program> WebAppFactory { get; set; }
-    public HttpClient HttpClient { get; set; }
+    public HttpClient _httpClient { get; set; }
     public ApiClient ApiClient { get; set; }
     private readonly string _dbConnectionString;
 
@@ -21,16 +21,8 @@ public class BaseFixture: IDisposable
     {
         faker = new Faker("pt_BR");
         WebAppFactory = new CustomWebApplicationFactory<Program>();
-        HttpClient = WebAppFactory.CreateClient();
-        var configuration = WebAppFactory.Services
-            .GetRequiredService<IConfiguration>();
-        var keycloakOptions = configuration
-            .GetSection(KeycloakAuthenticationOptions.Section)
-            .Get<KeycloakAuthenticationOptions>();
-        ApiClient = new ApiClient(HttpClient, keycloakOptions);
-        ArgumentNullException.ThrowIfNull(configuration);
-        _dbConnectionString = configuration
-            .GetConnectionString("CatalogDb");
+        _httpClient = WebAppFactory.CreateClient();
+        ApiClient = new ApiClient(_httpClient);
     }
 
     public CatalogDbContext CreateDbContext()

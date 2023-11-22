@@ -1,6 +1,5 @@
 using Catalog.Domain.Entitys;
 using Catalog.Domain.SeedWork;
-using Moq;
 
 namespace Catalog.Domain.Repository;
 

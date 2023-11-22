@@ -1,6 +1,6 @@
 {
-  "Catalog.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/Catalog.Application",
-  "Catalog.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/Catalog.Data",
-  "Catalog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/Catalog.Domain",
-  "Catalog.Infra, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/Catalog.Infra"
+  "Catalog.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Application",
+  "Catalog.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Data",
+  "Catalog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Domain",
+  "Catalog.Infra, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\mauricio\\Documents\\WebStream\\WebSolution\\Catalog.Infra"
 }

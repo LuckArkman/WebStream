@@ -452,3 +452,14 @@
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.EndToEndTests/obj/Debug/net6.0/Catalog.EndToEndTests.pdb
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.EndToEndTests/obj/Debug/net6.0/Catalog.EndToEndTests.genruntimeconfig.cache
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.EndToEndTests/obj/Debug/net6.0/ref/Catalog.EndToEndTests.dll
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\bin\Debug\net6.0\CoverletSourceRootsMapping
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\Catalog.EndToEndTests.csproj.AssemblyReference.cache
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\MvcTestingAppManifest.json
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\Catalog.EndToEndTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\Catalog.EndToEndTests.AssemblyInfoInputs.cache
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\Catalog.EndToEndTests.AssemblyInfo.cs
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\Catalog.EndToEndTests.csproj.CoreCompileInputs.cache
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\Catalog.EndToEndTests.sourcelink.json
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\Catalog.EndToEndTests.dll
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\refint\Catalog.EndToEndTests.dll
+C:\Users\mauricio\Documents\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net6.0\Catalog.EndToEndTests.pdb

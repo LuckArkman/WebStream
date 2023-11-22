@@ -1451,12 +1451,6 @@
           "build/netcoreapp3.1/Microsoft.TestPlatform.TestHost.props": {}
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
-        "type": "package",
-        "build": {
-          "build/_._": {}
-        }
-      },
       "Moq/4.20.69": {
         "type": "package",
         "dependencies": {
@@ -2116,18 +2110,17 @@
           }
         }
       },
-      "Catalog.API/1.0.0": {
+      "catalog.API/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.4",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "compile": {
-          "bin/placeholder/Catalog.API.dll": {}
+          "bin/placeholder/catalog.API.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Catalog.API.dll": {}
+          "bin/placeholder/catalog.API.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -4091,87 +4084,6 @@
         "microsoft.testplatform.testhost.nuspec"
       ]
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
-      "sha512": "aKxpRAUIxDrnSnyr7xJWGixOBgsB7Z4oHpWRkpRzzq04kfze4mN7944gRc4X9H2U5KG3A/btF74kavkO8KXqCg==",
-      "type": "package",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.4",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "CHANGELOG.md",
-        "EULA.md",
-        "ThirdPartyNotices.txt",
-        "build/Container.props",
-        "build/Container.targets",
-        "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.props",
-        "build/Microsoft.VisualStudio.Azure.Containers.Tools.Targets.targets",
-        "build/Rules/GeneralBrowseObject.xaml",
-        "build/Rules/cs-CZ/GeneralBrowseObject.xaml",
-        "build/Rules/de-DE/GeneralBrowseObject.xaml",
-        "build/Rules/es-ES/GeneralBrowseObject.xaml",
-        "build/Rules/fr-FR/GeneralBrowseObject.xaml",
-        "build/Rules/it-IT/GeneralBrowseObject.xaml",
-        "build/Rules/ja-JP/GeneralBrowseObject.xaml",
-        "build/Rules/ko-KR/GeneralBrowseObject.xaml",
-        "build/Rules/pl-PL/GeneralBrowseObject.xaml",
-        "build/Rules/pt-BR/GeneralBrowseObject.xaml",
-        "build/Rules/ru-RU/GeneralBrowseObject.xaml",
-        "build/Rules/tr-TR/GeneralBrowseObject.xaml",
-        "build/Rules/zh-CN/GeneralBrowseObject.xaml",
-        "build/Rules/zh-TW/GeneralBrowseObject.xaml",
-        "build/ToolsTarget.props",
-        "build/ToolsTarget.targets",
-        "icon.png",
-        "microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
-        "microsoft.visualstudio.azure.containers.tools.targets.nuspec",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Common.dll",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Shared.dll",
-        "tools/Microsoft.VisualStudio.Containers.Tools.Tasks.dll",
-        "tools/Newtonsoft.Json.dll",
-        "tools/System.Security.Principal.Windows.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/cs/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/de/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/es/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/fr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/it/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ja/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ko/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/pl/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/pt-BR/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/ru/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/tr/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/utils/KillProcess.exe",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/zh-Hans/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Common.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Shared.resources.dll",
-        "tools/zh-Hant/Microsoft.VisualStudio.Containers.Tools.Tasks.resources.dll"
-      ]
-    },
     "Moq/4.20.69": {
       "sha512": "8P/oAUOL8ZVyXnzBBcgdhTsOD1kQbAWfOcMI7KDQO3HqQtzB/0WYLdnMa4Jefv8nu/MQYiiG0IuoJdvG0v0Nig==",
       "type": "package",
@@ -5362,10 +5274,10 @@
         "xunit.extensibility.execution.nuspec"
       ]
     },
-    "Catalog.API/1.0.0": {
+    "catalog.API/1.0.0": {
       "type": "project",
-      "path": "../Catalog.API/Catalog.API.csproj",
-      "msbuildProject": "../Catalog.API/Catalog.API.csproj"
+      "path": "../catalog.API/catalog.API.csproj",
+      "msbuildProject": "../catalog.API/catalog.API.csproj"
     },
     "Catalog.Application/1.0.0": {
       "type": "project",
@@ -5391,7 +5303,6 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Bogus >= 34.0.2",
-      "Catalog.API >= 1.0.0",
       "Catalog.Application >= 1.0.0",
       "Catalog.Data >= 1.0.0",
       "Catalog.Infra >= 1.0.0",
@@ -5409,6 +5320,7 @@
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.6.1",
       "NUnit3TestAdapter >= 4.4.2",
+      "catalog.API >= 1.0.0",
       "coverlet.collector >= 3.2.0",
       "xunit >= 2.6.2",
       "xunit.assert >= 2.6.2",
@@ -5416,52 +5328,41 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mauricio\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/home/mauricio/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj",
+      "projectUniqueName": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.EndToEndTests/Catalog.EndToEndTests.csproj",
       "projectName": "Catalog.EndToEndTests",
-      "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj",
-      "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-      "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\obj\\",
+      "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.EndToEndTests/Catalog.EndToEndTests.csproj",
+      "packagesPath": "/home/mauricio/.nuget/packages/",
+      "outputPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.EndToEndTests/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/home/mauricio/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj": {
-              "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.API\\Catalog.API.csproj"
+            "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj": {
+              "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj"
             },
-            "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj": {
-              "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj"
+            "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj": {
+              "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj"
             },
-            "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
-              "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj"
+            "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj": {
+              "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj"
             },
-            "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj": {
-              "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj"
+            "/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/catalog.API.csproj": {
+              "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/catalog.API.csproj"
             }
           }
         }
@@ -5470,9 +5371,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "default"
       }
     },
     "frameworks": {
@@ -5570,15 +5468,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
+            "version": "[6.0.20, 6.0.20]"
           }
         ],
         "frameworkReferences": {
@@ -5586,7 +5476,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.306/RuntimeIdentifierGraph.json"
       }
     }
   }

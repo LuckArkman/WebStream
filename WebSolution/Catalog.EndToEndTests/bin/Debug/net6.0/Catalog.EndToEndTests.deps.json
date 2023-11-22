@@ -35,7 +35,6 @@
       "Catalog.EndToEndTests/1.0.0": {
         "dependencies": {
           "Bogus": "34.0.2",
-          "Catalog.API": "1.0.0",
           "Catalog.Application": "1.0.0",
           "Catalog.Data": "1.0.0",
           "Catalog.Infra": "1.0.0",
@@ -53,6 +52,7 @@
           "NUnit": "3.13.3",
           "NUnit.Analyzers": "3.6.1",
           "NUnit3TestAdapter": "4.4.2",
+          "catalog.API": "1.0.0",
           "coverlet.collector": "3.2.0",
           "xunit": "2.6.2",
           "xunit.assert": "2.6.2",
@@ -1322,7 +1322,6 @@
           "lib/netcoreapp3.1/testhost.dll": {}
         }
       },
-      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {},
       "Moq/4.20.69": {
         "dependencies": {
           "Castle.Core": "5.1.1"
@@ -1644,7 +1643,7 @@
         "runtime": {
           "lib/netstandard2.0/xunit.abstractions.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
+            "fileVersion": "0.0.0.0"
           }
         },
         "compile": {
@@ -1699,16 +1698,15 @@
           "lib/netstandard1.1/xunit.execution.dotnet.dll": {}
         }
       },
-      "Catalog.API/1.0.0": {
+      "catalog.API/1.0.0": {
         "dependencies": {
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.19.4",
           "Swashbuckle.AspNetCore": "6.5.0"
         },
         "runtime": {
-          "Catalog.API.dll": {}
+          "catalog.API.dll": {}
         },
         "compile": {
-          "Catalog.API.dll": {}
+          "catalog.API.dll": {}
         }
       },
       "Catalog.Application/1.0.0": {
@@ -4010,13 +4008,6 @@
       "path": "microsoft.testplatform.testhost/17.8.0",
       "hashPath": "microsoft.testplatform.testhost.17.8.0.nupkg.sha512"
     },
-    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.19.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-aKxpRAUIxDrnSnyr7xJWGixOBgsB7Z4oHpWRkpRzzq04kfze4mN7944gRc4X9H2U5KG3A/btF74kavkO8KXqCg==",
-      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.19.4",
-      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512"
-    },
     "Moq/4.20.69": {
       "type": "package",
       "serviceable": true,
@@ -4311,7 +4302,7 @@
       "path": "xunit.extensibility.execution/2.6.2",
       "hashPath": "xunit.extensibility.execution.2.6.2.nupkg.sha512"
     },
-    "Catalog.API/1.0.0": {
+    "catalog.API/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

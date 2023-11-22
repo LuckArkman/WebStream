@@ -1,4 +1,5 @@
 using System.Net.Http.Headers;
+using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using Catalog.EndToEndTests.Common;
@@ -104,13 +105,21 @@ public class ApiClient
 
     public async Task<(HttpResponseMessage?, TOutput?)> Get<TOutput>(
         string route,
-        object? queryStringParametersObject = null 
-    ) where TOutput : class
+        object? payload = null 
+    )
     {
-        var url = PrepareGetRoute(route, queryStringParametersObject);
-        var response = await _httpClient.GetAsync(url);
-        var output = await GetOutput<TOutput>(response);
-        return (response, output);
+        var response = await _httpClient.PostAsync(route, new StringContent(
+            JsonSerializer.Serialize(payload), Encoding.UTF8,
+            "application/json"
+            )
+        );
+        var output = await response.Content.ReadAsStringAsync();
+        var obj = JsonSerializer.Deserialize<TOutput>(output,
+            new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        });
+        return (response, obj);
     }
     public async Task<(HttpResponseMessage?, TOutput?)> Delete<TOutput>(
         string route

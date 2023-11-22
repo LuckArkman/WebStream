@@ -33,16 +33,12 @@ public class BaseFixture: IDisposable
             .GetConnectionString("CatalogDb");
     }
 
-    public CatalogDbContext CreateDbContext(bool preserveData = false, string _Id = "")
-    {
-        var context = new CatalogDbContext(
+    public CatalogDbContext CreateDbContext()
+     => new (
             new DbContextOptionsBuilder<CatalogDbContext>()
-                .UseInMemoryDatabase($"end2end-tests-db{_Id}")
+                .UseInMemoryDatabase($"end2end-tests-db")
                 .Options
         );
-        if (preserveData == false) context.Database.EnsureDeleted();
-        return context;
-    }
     public void CleanPersistence()
     {
         var context = CreateDbContext();

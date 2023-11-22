@@ -1,4 +1,3 @@
-using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
 using Catalog.EndToEndTests.Common;
@@ -16,27 +15,7 @@ public class ApiClient
     private const string _adminUser = "admin";
     private const string _adminPassword = "123456";
 
-    public ApiClient(HttpClient httpClient,
-        KeycloakAuthenticationOptions keycloakOptions)
-    {
-        _httpClient = httpClient;
-        _defaultSerializeOptions = new JsonSerializerOptions
-        {
-            PropertyNamingPolicy = new JsonSnakeCasePolicy(),
-            PropertyNameCaseInsensitive = true
-        };
-        _keycloakOptions = keycloakOptions;
-        AddAuthorizationHeader();
-    }
-
-    private void AddAuthorizationHeader()
-    {
-        var accessToken = GetAccessTokenAsync(_adminUser, _adminPassword)
-            .GetAwaiter().GetResult();
-        _httpClient.DefaultRequestHeaders
-            .Authorization = new AuthenticationHeaderValue(
-                "Bearer", accessToken);
-    }
+    public ApiClient(HttpClient httpClient) => _httpClient = httpClient;
 
     public async Task<string> GetAccessTokenAsync(string user, string password)
     {
@@ -104,13 +83,21 @@ public class ApiClient
 
     public async Task<(HttpResponseMessage?, TOutput?)> Get<TOutput>(
         string route,
-        object? queryStringParametersObject = null 
-    ) where TOutput : class
+        object? payload = null 
+    )
     {
-        var url = PrepareGetRoute(route, queryStringParametersObject);
-        var response = await _httpClient.GetAsync(url);
-        var output = await GetOutput<TOutput>(response);
-        return (response, output);
+        var response = await _httpClient.PostAsync(route, new StringContent(
+            JsonSerializer.Serialize(payload), Encoding.UTF8,
+            "application/json"
+            )
+        );
+        var output = await response.Content.ReadAsStringAsync();
+        var obj = JsonSerializer.Deserialize<TOutput>(output,
+            new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true
+        });
+        return (response, obj);
     }
     public async Task<(HttpResponseMessage?, TOutput?)> Delete<TOutput>(
         string route
@@ -155,7 +142,7 @@ public class ApiClient
             where TOutput: class
     {
         var fileContent = new StreamContent(file.FileStream);
-        fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
+        //fileContent.Headers.ContentType = new MediaTypeHeaderValue(file.ContentType);
 
         using var content = new MultipartFormDataContent
         {

@@ -25,9 +25,11 @@ namespace Catalog.EndToEndTests.API.Category.CreateCategory
         {
             var input = _fixture.getExampleInput();
 
-            var output = await _fixture.ApiClient.Post<CategoryModelOutput>(
+            var (response,output) = await _fixture.ApiClient.Post<CategoryModelOutput>(
                 "/categories",input);
 
+            response.Should().NotBeNull();
+            response.StatusCode.Should().Be(HttpStatusCode.Created);
             output.Should().NotBeNull();
             output.Name.Should().Be(input.Name);
             output.Description.Should().Be(input.Description);

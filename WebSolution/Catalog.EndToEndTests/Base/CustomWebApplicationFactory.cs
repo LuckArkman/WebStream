@@ -3,14 +3,10 @@ using Catalog.Infra.Messaging.Configuration;
 using Google.Cloud.Storage.V1;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Moq;
-using RabbitMQ.Client;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using IModel = RabbitMQ.Client.IModel;
 
 namespace Catalog.EndToEndTests.Base;
@@ -29,34 +25,20 @@ public class CustomWebApplicationFactory<TStartup>
         IWebHostBuilder builder
     )
     {
-        var environment = "EndToEndTest";
-        Environment.SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", environment);
-        builder.UseEnvironment(environment);
-        builder.ConfigureServices(services => {
-            var descriptor = services.First(s =>
-                s.ServiceType == typeof(StorageClient));
-            services.Remove(descriptor);
-            services.AddScoped(sp =>
+        builder.ConfigureServices(services =>
+        {
+            var _dbOptions = services.FirstOrDefault(x => x.ServiceType == typeof(
+                DbContextOptions<CatalogDbContext>)
+            );
+            if (_dbOptions is  not  null)
             {
-                StorageClient = new Mock<StorageClient>();
-                return StorageClient.Object;
-            });
-            var serviceProvider = services.BuildServiceProvider();
-            using var scope = serviceProvider.CreateScope();
-            RabbitMQChannel = scope
-                .ServiceProvider
-                .GetService<ChannelManager>()!
-                .GetChannel();
-            RabbitMQConfiguration = scope
-                .ServiceProvider
-                .GetService<IOptions<RabbitMQConfiguration>>()!
-                .Value;
-            SetupRabbitMQ();
-            var context = scope.ServiceProvider
-                .GetService<CatalogDbContext>();
-            ArgumentNullException.ThrowIfNull(context);
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+                services.Remove(_dbOptions);
+                services.AddDbContext<CatalogDbContext>(options =>
+                {
+                    options.UseInMemoryDatabase("end2end-tests-db");
+
+                });
+            }
         });
 
         base.ConfigureWebHost(builder);

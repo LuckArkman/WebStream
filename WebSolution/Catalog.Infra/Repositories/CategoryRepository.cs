@@ -32,7 +32,7 @@ public class CategoryRepository : ICategoryRepository
     public Task Delete(Category tAggregate, CancellationToken cancellationToken)
     =>Task.FromResult(_categories.Remove(tAggregate));
 
-    public Task Update(Category _category, CancellationToken cancellationToken) => Task.FromResult(_categories.Update(_category));
+    public async Task Update(Category _category, CancellationToken cancellationToken) => await Task.FromResult(_categories.Update(_category));
 
     public Task<IReadOnlyList<Guid>> GetIdsListByIds(List<Guid> ids, CancellationToken cancellationToken)
     {

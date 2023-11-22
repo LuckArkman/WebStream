@@ -46,7 +46,7 @@ public class UpdateCategoryTest
             unitOfWorkMock.Object
         );
 
-        CategoryModelOutput output = await useCase.Handle(input, CancellationToken.None);
+        var output = await useCase.Handle(input, CancellationToken.None);
 
         var dbCategory = await _categoryDB.Categories.FindAsync(output.Id);
         dbCategory.Should().NotBeNull();

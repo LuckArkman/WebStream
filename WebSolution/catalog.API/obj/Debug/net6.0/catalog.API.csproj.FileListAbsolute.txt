@@ -30,3 +30,4 @@
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/obj/Debug/net6.0/catalog.API.pdb
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/obj/Debug/net6.0/catalog.API.genruntimeconfig.cache
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/obj/Debug/net6.0/ref/catalog.API.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/obj/Debug/net6.0/catalog.API.sourcelink.json

@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Moq;
-using IModel = RabbitMQ.Client.IModel;
 
 namespace Catalog.EndToEndTests.Base;
 
@@ -19,7 +18,7 @@ public class CustomWebApplicationFactory<TStartup>
     public string VideoEncodedRoutingKey => "video.encoded";
     public string VideoCreatedQueue => "video.created.queue";
     public Mock<StorageClient> StorageClient { get; private set; }
-    public IModel RabbitMQChannel { get; private set; }
+    //public IModel RabbitMQChannel { get; private set; }
     public RabbitMQConfiguration RabbitMQConfiguration { get; private set; }
     protected override void ConfigureWebHost(
         IWebHostBuilder builder
@@ -43,7 +42,7 @@ public class CustomWebApplicationFactory<TStartup>
 
         base.ConfigureWebHost(builder);
     }
-
+    /*
     public void SetupRabbitMQ()
     {
         var channel = RabbitMQChannel!;
@@ -68,10 +67,10 @@ public class CustomWebApplicationFactory<TStartup>
         channel.QueueDelete(RabbitMQConfiguration.VideoEncodedQueue, false, false);
         channel.ExchangeDelete(exchange, false);
     }
-
+    */
     public override ValueTask DisposeAsync()
     {
-        TearDownRabbitMQ();
+        //TearDownRabbitMQ();
         return base.DisposeAsync();
     }
 }

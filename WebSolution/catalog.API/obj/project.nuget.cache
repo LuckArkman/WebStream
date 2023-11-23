@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vzHh4sQA83e90SIZS4mZqb0+2oSLTplMH59ZH3YkStpq9mQ6hvUdRxkhOGMJ8a+rrH1xdIxvl64MLINCdmS/sg==",
+  "dgSpecHash": "6+TygWHLAGaT2VNTtOJfqFEy19Ayfx1TnA/+1pw/rgalC+p6FoBZo0qI3ow/uyLL4Ua55jszemzSXVSnpo24Hg==",
   "success": true,
   "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/catalog.API.csproj",
   "expectedPackageFiles": [
@@ -9,8 +9,7 @@
     "/home/mauricio/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "/home/mauricio/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
-    "/home/mauricio/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
-    "/home/mauricio/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.20/microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512"
+    "/home/mauricio/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
   ],
   "logs": []
 }

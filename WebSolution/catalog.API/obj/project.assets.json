@@ -474,24 +474,35 @@
     ]
   },
   "packageFolders": {
-    "/home/mauricio/.nuget/packages/": {}
+    "C:\\Users\\mauricio\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/catalog.API.csproj",
+      "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\catalog.API\\catalog.API.csproj",
       "projectName": "catalog.API",
-      "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/catalog.API.csproj",
-      "packagesPath": "/home/mauricio/.nuget/packages/",
-      "outputPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/obj/",
+      "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\catalog.API\\catalog.API.csproj",
+      "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
+      "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\catalog.API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+      ],
       "configFilePaths": [
-        "/home/mauricio/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -538,7 +549,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/current/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

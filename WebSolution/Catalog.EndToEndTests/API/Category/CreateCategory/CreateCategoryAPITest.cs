@@ -29,9 +29,9 @@ namespace Catalog.EndToEndTests.API.Category.CreateCategory
                 "/categories",input);
 
             response.Should().NotBeNull();
-            response.StatusCode.Should().Be(HttpStatusCode.Created);
+            response!.StatusCode.Should().Be(HttpStatusCode.Created);
             output.Should().NotBeNull();
-            output.Name.Should().Be(input.Name);
+            output!.Name.Should().Be(input.Name);
             output.Description.Should().Be(input.Description);
             output.IsActive.Should().Be(input.IsActive);
             output.Id.Should().NotBeEmpty();

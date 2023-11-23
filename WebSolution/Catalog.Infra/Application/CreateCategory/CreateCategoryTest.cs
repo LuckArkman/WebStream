@@ -36,6 +36,7 @@ public class CreateCategoryTest
         
         var _dbCategory = await _categoryDB.Categories.FindAsync(output.Id);
         _dbCategory.Should().NotBeNull();
+
         _dbCategory.Name.Should().Be(output.Name);
         _dbCategory.Description.Should().Be(output.Description);
         _dbCategory.IsActive.Should().Be(output.IsActive);

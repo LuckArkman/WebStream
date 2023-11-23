@@ -1,8 +1,8 @@
 {
-  "catalog.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/catalog.API",
-  "Catalog.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/Catalog.Application",
-  "Catalog.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/Catalog.Data",
-  "Catalog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/Catalog.Domain",
-  "Catalog.Infra, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/Catalog.Infra",
-  "TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/home\/mauricio\/Documents\/GitHub\/WebStream\/WebSolution\/TestProject"
+  "catalog.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\catalog.API",
+  "Catalog.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application",
+  "Catalog.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data",
+  "Catalog.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain",
+  "Catalog.Infra, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra",
+  "TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\TestProject"
 }

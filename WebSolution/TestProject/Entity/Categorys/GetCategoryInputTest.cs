@@ -39,6 +39,6 @@ public class GetCategoryInputTest
         
         valid.Should().NotBeNull();
         valid.IsValid.Should().BeFalse();
-        valid.Errors[0].ErrorMessage.Should().Be("'Id' must not be empty.");
+        valid.Errors[0].ErrorMessage.Should().Be("'Id' deve ser informado.");
     }
 }

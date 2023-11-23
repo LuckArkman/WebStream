@@ -1,10 +1,6 @@
 using Bogus;
-using Keycloak.AuthServices.Authentication;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Catalog.Data.Configurations;
-using System.Net.Http;
 
 namespace Catalog.EndToEndTests.Base;
 

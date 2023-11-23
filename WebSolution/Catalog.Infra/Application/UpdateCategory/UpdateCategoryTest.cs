@@ -35,7 +35,7 @@ public class UpdateCategoryTest
         
         var _Id = Guid.NewGuid().ToString();
         var _categoryDB = _fixture.CreateDBContext(false, _Id);
-        _categoryDB.AddRangeAsync(exampleCategory);
+        await _categoryDB.AddRangeAsync(exampleCategory);
         _categoryDB.SaveChanges();
         var _categoryRepository = new CategoryRepository(_categoryDB);
         var _unityOfWord = new UnityOfWork(_categoryDB);
@@ -46,7 +46,7 @@ public class UpdateCategoryTest
             unitOfWorkMock.Object
         );
 
-        CategoryModelOutput output = await useCase.Handle(input, CancellationToken.None);
+        var output = await useCase.Handle(input, CancellationToken.None);
 
         var dbCategory = await _categoryDB.Categories.FindAsync(output.Id);
         dbCategory.Should().NotBeNull();

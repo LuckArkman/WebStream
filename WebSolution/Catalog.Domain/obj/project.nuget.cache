@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gGgT6p4tgQC3CGc0RQcNFL+0p+T9m8ybPgVdpBhMqZzxWOOr/thAR25bJJmIoXOz7B5umK0WcJY/d+Lrq4B2Ow==",
+  "dgSpecHash": "BFjjJJRBsz77t0TfgA6v0G3HsM2rNU4g5y+/lPRDPTekPi6qjIennLwl7WZr6ww821fi51ni1D/D+xXDeCR4OQ==",
   "success": true,
   "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj",
   "expectedPackageFiles": [
@@ -91,8 +91,7 @@
     "/home/mauricio/.nuget/packages/xunit.assert/2.6.1/xunit.assert.2.6.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/xunit.core/2.6.1/xunit.core.2.6.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/xunit.extensibility.core/2.6.1/xunit.extensibility.core.2.6.1.nupkg.sha512",
-    "/home/mauricio/.nuget/packages/xunit.extensibility.execution/2.6.1/xunit.extensibility.execution.2.6.1.nupkg.sha512",
-    "/home/mauricio/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.20/microsoft.aspnetcore.app.ref.6.0.20.nupkg.sha512"
+    "/home/mauricio/.nuget/packages/xunit.extensibility.execution/2.6.1/xunit.extensibility.execution.2.6.1.nupkg.sha512"
   ],
   "logs": []
 }

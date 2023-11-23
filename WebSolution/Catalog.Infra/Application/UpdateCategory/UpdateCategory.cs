@@ -21,10 +21,8 @@ public class UpdateCategory : IUpdateCategory
             request.IsActive != null &&
             request.IsActive != category.IsActive
         )
-        {
             if ((bool)request.IsActive!) category.Activate();
             else category.NotActivate();
-        }
         await _categoryRepository.Update(category, cancellationToken);
         await _uinitOfWork.Commit(cancellationToken);
         return CategoryModelOutput.FromCategory(category);

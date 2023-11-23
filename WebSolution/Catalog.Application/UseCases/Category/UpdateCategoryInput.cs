@@ -1,6 +1,4 @@
 using Catalog.Application.Common;
-using Catalog.Application.Interfaces;
-using Catalog.Domain.Repository;
 using MediatR;
 
 namespace Catalog.Application.UseCases.Category;

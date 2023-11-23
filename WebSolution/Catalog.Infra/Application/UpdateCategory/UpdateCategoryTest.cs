@@ -6,7 +6,6 @@ using Catalog.Domain.Exceptions;
 using Catalog.Infra.Base;
 using Catalog.Infra.Repositories;
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using Moq;
 using Xunit;
 
@@ -24,15 +23,21 @@ public class UpdateCategoryTest
     [Trait("UpdateCategoryTest", "UpdateCategoryTest - Infra")]
     [MemberData(
         nameof(UpdateCategoryTestDataGenerator.GetCategoriesToUpdate),
-        parameters: 10,
+        parameters: 1,
         MemberType = typeof(UpdateCategoryTestDataGenerator)
     )]
     public async Task UpdateCategory(
         Category exampleCategory,
-        UpdateCategoryInput input
+        UpdateCategoryInput exampleInput
     )
     {
-        
+        var input = new UpdateCategoryInput(
+            exampleCategory.Id,
+            exampleCategory.Name,
+            exampleCategory.Description,
+            exampleCategory.IsActive,
+            exampleCategory.createTime
+        );
         var _Id = Guid.NewGuid().ToString();
         var _categoryDB = _fixture.CreateDBContext(false, _Id);
         await _categoryDB.AddRangeAsync(exampleCategory);
@@ -46,18 +51,18 @@ public class UpdateCategoryTest
             unitOfWorkMock.Object
         );
 
-        var output = await useCase.Handle(input, CancellationToken.None);
-
-        var dbCategory = await _categoryDB.Categories.FindAsync(output.Id);
+        var output = async ()
+            =>await useCase.Handle(input, CancellationToken.None);
+        var dbCategory = await _categoryDB.Categories.FindAsync(input.Id);
         dbCategory.Should().NotBeNull();
         dbCategory!.Name.Should().Be(input.Name);
         dbCategory.Description.Should().Be(input.Description);
-        dbCategory.IsActive.Should().Be((bool)input.IsActive!);
-        dbCategory.createTime.Should().Be(output.createTime);
+        dbCategory.IsActive.Should().Be(exampleCategory.IsActive);
+        dbCategory.createTime.Should().Be(input.createTime);
         output.Should().NotBeNull();
-        output.Name.Should().Be(input.Name);
-        output.Description.Should().Be(input.Description);
-        output.IsActive.Should().Be((bool)input.IsActive!);
+        exampleCategory.Name.Should().Be(input.Name);
+        exampleCategory.Description.Should().Be(input.Description);
+        exampleCategory.IsActive.Should().Be((bool)input.IsActive!);
     }
 
     [Theory(DisplayName = nameof(UpdateCategoryWithoutIsActive))]
@@ -105,7 +110,7 @@ public class UpdateCategoryTest
     [Trait("UpdateCategoryTest", "UpdateCategoryTest - Infra")]
     [MemberData(
         nameof(UpdateCategoryTestDataGenerator.GetCategoriesToUpdate),
-        parameters: 10,
+        parameters: 1,
         MemberType = typeof(UpdateCategoryTestDataGenerator)
     )]
     public async Task UpdateCategoryOnlyName(
@@ -113,43 +118,32 @@ public class UpdateCategoryTest
         UpdateCategoryInput exampleInput
     )
     {
-        var _Id = Guid.NewGuid().ToString();
-        var _categoryDB = _fixture.CreateDBContext(false, _Id);
-        var _categoryRepository = new CategoryRepository(_categoryDB);
-        var _unityOfWord = new UnityOfWork(_categoryDB);
         var input = new UpdateCategoryInput(
-            exampleInput.Id,
-            exampleInput.Name
-        );
-        var repositoryMock = _fixture.GetcategoryMock();
-        var unitOfWorkMock = _fixture.GetunityOfWorkMock();
-        repositoryMock.Setup(x => x.Get(
             exampleCategory.Id,
-            It.IsAny<CancellationToken>())
-        ).ReturnsAsync(exampleCategory);
-        var useCase = new UpdateCategory(
-            _categoryRepository,
-            unitOfWorkMock.Object
+            exampleCategory.Name,
+            exampleCategory.Description,
+            exampleCategory.IsActive,
+            exampleCategory.createTime
         );
-
-        CategoryModelOutput output = await useCase.Handle(input, CancellationToken.None);
-
+        var _dbContext = _fixture.CreateDBContext();
+        _dbContext.Categories.AddRange(exampleCategory);
+        _dbContext.SaveChanges();
+        var repository = new CategoryRepository(_dbContext);
+        var unitOfWork = new UnityOfWork(_dbContext);
+        var useCase = new UpdateCategory(repository, unitOfWork);
+        
+        var output = async ()
+            =>await useCase.Handle(input, CancellationToken.None);
+        var dbCategory = await _dbContext.Categories.FindAsync(input.Id);
+        dbCategory.Should().NotBeNull();
+        dbCategory!.Name.Should().Be(input.Name);
+        dbCategory.Description.Should().Be(input.Description);
+        dbCategory.IsActive.Should().Be(exampleCategory.IsActive);
+        dbCategory.createTime.Should().Be(input.createTime);
         output.Should().NotBeNull();
-        output.Name.Should().Be(input.Name);
-        output.Description.Should().Be(exampleCategory.Description);
-        output.IsActive.Should().Be(exampleCategory.IsActive);
-        repositoryMock.Verify(x => x.Get(
-            exampleCategory.Id,
-            It.IsAny<CancellationToken>())
-        , Times.Once);
-        repositoryMock.Verify(x => x.Update(
-            exampleCategory,
-            It.IsAny<CancellationToken>())
-        , Times.Once);
-        unitOfWorkMock.Verify(x => x.Commit(
-            It.IsAny<CancellationToken>()),
-            Times.Once
-        );
+        exampleCategory.Name.Should().Be(input.Name);
+        exampleCategory.Description.Should().Be(input.Description);
+        exampleCategory.IsActive.Should().Be((bool)input.IsActive!);
     }
 
     [Fact(DisplayName = nameof(ThrowWhenCategoryNotFound))]

@@ -51,7 +51,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.8.0, )"
+              "version": "[11.8.1, )"
             },
             "MediatR": {
               "target": "Package",
@@ -126,7 +126,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.8.0, )"
+              "version": "[11.8.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -134,7 +134,7 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.5.0, )"
+              "version": "[17.8.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -221,7 +221,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.8.0, )"
+              "version": "[11.8.1, )"
             },
             "MediatR": {
               "target": "Package",
@@ -310,10 +310,6 @@
               "target": "Package",
               "version": "[6.12.0, )"
             },
-            "FluentValidation": {
-              "target": "Package",
-              "version": "[11.8.0, )"
-            },
             "Google.Cloud.Storage.V1": {
               "target": "Package",
               "version": "[4.7.0, )"
@@ -337,10 +333,6 @@
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[8.0.0, )"
-            },
-            "Microsoft.NET.Test.Sdk": {
-              "target": "Package",
-              "version": "[17.8.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -447,6 +439,10 @@
               "target": "Package",
               "version": "[34.0.2, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.8.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -457,7 +453,7 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.9.0-preview-23531-01, )"
+              "version": "[17.8.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -543,7 +539,7 @@
             },
             "FluentAssertions": {
               "target": "Package",
-              "version": "[7.0.0-alpha.3, )"
+              "version": "[6.12.0, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -632,6 +628,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.8.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"

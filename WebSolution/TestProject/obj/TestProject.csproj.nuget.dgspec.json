@@ -51,7 +51,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.8.0, )"
+              "version": "[11.8.1, )"
             },
             "MediatR": {
               "target": "Package",
@@ -126,7 +126,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.8.0, )"
+              "version": "[11.8.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -134,7 +134,7 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.5.0, )"
+              "version": "[17.8.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -221,7 +221,7 @@
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.8.0, )"
+              "version": "[11.8.1, )"
             },
             "MediatR": {
               "target": "Package",
@@ -299,7 +299,7 @@
             },
             "FluentAssertions": {
               "target": "Package",
-              "version": "[7.0.0-alpha.3, )"
+              "version": "[6.12.0, )"
             },
             "FluentValidation": {
               "target": "Package",

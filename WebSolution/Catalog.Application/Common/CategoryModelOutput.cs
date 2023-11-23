@@ -1,4 +1,5 @@
 using Catalog.Domain.Entitys;
+using System;
 
 namespace Catalog.Application.Common;
 
@@ -6,7 +7,7 @@ public class CategoryModelOutput
 {
     public CategoryModelOutput(Guid id, string name, string? description = null, bool isActive = true, DateTime? createdAt = null)
     {
-        Id = id;
+        Id = id ;
         Name = name;
         Description = description ?? "";
         IsActive = isActive;

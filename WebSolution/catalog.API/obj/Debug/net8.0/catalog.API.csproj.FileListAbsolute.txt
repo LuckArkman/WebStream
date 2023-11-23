@@ -31,3 +31,4 @@
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/obj/Debug/net8.0/catalog.API.pdb
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/obj/Debug/net8.0/catalog.API.genruntimeconfig.cache
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/obj/Debug/net8.0/ref/catalog.API.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/bin/Debug/net8.0/FluentValidation.dll

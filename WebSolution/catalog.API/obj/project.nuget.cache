@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "6+TygWHLAGaT2VNTtOJfqFEy19Ayfx1TnA/+1pw/rgalC+p6FoBZo0qI3ow/uyLL4Ua55jszemzSXVSnpo24Hg==",
+  "dgSpecHash": "DzDiWuy0BvSTzLGfI6cRcBqVG1WAkLHIrZX58uSp7LmhBmTeiXFRkyTvjmtK5+fdjTWyCbTRwvjtFIZIRlfxog==",
   "success": true,
   "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/catalog.API/catalog.API.csproj",
   "expectedPackageFiles": [
+    "/home/mauricio/.nuget/packages/fluentvalidation/11.8.1/fluentvalidation.11.8.1.nupkg.sha512",
     "/home/mauricio/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "/home/mauricio/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/home/mauricio/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",

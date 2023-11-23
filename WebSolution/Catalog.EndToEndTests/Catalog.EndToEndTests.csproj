@@ -12,14 +12,12 @@
     <ItemGroup>
         <PackageReference Include="Bogus" Version="34.0.2" />
         <PackageReference Include="FluentAssertions" Version="6.12.0" />
-        <PackageReference Include="FluentValidation" Version="11.8.0" />
         <PackageReference Include="Google.Cloud.Storage.V1" Version="4.7.0" />
         <PackageReference Include="Keycloak.AuthServices.Authentication" Version="1.6.0" />
         <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.25" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="8.0.0" />
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
         <PackageReference Include="Moq" Version="4.20.69" />
         <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="6.10.9" />
         <PackageReference Include="NUnit" Version="3.13.3" />

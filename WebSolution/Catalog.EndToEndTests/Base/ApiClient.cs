@@ -1,7 +1,6 @@
 using System.Text;
 using System.Text.Json;
 using Catalog.EndToEndTests.Common;
-using Catalog.Infra.Messaging;
 using Keycloak.AuthServices.Authentication;
 using Microsoft.AspNetCore.WebUtilities;
 
@@ -44,21 +43,25 @@ public class ApiClient
     public async Task<(HttpResponseMessage?, TOutput?)> Post<TOutput>(
         string route,
         object payload
-    ) where TOutput : class
+    )  where TOutput : class
     {
-        var payloadJson = JsonSerializer.Serialize(
-            payload,
-            _defaultSerializeOptions
-        );
-        var response = await _httpClient.PostAsync(
-            route,
-            new StringContent(
-                payloadJson,
+        var response = await _httpClient.PostAsync(route,
+            new StringContent(JsonSerializer.Serialize( payload),
                 Encoding.UTF8,
                 "application/json"
             )
         );
-        var output = await GetOutput<TOutput>(response);
+        var outputA = await response.Content.ReadAsStringAsync();
+        TOutput? output = null;
+        if (!string.IsNullOrWhiteSpace(outputA))
+        {
+            output = JsonSerializer.Deserialize<TOutput>(outputA,
+                new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+        }
+
         return (response, output);
     }
     public async Task<(HttpResponseMessage?, TOutput?)> Put<TOutput>(

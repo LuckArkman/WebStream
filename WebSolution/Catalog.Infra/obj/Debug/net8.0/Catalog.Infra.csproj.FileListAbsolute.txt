@@ -134,3 +134,4 @@
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/obj/Debug/net8.0/Catalog.Infra.pdb
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/obj/Debug/net8.0/Catalog.Infra.genruntimeconfig.cache
 /home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/obj/Debug/net8.0/ref/Catalog.Infra.dll
+/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/bin/Debug/net8.0/NuGet.Frameworks.dll

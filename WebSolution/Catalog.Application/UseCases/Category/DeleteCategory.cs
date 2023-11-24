@@ -11,10 +11,11 @@ public class DeleteCategory : IDeleteCategory
     public DeleteCategory(ICategoryRepository categoryRepository, IunityOfWork unityOfWork)
         =>(_categoryRepository, _unityOfWork)= (categoryRepository, unityOfWork);
 
-    public async Task Handle(DeleteCategoryInput request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(DeleteCategoryInput request, CancellationToken cancellationToken)
     {
         var category = await _categoryRepository.Get(request.Id, cancellationToken);
         await _categoryRepository.Delete(category, cancellationToken);
         await _unityOfWork.Commit(cancellationToken);
+        return Unit.Value;
     }
 }

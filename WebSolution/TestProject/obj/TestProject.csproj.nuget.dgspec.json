@@ -64,7 +64,7 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.2.0, )"
+              "version": "[11.1.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -252,7 +252,7 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.1.1, )"
+              "version": "[11.1.0, )"
             },
             "xunit": {
               "target": "Package",
@@ -340,10 +340,6 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.8.1, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[12.2.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

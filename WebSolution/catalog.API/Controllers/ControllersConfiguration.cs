@@ -1,9 +1,13 @@
-﻿namespace catalog.API.Controllers;
+﻿using MediatR;
+using System.Reflection;
+
+namespace catalog.API.Controllers;
 
 public static class ControllersConfiguration
 {
     public static IServiceCollection AddAndConfigureControllers(this IServiceCollection service)
     {
+        service.AddMediatR(Assembly.GetExecutingAssembly());
         service.AddControllers();
         service.Explorer();
         return service;

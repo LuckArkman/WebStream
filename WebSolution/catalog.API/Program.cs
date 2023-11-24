@@ -3,8 +3,10 @@ using catalog.API.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddUseCase()
-    .AddAndConfigureControllers();
+
+builder.Services.AddUseCase();
+builder.Services.AddAndConfigureControllers();
+
 
 var app = builder.Build();
 

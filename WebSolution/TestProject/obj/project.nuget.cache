@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "co5vzbpR0iHUD4MS2RwUsisTkwQw5CBD5oBk38O3fYFb9r2TMgNIXibLjO/FGcPdKVkJRAcmHqzY6aszCLJ4oA==",
+  "dgSpecHash": "ibAZuds1PkwXksft/gIqk6vdPDtw7mMSGWTy1UgtxZipr5XMddWC73NonmNHQY5gD6Ts49oQisO/WNNaklYVEw==",
   "success": true,
   "projectFilePath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\TestProject\\TestProject.csproj",
   "expectedPackageFiles": [
@@ -9,8 +9,8 @@
     "C:\\Users\\mauricio\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\fluentassertions\\7.0.0-alpha.3\\fluentassertions.7.0.0-alpha.3.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512",
-    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
-    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.codecoverage\\17.9.0-preview-23531-01\\microsoft.codecoverage.17.9.0-preview-23531-01.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.0\\microsoft.entityframeworkcore.8.0.0.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.0\\microsoft.entityframeworkcore.abstractions.8.0.0.nupkg.sha512",

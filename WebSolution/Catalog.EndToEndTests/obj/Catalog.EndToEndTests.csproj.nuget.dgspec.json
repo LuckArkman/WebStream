@@ -60,11 +60,19 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.2.0, )"
+              "version": "[11.1.0, )"
             },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[11.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.19.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -154,7 +162,7 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.2.0, )"
+              "version": "[11.1.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -342,7 +350,7 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.1.1, )"
+              "version": "[11.1.0, )"
             },
             "xunit": {
               "target": "Package",
@@ -688,10 +696,6 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.8.1, )"
-            },
-            "MediatR": {
-              "target": "Package",
-              "version": "[12.2.0, )"
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",

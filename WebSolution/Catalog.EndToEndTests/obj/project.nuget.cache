@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gEAw+DRVGGc8ll27rI4h5G6iE/uRNVlLNMpdwnN1kVgkpInuY9zGrprj71TkLkYCjTzAKSLT8Pxy6x2kMWgMnA==",
+  "dgSpecHash": "nta+yI2kMqhqI+1jxr97ibrAMjEhWcpc2rBZIIHL0fBu8a/75M9qZ/NCY3sasn9mQ6DtyNtwbuN+M4WCbALWFg==",
   "success": true,
   "projectFilePath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj",
   "expectedPackageFiles": [
@@ -17,8 +17,8 @@
     "C:\\Users\\mauricio\\.nuget\\packages\\google.apis.storage.v1\\1.63.0.3206\\google.apis.storage.v1.1.63.0.3206.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\google.cloud.storage.v1\\4.7.0\\google.cloud.storage.v1.4.7.0.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\keycloak.authservices.authentication\\1.6.0\\keycloak.authservices.authentication.1.6.0.nupkg.sha512",
-    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
-    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr\\11.1.0\\mediatr.11.1.0.nupkg.sha512",
+    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.1\\microsoft.aspnetcore.authentication.jwtbearer.6.0.1.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
@@ -76,6 +76,7 @@
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.9.0-preview-23531-01\\microsoft.testplatform.objectmodel.17.9.0-preview-23531-01.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.testplatform.testhost\\17.9.0-preview-23531-01\\microsoft.testplatform.testhost.17.9.0-preview-23531-01.nupkg.sha512",
+    "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.5\\microsoft.visualstudio.azure.containers.tools.targets.1.19.5.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\moq\\4.20.69\\moq.4.20.69.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\mysql.data\\6.10.9\\mysql.data.6.10.9.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\mysql.data.entityframeworkcore\\6.10.9\\mysql.data.entityframeworkcore.6.10.9.nupkg.sha512",
@@ -116,16 +117,5 @@
     "C:\\Users\\mauricio\\.nuget\\packages\\xunit.extensibility.core\\2.6.2\\xunit.extensibility.core.2.6.2.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\xunit.extensibility.execution\\2.6.2\\xunit.extensibility.execution.2.6.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1608",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Versão detectada do pacote fora da restrição de dependência: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requer MediatR (>= 11.0.0 && < 12.0.0), mas a versão MediatR 12.2.0 foi resolvida.",
-      "libraryId": "MediatR",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }

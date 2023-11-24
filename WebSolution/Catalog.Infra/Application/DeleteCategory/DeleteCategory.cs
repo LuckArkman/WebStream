@@ -1,5 +1,5 @@
-using Catalog.Application.Interfaces;
 using Catalog.Application.UseCases.Category;
+using Catalog.Application.Interfaces;
 using Catalog.Domain.Repository;
 using MediatR;
 
@@ -13,11 +13,11 @@ public class DeleteCategory : IDeleteCategory
     public DeleteCategory(ICategoryRepository categoryRepository, IunityOfWork unitOfWork)
         => (_categoryRepository, _unitOfWork) = (categoryRepository, unitOfWork);
 
-    public async Task Handle(DeleteCategoryInput request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(DeleteCategoryInput request, CancellationToken cancellationToken)
     {
         var category = await _categoryRepository.Get(request.Id, cancellationToken);
         await _categoryRepository.Delete(category, cancellationToken);
         await _unitOfWork.Commit(cancellationToken);
-        await Task.CompletedTask;
+        return Unit.Value;
     }
 }

@@ -1,5 +1,5 @@
 using Catalog.Application.Interfaces;
-using Catalog.Data.Configurations;
+using Catalog.Infra.Data;
 
 namespace Catalog.Infra.Base;
 

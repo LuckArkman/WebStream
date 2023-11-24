@@ -4,7 +4,6 @@ using Catalog.Domain.Repository;
 using Catalog.Infra.Base;
 using Catalog.Infra.Repositories;
 using MediatR;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace catalog.API.Configurations;
 

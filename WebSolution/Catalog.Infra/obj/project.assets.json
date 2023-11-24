@@ -905,6 +905,7 @@
           "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "MediatR": "11.1.0",
+          "Microsoft.EntityFrameworkCore.InMemory": "8.0.0",
           "Moq": "4.20.69"
         },
         "compile": {

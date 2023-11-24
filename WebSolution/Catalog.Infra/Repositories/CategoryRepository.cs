@@ -1,9 +1,9 @@
-using Catalog.Data.Configurations;
 using Catalog.Domain.Entitys;
 using Catalog.Domain.Enum;
 using Catalog.Domain.Exceptions;
 using Catalog.Domain.Repository;
 using Catalog.Domain.SeedWork;
+using Catalog.Infra.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.Infra.Repositories;
@@ -11,10 +11,16 @@ namespace Catalog.Infra.Repositories;
 public class CategoryRepository : ICategoryRepository
 {
     CatalogDbContext _catalogDb;
-    
+    private Catalog.Data.Configurations.CatalogDbContext catalogDbContext;
+
     DbSet<Category> _categories => _catalogDb.Set<Category>();
     public CategoryRepository(CatalogDbContext dbContext)
     => _catalogDb = dbContext;
+
+    public CategoryRepository(Catalog.Data.Configurations.CatalogDbContext catalogDbContext)
+    {
+        this.catalogDbContext = catalogDbContext;
+    }
 
     public async Task Insert(Category category, CancellationToken none)
     => await _categories.AddAsync(category, none);

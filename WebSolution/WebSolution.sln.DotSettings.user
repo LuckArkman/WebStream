@@ -1,19 +1,23 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=856d8237_002D1902_002D46df_002Dbc1a_002Df660097c0ce6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
-  &lt;Or&gt;
-    &lt;And&gt;
-      &lt;Namespace&gt;Catalog.EndToEndTests.API.Category.CreateCategory&lt;/Namespace&gt;
-      &lt;Project Location="/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.EndToEndTests" Presentation="&amp;lt;Catalog.EndToEndTests&amp;gt;" /&gt;
-    &lt;/And&gt;
-    &lt;And&gt;
-      &lt;Namespace&gt;Catalog.Infra.Application&lt;/Namespace&gt;
-      &lt;Project Location="/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra" Presentation="&amp;lt;Catalog.Infra&amp;gt;" /&gt;
-    &lt;/And&gt;
-    &lt;TestAncestor&gt;
-      &lt;TestId&gt;xUnit::FCD76AED-7F9F-40CB-8DF9-456163A5DEC1::net8.0::TestProject.CreateCategorys.CreateCategoryTest&lt;/TestId&gt;
-    &lt;/TestAncestor&gt;
-    &lt;Project Location="/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra" Presentation="&amp;lt;Catalog.Infra&amp;gt;" /&gt;
-  &lt;/Or&gt;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=856d8237_002D1902_002D46df_002Dbc1a_002Df660097c0ce6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;Namespace&gt;Catalog.EndToEndTests.API.Category.CreateCategory&lt;/Namespace&gt;&#xD;
+      &lt;Project Location="\home\mauricio\Documents\GitHub\WebStream\WebSolution\Catalog.EndToEndTests" Presentation="&amp;lt;Catalog.EndToEndTests&amp;gt;" /&gt;&#xD;
+    &lt;/And&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;Namespace&gt;Catalog.Infra.Application&lt;/Namespace&gt;&#xD;
+      &lt;Project Location="\home\mauricio\Documents\GitHub\WebStream\WebSolution\Catalog.Infra" Presentation="&amp;lt;Catalog.Infra&amp;gt;" /&gt;&#xD;
+    &lt;/And&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::FCD76AED-7F9F-40CB-8DF9-456163A5DEC1::net8.0::TestProject.CreateCategorys.CreateCategoryTest&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;Project Location="\home\mauricio\Documents\GitHub\WebStream\WebSolution\Catalog.Infra" Presentation="&amp;lt;Catalog.Infra&amp;gt;" /&gt;&#xD;
+    &lt;And&gt;&#xD;
+      &lt;Namespace&gt;Catalog.EndToEndTests.API.Category.CreateCategory&lt;/Namespace&gt;&#xD;
+      &lt;Project Location="D:\AzureProjects\Git\WebStream\WebSolution\Catalog.EndToEndTests" Presentation="&amp;lt;Catalog.EndToEndTests&amp;gt;" /&gt;&#xD;
+    &lt;/And&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	
 	

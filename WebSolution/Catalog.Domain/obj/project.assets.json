@@ -15,7 +15,7 @@
           }
         }
       },
-      "FluentAssertions/6.12.0": {
+      "FluentAssertions/7.0.0-alpha.3": {
         "type": "package",
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.4.0"
@@ -1511,15 +1511,15 @@
         "lib/netstandard2.0/Bogus.xml"
       ]
     },
-    "FluentAssertions/6.12.0": {
-      "sha512": "ZXhHT2YwP9lajrwSKbLlFqsmCCvFJMoRSK9t7sImfnCyd0OB3MhgxdoMcVqxbq1iyxD6mD2fiackWmBb7ayiXQ==",
+    "FluentAssertions/7.0.0-alpha.3": {
+      "sha512": "c5HCYKAW0vhxx8qJ6s8o683GqjfKD7HCJPGA9IOcnZVvqa8atkG0mYhHEpkp/hnC4IVhRPmX+wHjBXDyZVn+3g==",
       "type": "package",
-      "path": "fluentassertions/6.12.0",
+      "path": "fluentassertions/7.0.0-alpha.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "FluentAssertions.png",
-        "fluentassertions.6.12.0.nupkg.sha512",
+        "fluentassertions.7.0.0-alpha.3.nupkg.sha512",
         "fluentassertions.nuspec",
         "lib/net47/FluentAssertions.dll",
         "lib/net47/FluentAssertions.pdb",
@@ -1527,12 +1527,6 @@
         "lib/net6.0/FluentAssertions.dll",
         "lib/net6.0/FluentAssertions.pdb",
         "lib/net6.0/FluentAssertions.xml",
-        "lib/netcoreapp2.1/FluentAssertions.dll",
-        "lib/netcoreapp2.1/FluentAssertions.pdb",
-        "lib/netcoreapp2.1/FluentAssertions.xml",
-        "lib/netcoreapp3.0/FluentAssertions.dll",
-        "lib/netcoreapp3.0/FluentAssertions.pdb",
-        "lib/netcoreapp3.0/FluentAssertions.xml",
         "lib/netstandard2.0/FluentAssertions.dll",
         "lib/netstandard2.0/FluentAssertions.pdb",
         "lib/netstandard2.0/FluentAssertions.xml",
@@ -5073,7 +5067,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Bogus >= 34.0.2",
-      "FluentAssertions >= 6.12.0",
+      "FluentAssertions >= 7.0.0-alpha.3",
       "FluentValidation >= 11.8.1",
       "MediatR >= 12.1.1",
       "xunit >= 2.6.1"
@@ -5133,7 +5127,7 @@
           },
           "FluentAssertions": {
             "target": "Package",
-            "version": "[6.12.0, )"
+            "version": "[7.0.0-alpha.3, )"
           },
           "FluentValidation": {
             "target": "Package",

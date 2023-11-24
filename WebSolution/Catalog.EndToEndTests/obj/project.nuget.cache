@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "hPPEZ09lYL9ATChEcDZ3wkGUdHt01DqhZVb7TU8p7TAgrfZK8l6sXMlQOF5kBYeEhMIWSly71hYoTOuE0jOPaw==",
+  "dgSpecHash": "gEAw+DRVGGc8ll27rI4h5G6iE/uRNVlLNMpdwnN1kVgkpInuY9zGrprj71TkLkYCjTzAKSLT8Pxy6x2kMWgMnA==",
   "success": true,
   "projectFilePath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.EndToEndTests\\Catalog.EndToEndTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mauricio\\.nuget\\packages\\bogus\\34.0.2\\bogus.34.0.2.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
-    "C:\\Users\\mauricio\\.nuget\\packages\\fluentassertions\\6.12.0\\fluentassertions.6.12.0.nupkg.sha512",
+    "C:\\Users\\mauricio\\.nuget\\packages\\fluentassertions\\7.0.0-alpha.3\\fluentassertions.7.0.0-alpha.3.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\fluentvalidation\\11.8.1\\fluentvalidation.11.8.1.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\google.api.gax\\4.4.0\\google.api.gax.4.4.0.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\google.api.gax.rest\\4.4.0\\google.api.gax.rest.4.4.0.nupkg.sha512",
@@ -19,6 +19,7 @@
     "C:\\Users\\mauricio\\.nuget\\packages\\keycloak.authservices.authentication\\1.6.0\\keycloak.authservices.authentication.1.6.0.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\mediatr\\12.2.0\\mediatr.12.2.0.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\mauricio\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\11.1.0\\mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.1\\microsoft.aspnetcore.authentication.jwtbearer.6.0.1.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
@@ -115,5 +116,16 @@
     "C:\\Users\\mauricio\\.nuget\\packages\\xunit.extensibility.core\\2.6.2\\xunit.extensibility.core.2.6.2.nupkg.sha512",
     "C:\\Users\\mauricio\\.nuget\\packages\\xunit.extensibility.execution\\2.6.2\\xunit.extensibility.execution.2.6.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1608",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Versão detectada do pacote fora da restrição de dependência: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requer MediatR (>= 11.0.0 && < 12.0.0), mas a versão MediatR 12.2.0 foi resolvida.",
+      "libraryId": "MediatR",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

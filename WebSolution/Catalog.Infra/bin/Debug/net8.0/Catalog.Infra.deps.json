@@ -18,8 +18,8 @@
           "Microsoft.NET.Test.Sdk": "17.8.0",
           "Moq": "4.20.69",
           "RabbitMQ.Client": "7.0.0-alpha.1",
-          "xunit.assert": "2.6.2",
-          "xunit.core": "2.6.2"
+          "xunit": "2.6.2",
+          "xunit.assert": "2.6.2"
         },
         "runtime": {
           "Catalog.Infra.dll": {}
@@ -45,14 +45,14 @@
         }
       },
       "coverlet.collector/3.2.0": {},
-      "FluentAssertions/6.12.0": {
+      "FluentAssertions/7.0.0-alpha.3": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.4.0"
         },
         "runtime": {
           "lib/net6.0/FluentAssertions.dll": {
-            "assemblyVersion": "6.12.0.0",
-            "fileVersion": "6.12.0.0"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
           }
         }
       },
@@ -64,7 +64,7 @@
           }
         }
       },
-      "MediatR/12.1.1": {
+      "MediatR/12.2.0": {
         "dependencies": {
           "MediatR.Contracts": "2.0.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
@@ -72,7 +72,7 @@
         "runtime": {
           "lib/net6.0/MediatR.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.1.1.0"
+            "fileVersion": "12.2.0.0"
           }
         }
       },
@@ -587,9 +587,9 @@
         }
       },
       "System.Threading.Channels/8.0.0": {},
-      "xunit/2.6.1": {
+      "xunit/2.6.2": {
         "dependencies": {
-          "xunit.analyzers": "1.4.0",
+          "xunit.analyzers": "1.6.0",
           "xunit.assert": "2.6.2",
           "xunit.core": "2.6.2"
         }
@@ -602,7 +602,7 @@
           }
         }
       },
-      "xunit.analyzers/1.4.0": {},
+      "xunit.analyzers/1.6.0": {},
       "xunit.assert/2.6.2": {
         "runtime": {
           "lib/net6.0/xunit.assert.dll": {
@@ -645,9 +645,9 @@
         "dependencies": {
           "Catalog.Data": "1.0.0",
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
-          "MediatR": "12.1.1",
+          "MediatR": "12.2.0",
           "Moq": "4.20.69"
         },
         "runtime": {
@@ -657,7 +657,7 @@
       "Catalog.Data/1.0.0": {
         "dependencies": {
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
@@ -674,10 +674,10 @@
       "Catalog.Domain/1.0.0": {
         "dependencies": {
           "Bogus": "34.0.2",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
-          "MediatR": "12.1.1",
-          "xunit": "2.6.1"
+          "MediatR": "12.2.0",
+          "xunit": "2.6.2"
         },
         "runtime": {
           "Catalog.Domain.dll": {}
@@ -712,12 +712,12 @@
       "path": "coverlet.collector/3.2.0",
       "hashPath": "coverlet.collector.3.2.0.nupkg.sha512"
     },
-    "FluentAssertions/6.12.0": {
+    "FluentAssertions/7.0.0-alpha.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZXhHT2YwP9lajrwSKbLlFqsmCCvFJMoRSK9t7sImfnCyd0OB3MhgxdoMcVqxbq1iyxD6mD2fiackWmBb7ayiXQ==",
-      "path": "fluentassertions/6.12.0",
-      "hashPath": "fluentassertions.6.12.0.nupkg.sha512"
+      "sha512": "sha512-c5HCYKAW0vhxx8qJ6s8o683GqjfKD7HCJPGA9IOcnZVvqa8atkG0mYhHEpkp/hnC4IVhRPmX+wHjBXDyZVn+3g==",
+      "path": "fluentassertions/7.0.0-alpha.3",
+      "hashPath": "fluentassertions.7.0.0-alpha.3.nupkg.sha512"
     },
     "FluentValidation/11.8.1": {
       "type": "package",
@@ -726,12 +726,12 @@
       "path": "fluentvalidation/11.8.1",
       "hashPath": "fluentvalidation.11.8.1.nupkg.sha512"
     },
-    "MediatR/12.1.1": {
+    "MediatR/12.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1AbwzzeS6gn4NdcO6A9LfKS5TXXgAiUQM3J18dREHa7O7TrdCXJ5dNFeRBpzPZY7UWl5Kby+n9pWrPJe3SDiMA==",
-      "path": "mediatr/12.1.1",
-      "hashPath": "mediatr.12.1.1.nupkg.sha512"
+      "sha512": "sha512-8TUFrHapKi6D74PhnSNEguRsH91HNGyP3R4ZQdgDorJgl9Wac5Prh0vA33QfrniAaS6L2xNNhc6vxzg+5AIbwA==",
+      "path": "mediatr/12.2.0",
+      "hashPath": "mediatr.12.2.0.nupkg.sha512"
     },
     "MediatR.Contracts/2.0.1": {
       "type": "package",
@@ -964,12 +964,12 @@
       "path": "system.threading.channels/8.0.0",
       "hashPath": "system.threading.channels.8.0.0.nupkg.sha512"
     },
-    "xunit/2.6.1": {
+    "xunit/2.6.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SnTEV7LFf2s3GJua5AJKB/m115jDcWJSG5n02YZS05iezU2QJKjShCsOxlxL8FUO+J7h2/yXGEr+evgpIHc3sA==",
-      "path": "xunit/2.6.1",
-      "hashPath": "xunit.2.6.1.nupkg.sha512"
+      "sha512": "sha512-sErOyzTZBfgeLcdu5y3CkhCirZikCe9GwEv56jbQRjSa4FyI2tIHjfBRvlWqg7M78bfAGajrreH0IHnxrUOpVA==",
+      "path": "xunit/2.6.2",
+      "hashPath": "xunit.2.6.2.nupkg.sha512"
     },
     "xunit.abstractions/2.0.3": {
       "type": "package",
@@ -978,12 +978,12 @@
       "path": "xunit.abstractions/2.0.3",
       "hashPath": "xunit.abstractions.2.0.3.nupkg.sha512"
     },
-    "xunit.analyzers/1.4.0": {
+    "xunit.analyzers/1.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7ljnTJfFjz5zK+Jf0h2dd2QOSO6UmFizXsojv/x4QX7TU5vEgtKZPk9RvpkiuUqg2bddtNZufBoKQalsi7djfA==",
-      "path": "xunit.analyzers/1.4.0",
-      "hashPath": "xunit.analyzers.1.4.0.nupkg.sha512"
+      "sha512": "sha512-b/Wbrqr/bFvcjqAbYdJyCCvjz+PjjKMnoK/K6sbcCBu94pqAkB2vBAHFo87wNq2awsLPAuq5MA7q0XexyQ3mJQ==",
+      "path": "xunit.analyzers/1.6.0",
+      "hashPath": "xunit.analyzers.1.6.0.nupkg.sha512"
     },
     "xunit.assert/2.6.2": {
       "type": "package",

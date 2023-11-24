@@ -40,7 +40,7 @@
           "Catalog.Application": "1.0.0",
           "Catalog.Data": "1.0.0",
           "Catalog.Infra": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "Google.Cloud.Storage.V1": "4.7.0",
           "Keycloak.AuthServices.Authentication": "1.6.0",
           "Microsoft.AspNetCore.Http": "2.2.2",
@@ -393,14 +393,14 @@
         }
       },
       "coverlet.collector/3.2.0": {},
-      "FluentAssertions/6.12.0": {
+      "FluentAssertions/7.0.0-alpha.3": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.4.1"
         },
         "runtime": {
           "lib/net6.0/FluentAssertions.dll": {
-            "assemblyVersion": "6.12.0.0",
-            "fileVersion": "6.12.0.0"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
           }
         },
         "compile": {
@@ -574,6 +574,21 @@
         },
         "compile": {
           "lib/netstandard2.0/MediatR.Contracts.dll": {}
+        }
+      },
+      "MediatR.Extensions.Microsoft.DependencyInjection/11.1.0": {
+        "dependencies": {
+          "MediatR": "12.2.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "11.0.0.0",
+            "fileVersion": "11.1.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/MediatR.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.1": {
@@ -1647,8 +1662,13 @@
       },
       "catalog.API/1.0.0": {
         "dependencies": {
+          "Catalog.Application": "1.0.0",
+          "Catalog.Infra": "1.0.0",
           "FluentValidation": "11.8.1",
-          "Swashbuckle.AspNetCore": "6.5.0"
+          "MediatR": "12.2.0",
+          "MediatR.Extensions.Microsoft.DependencyInjection": "11.1.0",
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "xunit": "2.6.2"
         },
         "runtime": {
           "catalog.API.dll": {}
@@ -1661,7 +1681,7 @@
         "dependencies": {
           "Catalog.Data": "1.0.0",
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "MediatR": "12.2.0",
           "Moq": "4.20.69"
@@ -1676,7 +1696,7 @@
       "Catalog.Data/1.0.0": {
         "dependencies": {
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.NET.Test.Sdk": "17.9.0-preview-23531-01",
@@ -1696,7 +1716,7 @@
       "Catalog.Domain/1.0.0": {
         "dependencies": {
           "Bogus": "34.0.2",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "MediatR": "12.2.0",
           "xunit": "2.6.2"
@@ -1720,8 +1740,8 @@
           "Microsoft.NET.Test.Sdk": "17.9.0-preview-23531-01",
           "Moq": "4.20.69",
           "RabbitMQ.Client": "7.0.0-alpha.1",
-          "xunit.assert": "2.6.2",
-          "xunit.core": "2.6.2"
+          "xunit": "2.6.2",
+          "xunit.assert": "2.6.2"
         },
         "runtime": {
           "Catalog.Infra.dll": {}
@@ -1735,7 +1755,7 @@
           "Bogus": "34.0.2",
           "Catalog.Application": "1.0.0",
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "MediatR": "12.2.0",
           "Microsoft.NET.Test.Sdk": "17.9.0-preview-23531-01",
@@ -3584,12 +3604,12 @@
       "path": "coverlet.collector/3.2.0",
       "hashPath": "coverlet.collector.3.2.0.nupkg.sha512"
     },
-    "FluentAssertions/6.12.0": {
+    "FluentAssertions/7.0.0-alpha.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZXhHT2YwP9lajrwSKbLlFqsmCCvFJMoRSK9t7sImfnCyd0OB3MhgxdoMcVqxbq1iyxD6mD2fiackWmBb7ayiXQ==",
-      "path": "fluentassertions/6.12.0",
-      "hashPath": "fluentassertions.6.12.0.nupkg.sha512"
+      "sha512": "sha512-c5HCYKAW0vhxx8qJ6s8o683GqjfKD7HCJPGA9IOcnZVvqa8atkG0mYhHEpkp/hnC4IVhRPmX+wHjBXDyZVn+3g==",
+      "path": "fluentassertions/7.0.0-alpha.3",
+      "hashPath": "fluentassertions.7.0.0-alpha.3.nupkg.sha512"
     },
     "FluentValidation/11.8.1": {
       "type": "package",
@@ -3667,6 +3687,13 @@
       "sha512": "sha512-FYv95bNT4UwcNA+G/J1oX5OpRiSUxteXaUt2BJbRSdRNiIUNbggJF69wy6mnk2wYToaanpdXZdCwVylt96MpwQ==",
       "path": "mediatr.contracts/2.0.1",
       "hashPath": "mediatr.contracts.2.0.1.nupkg.sha512"
+    },
+    "MediatR.Extensions.Microsoft.DependencyInjection/11.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RW3etRuy6Xp63cgqfC0r/ITOtUT0f9ymJl1+1XZdzsYUsfv7WBPC2kXGOP8IYpY/6c4Q6805vbIW/88DopUs3w==",
+      "path": "mediatr.extensions.microsoft.dependencyinjection/11.1.0",
+      "hashPath": "mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/6.0.1": {
       "type": "package",

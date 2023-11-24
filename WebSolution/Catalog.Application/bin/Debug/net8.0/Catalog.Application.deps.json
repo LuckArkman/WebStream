@@ -10,9 +10,9 @@
         "dependencies": {
           "Catalog.Data": "1.0.0",
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
-          "MediatR": "12.1.1",
+          "MediatR": "12.2.0",
           "Moq": "4.20.69"
         },
         "runtime": {
@@ -39,14 +39,14 @@
         }
       },
       "coverlet.collector/3.2.0": {},
-      "FluentAssertions/6.12.0": {
+      "FluentAssertions/7.0.0-alpha.3": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.4.0"
         },
         "runtime": {
           "lib/net6.0/FluentAssertions.dll": {
-            "assemblyVersion": "6.12.0.0",
-            "fileVersion": "6.12.0.0"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
           }
         }
       },
@@ -58,7 +58,7 @@
           }
         }
       },
-      "MediatR/12.1.1": {
+      "MediatR/12.2.0": {
         "dependencies": {
           "MediatR.Contracts": "2.0.1",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0"
@@ -66,7 +66,7 @@
         "runtime": {
           "lib/net6.0/MediatR.dll": {
             "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.1.1.0"
+            "fileVersion": "12.2.0.0"
           }
         }
       },
@@ -616,7 +616,7 @@
       "Catalog.Data/1.0.0": {
         "dependencies": {
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.NET.Test.Sdk": "17.8.0",
@@ -633,9 +633,9 @@
       "Catalog.Domain/1.0.0": {
         "dependencies": {
           "Bogus": "34.0.2",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
-          "MediatR": "12.1.1",
+          "MediatR": "12.2.0",
           "xunit": "2.6.1"
         },
         "runtime": {
@@ -671,12 +671,12 @@
       "path": "coverlet.collector/3.2.0",
       "hashPath": "coverlet.collector.3.2.0.nupkg.sha512"
     },
-    "FluentAssertions/6.12.0": {
+    "FluentAssertions/7.0.0-alpha.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZXhHT2YwP9lajrwSKbLlFqsmCCvFJMoRSK9t7sImfnCyd0OB3MhgxdoMcVqxbq1iyxD6mD2fiackWmBb7ayiXQ==",
-      "path": "fluentassertions/6.12.0",
-      "hashPath": "fluentassertions.6.12.0.nupkg.sha512"
+      "sha512": "sha512-c5HCYKAW0vhxx8qJ6s8o683GqjfKD7HCJPGA9IOcnZVvqa8atkG0mYhHEpkp/hnC4IVhRPmX+wHjBXDyZVn+3g==",
+      "path": "fluentassertions/7.0.0-alpha.3",
+      "hashPath": "fluentassertions.7.0.0-alpha.3.nupkg.sha512"
     },
     "FluentValidation/11.8.1": {
       "type": "package",
@@ -685,12 +685,12 @@
       "path": "fluentvalidation/11.8.1",
       "hashPath": "fluentvalidation.11.8.1.nupkg.sha512"
     },
-    "MediatR/12.1.1": {
+    "MediatR/12.2.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1AbwzzeS6gn4NdcO6A9LfKS5TXXgAiUQM3J18dREHa7O7TrdCXJ5dNFeRBpzPZY7UWl5Kby+n9pWrPJe3SDiMA==",
-      "path": "mediatr/12.1.1",
-      "hashPath": "mediatr.12.1.1.nupkg.sha512"
+      "sha512": "sha512-8TUFrHapKi6D74PhnSNEguRsH91HNGyP3R4ZQdgDorJgl9Wac5Prh0vA33QfrniAaS6L2xNNhc6vxzg+5AIbwA==",
+      "path": "mediatr/12.2.0",
+      "hashPath": "mediatr.12.2.0.nupkg.sha512"
     },
     "MediatR.Contracts/2.0.1": {
       "type": "package",

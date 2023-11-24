@@ -11,7 +11,7 @@
           "Bogus": "34.0.2",
           "Catalog.Application": "1.0.0",
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "MediatR": "12.2.0",
           "Microsoft.NET.Test.Sdk": "17.9.0-preview-23531-01",
@@ -44,14 +44,14 @@
         }
       },
       "coverlet.collector/6.0.0": {},
-      "FluentAssertions/6.12.0": {
+      "FluentAssertions/7.0.0-alpha.3": {
         "dependencies": {
           "System.Configuration.ConfigurationManager": "4.4.0"
         },
         "runtime": {
           "lib/net6.0/FluentAssertions.dll": {
-            "assemblyVersion": "6.12.0.0",
-            "fileVersion": "6.12.0.0"
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.0.0"
           }
         }
       },
@@ -602,7 +602,7 @@
         "dependencies": {
           "Catalog.Data": "1.0.0",
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "MediatR": "12.2.0",
           "Moq": "4.20.69"
@@ -614,7 +614,7 @@
       "Catalog.Data/1.0.0": {
         "dependencies": {
           "Catalog.Domain": "1.0.0",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "Microsoft.EntityFrameworkCore": "8.0.0",
           "Microsoft.NET.Test.Sdk": "17.9.0-preview-23531-01",
@@ -631,7 +631,7 @@
       "Catalog.Domain/1.0.0": {
         "dependencies": {
           "Bogus": "34.0.2",
-          "FluentAssertions": "6.12.0",
+          "FluentAssertions": "7.0.0-alpha.3",
           "FluentValidation": "11.8.1",
           "MediatR": "12.2.0",
           "xunit": "2.6.2"
@@ -669,12 +669,12 @@
       "path": "coverlet.collector/6.0.0",
       "hashPath": "coverlet.collector.6.0.0.nupkg.sha512"
     },
-    "FluentAssertions/6.12.0": {
+    "FluentAssertions/7.0.0-alpha.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZXhHT2YwP9lajrwSKbLlFqsmCCvFJMoRSK9t7sImfnCyd0OB3MhgxdoMcVqxbq1iyxD6mD2fiackWmBb7ayiXQ==",
-      "path": "fluentassertions/6.12.0",
-      "hashPath": "fluentassertions.6.12.0.nupkg.sha512"
+      "sha512": "sha512-c5HCYKAW0vhxx8qJ6s8o683GqjfKD7HCJPGA9IOcnZVvqa8atkG0mYhHEpkp/hnC4IVhRPmX+wHjBXDyZVn+3g==",
+      "path": "fluentassertions/7.0.0-alpha.3",
+      "hashPath": "fluentassertions.7.0.0-alpha.3.nupkg.sha512"
     },
     "FluentValidation/11.8.1": {
       "type": "package",

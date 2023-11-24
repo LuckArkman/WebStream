@@ -34,7 +34,14 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj"
+              },
+              "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj": {
+                "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Infra\\Catalog.Infra.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -50,6 +57,14 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.8.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.2.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.1.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -131,7 +146,7 @@
           "dependencies": {
             "FluentAssertions": {
               "target": "Package",
-              "version": "[6.12.0, )"
+              "version": "[7.0.0-alpha.3, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -139,7 +154,7 @@
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.1.1, )"
+              "version": "[12.2.0, )"
             },
             "Moq": {
               "target": "Package",
@@ -215,7 +230,7 @@
           "dependencies": {
             "FluentAssertions": {
               "target": "Package",
-              "version": "[6.12.0, )"
+              "version": "[7.0.0-alpha.3, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -319,7 +334,7 @@
             },
             "FluentAssertions": {
               "target": "Package",
-              "version": "[6.12.0, )"
+              "version": "[7.0.0-alpha.3, )"
             },
             "FluentValidation": {
               "target": "Package",
@@ -419,7 +434,7 @@
             },
             "FluentAssertions": {
               "target": "Package",
-              "version": "[6.12.0, )"
+              "version": "[7.0.0-alpha.3, )"
             },
             "Google.Cloud.Storage.V1": {
               "target": "Package",
@@ -583,11 +598,11 @@
               "target": "Package",
               "version": "[7.0.0-alpha.1, )"
             },
-            "xunit.assert": {
+            "xunit": {
               "target": "Package",
               "version": "[2.6.2, )"
             },
-            "xunit.core": {
+            "xunit.assert": {
               "target": "Package",
               "version": "[2.6.2, )"
             }
@@ -668,7 +683,7 @@
             },
             "FluentAssertions": {
               "target": "Package",
-              "version": "[6.12.0, )"
+              "version": "[7.0.0-alpha.3, )"
             },
             "FluentValidation": {
               "target": "Package",

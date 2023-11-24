@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Catalog.EndToEndTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+681b4fc4bdc6e515fbab285b81b5f765d764043b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("Catalog.EndToEndTests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Catalog.EndToEndTests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

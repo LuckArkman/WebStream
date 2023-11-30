@@ -23,6 +23,5 @@ namespace Catalog.Application.Base
         }
         
         public void CleanInMemoryDatabase() => CreateDBContext().Database.EnsureDeleted();
-
     }
 }

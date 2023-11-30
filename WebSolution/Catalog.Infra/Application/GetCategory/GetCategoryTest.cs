@@ -1,8 +1,7 @@
-using Catalog.Application.GetCategoryTest.Categorys;
+using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
 using Catalog.Infra.Repositories;
 using FluentAssertions;
-using Moq;
 using Xunit;
 
 namespace Catalog.Infra.Application.GetCategory;
@@ -36,7 +35,7 @@ public class GetCategoryTest
         output.Description.Should().Be(_category.Description);
         output.IsActive.Should().Be(_category.IsActive);
         output.Id.Should().Be(_category.Id);
-        output.createTime.Should().Be(_category.createTime);
+        output.CreatedAt.Should().Be(_category.createTime);
     }
     
     [Fact(DisplayName = nameof(NotFoundExceptionWhenCategoryDoesntExist))]

@@ -1,7 +1,7 @@
 using Catalog.Application.Common;
 using MediatR;
 
-namespace Catalog.Application.GetCategoryTest.Categorys;
+namespace Catalog.Application.UseCases.Category;
 
 public class GetCategoryInput : IRequest<CategoryModelOutput>
 {

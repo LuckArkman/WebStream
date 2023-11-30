@@ -40,14 +40,14 @@ public class CreateCategoryTest
         _dbCategory.Name.Should().Be(output.Name);
         _dbCategory.Description.Should().Be(output.Description);
         _dbCategory.IsActive.Should().Be(output.IsActive);
-        _dbCategory.createTime.Should().Be(output.createTime);
+        _dbCategory.createTime.Should().Be(output.CreatedAt);
         
         output.Should().NotBeNull();
         output.Name.Should().Be(input.Name);
         output.Description.Should().Be(input.Description);
         output.IsActive.Should().Be(input.IsActive);
         output.Id.Should().NotBeEmpty();
-        output.createTime.Should().NotBeSameDateAs(default);
+        output.CreatedAt.Should().NotBeSameDateAs(default);
     }
 
     [Fact(DisplayName = nameof(CreateCategoryWithOnlyName))]
@@ -67,7 +67,6 @@ public class CreateCategoryTest
             _categoryRepository, unitOfWorkMock.Object
         );
         var input = new CreateCategoryInput(
-            Guid.NewGuid(),
             _fixture.GetValidCategoryName()
         );
 
@@ -78,7 +77,7 @@ public class CreateCategoryTest
         output.Description.Should().Be("");
         output.IsActive.Should().BeTrue();
         output.Id.Should().NotBeEmpty();
-        output.createTime.Should().NotBeSameDateAs(default);
+        output.CreatedAt.Should().NotBeSameDateAs(default);
     }
 
     [Fact(DisplayName = nameof(CreateCategoryWithOnlyNameAndDescription))]
@@ -99,7 +98,6 @@ public class CreateCategoryTest
             _categoryRepository, unitOfWorkMock.Object
         );
         var input = new CreateCategoryInput(
-            Guid.NewGuid(),
             _fixture.GetValidCategoryName(),
             _fixture.GetValidCategoryDescription()
         );
@@ -111,7 +109,7 @@ public class CreateCategoryTest
         output.Description.Should().Be(input.Description);
         output.IsActive.Should().BeTrue();
         output.Id.Should().NotBeEmpty();
-        output.createTime.Should().NotBeSameDateAs(default);
+        output.CreatedAt.Should().NotBeSameDateAs(default);
     }
 
     [Theory(DisplayName = nameof(ThrowWhenCantInstantiateCategory))]

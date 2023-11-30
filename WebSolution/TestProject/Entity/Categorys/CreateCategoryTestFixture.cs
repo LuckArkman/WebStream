@@ -74,11 +74,10 @@ public class CreateCategoryTestFixture : BaseFixture
 
     public bool GetRamdomBool() => (new Random()).NextDouble() < 0.5;
 
-    public CreateCategoryInput GetInput() => new(Guid.Empty,
+    public CreateCategoryInput GetInput() => new(
         GetValidCategoryName(),
         GetValidCategoryDescription(),
-        GetRamdomBool(),
-        DateTime.Now
+        GetRamdomBool()
     );
 }
 

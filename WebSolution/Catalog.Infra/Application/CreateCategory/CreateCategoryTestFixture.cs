@@ -8,7 +8,6 @@ public class CreateCategoryTestFixture : CategoryUseCaseBaseFixture
 {
     public CreateCategoryInput GetInput()
         => new(
-            Guid.NewGuid(),
             GetValidCategoryName(),
             GetValidCategoryDescription(),
             GetRamdomBool()

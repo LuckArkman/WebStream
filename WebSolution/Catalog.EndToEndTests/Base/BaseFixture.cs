@@ -7,7 +7,6 @@ namespace Catalog.EndToEndTests.Base;
 public class BaseFixture: IDisposable
 {
     protected Faker faker { get; set; }
-
     public CustomWebApplicationFactory<Program> WebAppFactory { get; set; }
     public HttpClient _httpClient { get; set; }
     public ApiClient ApiClient { get; set; }

@@ -11,7 +11,7 @@ namespace Catalog.Infra.Repositories;
 public class CategoryRepository : ICategoryRepository
 {
     CatalogDbContext _catalogDb;
-    private Catalog.Data.Configurations.CatalogDbContext catalogDbContext;
+    private CatalogDbContext catalogDbContext;
 
     DbSet<Category> _categories => _catalogDb.Set<Category>();
     public CategoryRepository(CatalogDbContext dbContext)
@@ -22,7 +22,7 @@ public class CategoryRepository : ICategoryRepository
 
     public async Task<Category> Get(Guid Id, CancellationToken cancellationToken)
     {
-       var category = await _categories.AsNoTracking().FirstOrDefaultAsync(
+       var category = await _categories.FirstOrDefaultAsync(
            x => x.Id == Id
             , cancellationToken);
 

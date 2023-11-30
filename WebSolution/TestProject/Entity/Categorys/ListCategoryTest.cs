@@ -62,7 +62,7 @@ namespace TestProject.Entity.Categorys
                 outputItem.Name.Should().Be(repositoryCategory!.Name);
                 outputItem.Description.Should().Be(repositoryCategory!.Description);
                 outputItem.IsActive.Should().Be(repositoryCategory!.IsActive);
-                outputItem.createTime.Should().Be(repositoryCategory!.createTime);
+                outputItem.CreatedAt.Should().Be(repositoryCategory!.createTime);
             });
             categoryMock.Verify(x => x.Search(
                 It.Is<SearchInput>(
@@ -120,7 +120,7 @@ namespace TestProject.Entity.Categorys
                 outputItem.Name.Should().Be(repositoryCategory!.Name);
                 outputItem.Description.Should().Be(repositoryCategory!.Description);
                 outputItem.IsActive.Should().Be(repositoryCategory!.IsActive);
-                outputItem.createTime.Should().Be(repositoryCategory!.createTime);
+                outputItem.CreatedAt.Should().Be(repositoryCategory!.createTime);
             });
             categoryMock.Verify(x => x.Search(
                 It.Is<SearchInput>(

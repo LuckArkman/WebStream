@@ -12,6 +12,9 @@
     <PackageReference Include="xunit" Version="2.6.1" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Catalog.Data">
+      <HintPath>..\Catalog.Data\bin\Debug\net8.0\Catalog.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\..\..\..\..\..\..\home\mauricio\.nuget\packages\moq\4.20.69\lib\net6.0\Moq.dll</HintPath>
     </Reference>

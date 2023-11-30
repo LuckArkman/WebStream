@@ -7,7 +7,6 @@ public static class ControllersConfiguration
 {
     public static IServiceCollection AddAndConfigureControllers(this IServiceCollection service)
     {
-        service.AddMediatR(Assembly.GetExecutingAssembly());
         service.AddControllers();
         service.Explorer();
         return service;

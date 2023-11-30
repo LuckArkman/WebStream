@@ -1,13 +1,10 @@
+using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
 using UseCase = Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
 using Catalog.Infra.Base;
-using Catalog.Infra.Repositories;
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Moq;
 using Xunit;
 
 namespace Catalog.Infra.Application.DeleteCategory;

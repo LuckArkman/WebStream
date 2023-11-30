@@ -6,16 +6,18 @@ namespace Catalog.Application.UseCases.Category
 {
     public class ListCategories : IListCategories
     {
-        private readonly ICategoryRepository _categoryRepository;
+        private readonly ICategoryRepository _repository;
 
-        public ListCategories(ICategoryRepository categoryRepository) 
-            => _categoryRepository = categoryRepository;
+        public ListCategories(ICategoryRepository categoryRepository)
+        {
+            _repository = categoryRepository;
+        }
 
         public async Task<ListCategoriesOutput> Handle(
             ListCategoriesInput request, 
             CancellationToken cancellationToken)
         {
-            var searchOutput = await _categoryRepository.Search(
+            var searchOutput = await _repository.Search(
                 new(
                     request.Page, 
                     request.PerPage, 

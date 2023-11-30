@@ -1,7 +1,7 @@
 using Catalog.Application.Common;
+using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Enum;
-using Catalog.Infra.Repositories;
 using FluentAssertions;
 using Xunit;
 
@@ -46,7 +46,7 @@ public class ListCategoriesTest
             outputItem.Name.Should().Be(exampleItem!.Name);
             outputItem.Description.Should().Be(exampleItem.Description);
             outputItem.IsActive.Should().Be(exampleItem.IsActive);
-            outputItem.createTime.Should().Be(exampleItem.createTime);
+            outputItem.CreatedAt.Should().Be(exampleItem.createTime);
         }
     }
 
@@ -113,7 +113,7 @@ public class ListCategoriesTest
             outputItem.Name.Should().Be(exampleItem!.Name);
             outputItem.Description.Should().Be(exampleItem.Description);
             outputItem.IsActive.Should().Be(exampleItem.IsActive);
-            outputItem.createTime.Should().Be(exampleItem.createTime);
+            outputItem.CreatedAt.Should().Be(exampleItem.createTime);
         }
     }
 
@@ -175,7 +175,7 @@ public class ListCategoriesTest
             outputItem.Name.Should().Be(exampleItem!.Name);
             outputItem.Description.Should().Be(exampleItem.Description);
             outputItem.IsActive.Should().Be(exampleItem.IsActive);
-            outputItem.createTime.Should().Be(exampleItem.createTime);
+            outputItem.CreatedAt.Should().Be(exampleItem.createTime);
         }
     }
 
@@ -227,7 +227,7 @@ public class ListCategoriesTest
             outputItem.Id.Should().Be(exampleItem.Id);
             outputItem.Description.Should().Be(exampleItem.Description);
             outputItem.IsActive.Should().Be(exampleItem.IsActive);
-            outputItem.createTime.Should().Be(exampleItem.createTime);
+            outputItem.CreatedAt.Should().Be(exampleItem.createTime);
         }
     }
 }

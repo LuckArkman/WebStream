@@ -1,6 +1,6 @@
 using Catalog.Application.GetCategoryTest.Categorys;
+using Catalog.Application.UseCases.Category;
 using FluentAssertions;
-using Moq;
 using TestProject.Entity.GetCategory;
 using Xunit;
 

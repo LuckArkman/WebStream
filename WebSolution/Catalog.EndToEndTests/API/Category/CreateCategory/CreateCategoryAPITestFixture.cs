@@ -9,7 +9,6 @@ public class CreateCategoryAPITestFixture
 {
     public CreateCategoryInput getExampleInput()
         => new(
-            Guid.NewGuid(),
             GetValidCategoryName(),
             GetValidCategoryDescription(),
             getRandomBoolean()

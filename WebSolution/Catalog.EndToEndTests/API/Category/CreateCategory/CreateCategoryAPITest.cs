@@ -1,8 +1,6 @@
-using System.ComponentModel;
 using System.Net;
 using Catalog.Application.Common;
 using Catalog.Application.UseCases.Category;
-using Catalog.EndToEndTests.API.Models;
 using FluentAssertions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +24,7 @@ namespace Catalog.EndToEndTests.API.Category.CreateCategory
             var input = _fixture.getExampleInput();
 
             var (response,output) = await _fixture.ApiClient.Post<CategoryModelOutput>(
-                "/categories",input);
+                "/categorys",input);
 
             response.Should().NotBeNull();
             response!.StatusCode.Should().Be(HttpStatusCode.Created);
@@ -35,7 +33,7 @@ namespace Catalog.EndToEndTests.API.Category.CreateCategory
             output.Description.Should().Be(input.Description);
             output.IsActive.Should().Be(input.IsActive);
             output.Id.Should().NotBeEmpty();
-            output.createTime.Should().NotBeSameDateAs(default);
+            output.CreatedAt.Should().NotBeSameDateAs(default);
             var dbCategory = await _fixture.Persistence.GetById(output.Id);
             dbCategory.Should().NotBeNull();
             dbCategory!.Name.Should().Be(input.Name);
@@ -44,18 +42,22 @@ namespace Catalog.EndToEndTests.API.Category.CreateCategory
             dbCategory.Id.Should().NotBeEmpty();
             dbCategory.createTime.Should().NotBeSameDateAs(default);
         }
-        /*
-        [Theory(DisplayName = nameof(ErrorWhenCantInstantiateAggregate))]
+        
+        [Xunit.Theory(DisplayName = nameof(ErrorWhenCantInstantiate))]
         [Trait("CreateCategoryApiTest", "CreateCategoryApiTest - Endpoints")]
-        [MemberData(nameof(CreateCategoryAPITestDataGenerator.GetInvalidInputs),
-            5,
-            MemberType = typeof(CreateCategoryAPITestDataGenerator))]
-        public async Task ErrorWhenCantInstantiateAggregate(CreateCategoryInput input,string expectedDetail)
-        {
-            var (response, output) = await _fixture.ApiClient.Post<ProblemDetails>(
-                "/categories",
-                input
-            );
+        [MemberData(
+            nameof(CreateCategoryAPITestDataGenerator.GetInvalidInputs),
+            MemberType = typeof(CreateCategoryAPITestDataGenerator)
+        )]
+        public async Task ErrorWhenCantInstantiate(
+            CreateCategoryInput input,
+            string expectedDetail
+        ){
+            var (response, output) = await _fixture.
+                ApiClient.Post<ProblemDetails>(
+                    "/categories",
+                    input
+                );
 
             response.Should().NotBeNull();
             response!.StatusCode.Should().Be(HttpStatusCode.UnprocessableEntity);
@@ -65,7 +67,6 @@ namespace Catalog.EndToEndTests.API.Category.CreateCategory
             output.Status.Should().Be((int)StatusCodes.Status422UnprocessableEntity);
             output.Detail.Should().Be(expectedDetail);
         }
-        */
 
         public void Dispose()
             => _fixture.CleanPersistence();

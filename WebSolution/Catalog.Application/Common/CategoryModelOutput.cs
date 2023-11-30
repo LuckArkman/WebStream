@@ -1,27 +1,32 @@
 using Catalog.Domain.Entitys;
-using System;
 
 namespace Catalog.Application.Common;
 
 public class CategoryModelOutput
 {
-    public CategoryModelOutput(Guid id, string name, string? description = null, bool isActive = true, DateTime? createdAt = null)
-    {
-        Id = id ;
-        Name = name;
-        Description = description ?? "";
-        IsActive = isActive;
-        createTime = createdAt ?? DateTime.Now;
-
-    }
     public Guid Id { get; set; }
     public string Name { get; set; }
-    public string? Description { get; set; }
+    public string Description { get; set; }
     public bool IsActive { get; set; }
-    public DateTime? createTime { get; set; }
-    
+    public DateTime CreatedAt { get; set; }
+
+    public CategoryModelOutput(
+        Guid id,
+        string name,
+        string description,
+        bool isActive,
+        DateTime createdAt
+    )
+    {
+        Id = id;
+        Name = name;
+        Description = description;
+        IsActive = isActive;
+        CreatedAt = createdAt;
+    }
+
     public static CategoryModelOutput FromCategory(Category category)
-        => new (
+        => new(
             category.Id,
             category.Name,
             category.Description,

@@ -41,7 +41,7 @@ public class CreateCategoryTest
         output.Description.Should().Be(input.Description);
         output.IsActive.Should().Be(input.IsActive);
         output.Id.Should().NotBeEmpty();
-        output.createTime.Should().NotBeSameDateAs(default(DateTime));
+        output.CreatedAt.Should().NotBeSameDateAs(default(DateTime));
     }
     [Theory(DisplayName = nameof(CreateCategoryThrowWhenInstantiate))]
     [Trait("CreateCategoryTest", "CreateCategory - Use Cases")]
@@ -76,11 +76,9 @@ public class CreateCategoryTest
         );
         
         var input = new CreateCategoryInput(
-            null,
             _fixture.GetValidCategoryName(),
             "",
-            true,
-            null
+            true
             
         );
         
@@ -98,7 +96,7 @@ public class CreateCategoryTest
         output.Description.Should().Be("");
         output.IsActive.Should().Be(input.IsActive);
         output.Id.Should().NotBeEmpty();
-        output.createTime.Should().NotBeSameDateAs(default(DateTime));
+        output.CreatedAt.Should().NotBeSameDateAs(default(DateTime));
     }
     
     [Fact(DisplayName = nameof(CreateCategoryOnlyNameAndDescription))]
@@ -114,11 +112,9 @@ public class CreateCategoryTest
         );
         
         var input = new CreateCategoryInput(
-            null,
             _fixture.GetValidCategoryName(),
             _fixture.GetValidCategoryDescription(),
-            true,
-            null
+            true
             
         );
         
@@ -136,6 +132,6 @@ public class CreateCategoryTest
         output.Description.Should().Be(input.Description);
         output.IsActive.Should().Be(input.IsActive);
         output.Id.Should().NotBeEmpty();
-        output.createTime.Should().NotBeSameDateAs(default(DateTime));
+        output.CreatedAt.Should().NotBeSameDateAs(default(DateTime));
     }
 }

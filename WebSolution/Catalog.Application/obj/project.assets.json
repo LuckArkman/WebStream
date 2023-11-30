@@ -151,6 +151,22 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.InMemory/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
         "type": "package",
         "dependencies": {
@@ -1139,6 +1155,20 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.8.0.0.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.InMemory/8.0.0": {
+      "sha512": "/pT9FOO0BxGSRscK/ekEb6TdiP3+nnyhPLElE1yuVG/QaZLaBAuM3RoywBHdIxWoFALaOS7ktXlKzuMX3khJ4A==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.inmemory/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.InMemory.xml",
+        "microsoft.entityframeworkcore.inmemory.8.0.0.nupkg.sha512",
+        "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/8.0.0": {
@@ -2168,50 +2198,40 @@
       "FluentAssertions >= 7.0.0-alpha.3",
       "FluentValidation >= 11.8.1",
       "MediatR >= 11.1.0",
+      "Microsoft.EntityFrameworkCore.InMemory >= 8.0.0",
       "Moq >= 4.20.69"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mauricio\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "/home/mauricio/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj",
+      "projectUniqueName": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj",
       "projectName": "Catalog.Application",
-      "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\Catalog.Application.csproj",
-      "packagesPath": "C:\\Users\\mauricio\\.nuget\\packages\\",
-      "outputPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Application\\obj\\",
+      "projectPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj",
+      "packagesPath": "/home/mauricio/.nuget/packages/",
+      "outputPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Application/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\mauricio\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "/home/mauricio/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj": {
-              "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Data\\Catalog.Data.csproj"
+            "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj": {
+              "projectPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj"
             },
-            "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj": {
-              "projectPath": "D:\\AzureProjects\\Git\\WebStream\\WebSolution\\Catalog.Domain\\Catalog.Domain.csproj"
+            "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {
+              "projectPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj"
             }
           }
         }
@@ -2238,6 +2258,10 @@
             "target": "Package",
             "version": "[11.1.0, )"
           },
+          "Microsoft.EntityFrameworkCore.InMemory": {
+            "target": "Package",
+            "version": "[8.0.0, )"
+          },
           "Moq": {
             "target": "Package",
             "version": "[4.20.69, )"
@@ -2259,7 +2283,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/current/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

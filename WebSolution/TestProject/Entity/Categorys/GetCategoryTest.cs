@@ -1,4 +1,5 @@
 using Catalog.Application.GetCategoryTest.Categorys;
+using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
 using FluentAssertions;
 using Moq;
@@ -43,7 +44,7 @@ public class GetCategoryTest
         output.Description.Should().Be(_category.Description);
         output.IsActive.Should().Be(_category.IsActive);
         output.Id.Should().Be(_category.Id);
-        output.createTime.Should().Be(_category.createTime);
+        output.CreatedAt.Should().Be(_category.createTime);
 
     }
     

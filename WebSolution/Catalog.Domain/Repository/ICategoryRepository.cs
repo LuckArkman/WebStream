@@ -1,3 +1,4 @@
+using Catalog.Data.Configurations;
 using Catalog.Domain.Entitys;
 using Catalog.Domain.SeedWork;
 
@@ -5,16 +6,7 @@ namespace Catalog.Domain.Repository;
 
 public interface ICategoryRepository : IGenericRepository<Category>, ISearchableRepository<Category>
 {
-    
-    public Task<IReadOnlyList<Guid>> GetIdsListByIds(
-        List<Guid> ids,
-        CancellationToken cancellationToken
-    );
-    
-    public Task<IReadOnlyList<Guid>> GetListByIds(
-        List<Guid> ids,
-        CancellationToken cancellationToken
-    );
+    public CatalogDbContext _catalogDb { get; set; }
 
     public Task Update(
         Category _category,

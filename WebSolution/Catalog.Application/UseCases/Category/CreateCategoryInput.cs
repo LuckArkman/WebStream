@@ -5,17 +5,15 @@ namespace Catalog.Application.UseCases.Category;
 
 public class CreateCategoryInput : IRequest<CategoryModelOutput>
 {
-    public CreateCategoryInput(Guid? id = null, string? name = null, string? description = null, bool isActive = true, DateTime? createdAt = null)
+    public CreateCategoryInput(string name, string? description = null, bool isActive = true)
     {
-        Id = id ?? Guid.NewGuid();
         Name = name;
         Description = description ?? "";
         IsActive = isActive;
-        createTime = createdAt ?? DateTime.Now;
 
     }
     public Guid? Id { get; set; }
-    public string? Name { get; set; }
+    public string Name { get; set; }
     public string? Description { get; set; }
     public bool IsActive { get; set; }
     public DateTime? createTime { get; set; }

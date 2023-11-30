@@ -1,4 +1,5 @@
 using Castle.DynamicProxy;
+using Catalog.Application.UseCases.Category;
 using FluentValidation;
 
 namespace Catalog.Application.GetCategoryTest.Categorys;

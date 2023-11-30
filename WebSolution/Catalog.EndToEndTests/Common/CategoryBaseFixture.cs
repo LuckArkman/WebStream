@@ -1,10 +1,10 @@
-using Bogus;
 using Catalog.Domain.Entitys;
 using Catalog.EndToEndTests.Base;
 
 namespace Catalog.EndToEndTests.Common;
 
-public class CategoryBaseFixture : BaseFixture
+public class CategoryBaseFixture
+    : BaseFixture
 {
     public CategoryPersistence Persistence;
 

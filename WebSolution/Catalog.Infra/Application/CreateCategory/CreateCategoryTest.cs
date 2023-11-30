@@ -1,10 +1,8 @@
-using Catalog.Application.Repositories;
+using Catalog.Application.Base;
 using Catalog.Application.UseCases.Category;
 using UseCases = Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
-using Catalog.Infra.Base;
 using FluentAssertions;
-using Moq;
 using Xunit;
 
 namespace Catalog.Infra.Application.CreateCategory;

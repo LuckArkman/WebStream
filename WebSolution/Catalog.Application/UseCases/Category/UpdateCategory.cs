@@ -1,15 +1,15 @@
 using Catalog.Application.Common;
 using Catalog.Application.Interfaces;
-using Catalog.Domain.Repository;
+using Catalog.Application.Repositories;
 
 namespace Catalog.Application.UseCases.Category;
 
 public class UpdateCategory : IUpdateCategory
 {
-    public readonly IunityOfWork _unityOfWork;
+    public readonly IUnityOfWork _unityOfWork;
     public readonly ICategoryRepository _categoryRepository;
 
-    public UpdateCategory(ICategoryRepository categoryRepository, IunityOfWork unityOfWork)
+    public UpdateCategory(ICategoryRepository categoryRepository, IUnityOfWork unityOfWork)
         => (_categoryRepository, _unityOfWork) = (categoryRepository, unityOfWork);
 
     public async Task<CategoryModelOutput> Handle(UpdateCategoryInput request, CancellationToken cancellationToken)

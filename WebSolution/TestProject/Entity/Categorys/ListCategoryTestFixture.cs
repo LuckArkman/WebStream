@@ -1,4 +1,5 @@
 using Catalog.Application.Interfaces;
+using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Entitys;
 using Catalog.Domain.Enum;
@@ -10,8 +11,8 @@ namespace TestProject.Entity.Categorys
 {
     public class ListCategoryTestFixture : BaseFixture
     {
-        public Mock<ICategoryRepository> GetcategoryMock() => new Mock<ICategoryRepository>();
-        public Mock<IunityOfWork> GetunityOfWorkMock() => new Mock<IunityOfWork>();
+        public Mock<ICategoryRepository> GetcategoryMock() => new ();
+        public Mock<IUnityOfWork> GetunityOfWorkMock() => new ();
 
         public string GetValidCategoryName()
         {

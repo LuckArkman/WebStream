@@ -1,3 +1,4 @@
+using Catalog.Application.Base;
 using Catalog.Domain.Entitys;
 using Xunit;
 using FluentAssertions;

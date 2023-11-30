@@ -1,8 +1,6 @@
-using Catalog.Application.Repositories;
+using Catalog.Application.Base;
 using Catalog.Application.UseCases.Category;
-using UseCase = Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
-using Catalog.Infra.Base;
 using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Xunit;

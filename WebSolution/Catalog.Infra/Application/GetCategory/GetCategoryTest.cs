@@ -1,3 +1,4 @@
+using Catalog.Application.Base;
 using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;

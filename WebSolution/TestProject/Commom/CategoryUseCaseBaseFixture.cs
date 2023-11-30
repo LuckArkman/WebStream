@@ -1,6 +1,6 @@
 using Catalog.Application.Interfaces;
+using Catalog.Application.Repositories;
 using Catalog.Domain.Entitys;
-using Catalog.Domain.Repository;
 using Moq;
 using TestProject.Entity.Common;
 
@@ -10,7 +10,7 @@ namespace TestProject.Commom
     {
 
         public Mock<ICategoryRepository> GetcategoryMock() => new ();
-        public Mock<IunityOfWork> GetunityOfWorkMock() => new ();
+        public Mock<IUnityOfWork> GetunityOfWorkMock() => new ();
 
 
         public bool GetRamdomBool() => (new Random()).NextDouble() < 0.5;

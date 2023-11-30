@@ -1,15 +1,14 @@
 using Catalog.Application.Common;
-using Catalog.Application.Interfaces;
-using Catalog.Domain.Repository;
+using Catalog.Application.Repositories;
 
 namespace Catalog.Application.UseCases.Category;
 
 public class CreateCategory : ICreateCategory
 {
-    public readonly IunityOfWork _unityOfWork;
+    public readonly IUnityOfWork _unityOfWork;
     public readonly ICategoryRepository _categoryRepository;
 
-    public CreateCategory(ICategoryRepository categoryRepository, IunityOfWork unityOfWork)
+    public CreateCategory(ICategoryRepository categoryRepository, IUnityOfWork unityOfWork)
     {
         this._categoryRepository = categoryRepository;
         this._unityOfWork = unityOfWork;

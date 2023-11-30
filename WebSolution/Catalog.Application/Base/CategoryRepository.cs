@@ -1,12 +1,12 @@
+using Catalog.Application.Repositories;
 using Catalog.Data.Configurations;
 using Catalog.Domain.Entitys;
 using Catalog.Domain.Enum;
 using Catalog.Domain.Exceptions;
-using Catalog.Domain.Repository;
 using Catalog.Domain.SeedWork;
 using Microsoft.EntityFrameworkCore;
 
-namespace Catalog.Application.Repositories;
+namespace Catalog.Application.Base;
 
 public class CategoryRepository : ICategoryRepository
 {
@@ -17,15 +17,12 @@ public class CategoryRepository : ICategoryRepository
     => _catalogDb = dbContext;
 
     public async Task Insert(Category category, CancellationToken none)
-    {
-        await _catalogDb.AddRangeAsync(category);
-        await _catalogDb.SaveChangeAsync(none);
-        await _categories.AddAsync(category, none);
-    }
+        => await _categories.AddRangeAsync(category);
 
     public async Task<Category> Get(Guid Id, CancellationToken cancellationToken)
     {
-        var category = await _catalogDb.Get(Id, cancellationToken);
+        var category = await _categories.AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
+
        if (category is null)NotFoundException.ThrowIfNull(category,$"Category '{Id}' not found.");
        return category!;
     }

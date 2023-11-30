@@ -13,6 +13,7 @@ public class GetCategoryUseCase: IGetCategory
 
     public async Task<CategoryModelOutput> Handle(GetCategoryInput request, CancellationToken cancellationToken)
     {
+        
         var category = await _category.Get(request.Id, cancellationToken);
         return CategoryModelOutput.FromCategory(category);
 

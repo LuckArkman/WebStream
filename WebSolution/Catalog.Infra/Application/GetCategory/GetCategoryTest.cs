@@ -1,6 +1,6 @@
+using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Exceptions;
-using Catalog.Infra.Repositories;
 using FluentAssertions;
 using Xunit;
 

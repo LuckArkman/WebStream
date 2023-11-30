@@ -1,8 +1,6 @@
-﻿using Catalog.Application.Interfaces;
+﻿using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Repository;
-using Catalog.Infra.Base;
-using Catalog.Infra.Repositories;
 using MediatR;
 
 namespace catalog.API.Configurations;

@@ -10,23 +10,23 @@ namespace Catalog.Application.Repositories;
 
 public class CategoryRepository : ICategoryRepository
 {
-    CatalogDbContext _catalogDb;
-    private Catalog.Data.Configurations.CatalogDbContext catalogDbContext;
+    public CatalogDbContext _catalogDb { get; set; }
 
-    DbSet<Category> _categories => _catalogDb.Set<Category>();
+    public DbSet<Category> _categories => _catalogDb.Set<Category>();
     public CategoryRepository(CatalogDbContext dbContext)
     => _catalogDb = dbContext;
 
     public async Task Insert(Category category, CancellationToken none)
-    => await _categories.AddAsync(category, none);
+    {
+        await _catalogDb.AddRangeAsync(category);
+        await _catalogDb.SaveChangeAsync(none);
+        await _categories.AddAsync(category, none);
+    }
 
     public async Task<Category> Get(Guid Id, CancellationToken cancellationToken)
     {
-       var category = await _categories.AsNoTracking().FirstOrDefaultAsync(
-           x => x.Id == Id
-            , cancellationToken);
-
-       if (category == null)NotFoundException.ThrowIfNull(category,$"Category '{Id}' not found.");
+        var category = await _catalogDb.Get(Id, cancellationToken);
+       if (category is null)NotFoundException.ThrowIfNull(category,$"Category '{Id}' not found.");
        return category!;
     }
 
@@ -34,10 +34,6 @@ public class CategoryRepository : ICategoryRepository
     =>Task.FromResult(_categories.Remove(tAggregate));
 
     public async Task Update(Category _category, CancellationToken cancellationToken) => await Task.FromResult(_categories.Update(_category));
-
-    public Task<IReadOnlyList<Guid>> GetIdsListByIds(List<Guid> ids, CancellationToken cancellationToken) => null;
-
-    public Task<IReadOnlyList<Guid>> GetListByIds(List<Guid> ids, CancellationToken cancellationToken) => null;
 
     public async Task<SearchOutput<Category>> Search(
         SearchInput input, 

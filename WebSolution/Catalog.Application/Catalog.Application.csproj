@@ -18,4 +18,9 @@
   <ItemGroup>
     <Folder Include="Extencions\" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Catalog.Domain">
+      <HintPath>..\Catalog.Data\bin\Debug\net8.0\Catalog.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

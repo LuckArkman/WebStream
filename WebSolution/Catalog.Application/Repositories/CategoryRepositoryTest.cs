@@ -1,4 +1,3 @@
-using System.Collections.ObjectModel;
 using Catalog.Domain.Entitys;
 using Xunit;
 using FluentAssertions;

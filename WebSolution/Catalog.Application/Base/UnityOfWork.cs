@@ -1,5 +1,6 @@
 using Catalog.Application.Interfaces;
 using Catalog.Data.Configurations;
+using Catalog.Domain.Repository;
 
 namespace Catalog.Application.Base;
 

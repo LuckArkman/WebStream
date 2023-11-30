@@ -32,10 +32,11 @@ public class CategoriesController : ControllerBase
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(CategoryModelOutput), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> GetById([FromRoute] Guid id, CancellationToken cancellationToken
     )
     {
-        var output = await _mediator.Send(new GetCategoryInput(id), cancellationToken);
+        var output = await _mediator.Send(new  GetCategoryInput(id), cancellationToken);
         return Ok(output);
     }
 }

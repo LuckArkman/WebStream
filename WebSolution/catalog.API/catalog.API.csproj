@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Catalog.Application\Catalog.Application.csproj" />
+      <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
       <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
     </ItemGroup>
 

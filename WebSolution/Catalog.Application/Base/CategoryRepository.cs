@@ -16,20 +16,34 @@ public class CategoryRepository : ICategoryRepository
 
     public DbSet<Category> _categories => _catalogDb.Set<Category>();
     public CategoryRepository(CatalogDbContext dbContext)
-    => _catalogDb = dbContext;
+        => _catalogDb = Singleton._instance()._catalogDb;
 
     public async Task Insert(Category category, CancellationToken none)
-        =>await _categories.AddAsync(category);
+    {
+        _catalogDb = Singleton._instance()._catalogDb;
+        Singleton._instance()._Categories.Add(category);
+        await _categories.AddAsync(category);
+        Singleton._instance()._catalogDb.SaveChangeAsync(none);
+
+    }
 
     public async Task<Category> Get(Guid Id, CancellationToken cancellationToken)
     {
-        var category = await _categories.AsNoTracking().FirstOrDefaultAsync( c => c.Id == Id, cancellationToken);
-       if (category is null)NotFoundException.ThrowIfNull(category,$"Category '{Id}' not found.");
-       return category!;
+        Category? category = null;
+        foreach (var c in Singleton._instance()._Categories)
+        {
+            if (c.Id == Id)
+            {
+                category = c;
+                break;
+            }
+        }
+        if (category == null)NotFoundException.ThrowIfNull(category,$"Category '{Id}' not found.");
+        return category;
     }
 
     public Task Delete(Category tAggregate, CancellationToken cancellationToken)
-    =>Task.FromResult(_categories.Remove(tAggregate));
+        =>Task.FromResult(_categories.Remove(tAggregate));
 
     public async Task Update(Category _category, CancellationToken cancellationToken) => await Task.FromResult(_categories.Update(_category));
 

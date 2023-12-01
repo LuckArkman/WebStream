@@ -20,7 +20,7 @@ public class GetCategoryTest
     {
         var _Id = Guid.NewGuid().ToString();
         var repositoryMock = _fixture.GetcategoryMock();
-        var _categoryDB = _fixture.CreateDBContext(false, _Id);
+        var _categoryDB = _fixture.CreateDBContext();
         var _category = _fixture.GetValidCategory();
         _categoryDB.Categories.Add(_category);
         _categoryDB.SaveChanges();

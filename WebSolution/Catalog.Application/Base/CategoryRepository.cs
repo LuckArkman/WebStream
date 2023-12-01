@@ -17,12 +17,13 @@ public class CategoryRepository : ICategoryRepository
     => _catalogDb = dbContext;
 
     public async Task Insert(Category category, CancellationToken none)
-        => await _categories.AddRangeAsync(category);
+    {
+        await _categories.AddRangeAsync(category);
+    }
 
     public async Task<Category> Get(Guid Id, CancellationToken cancellationToken)
     {
-        var category = await _categories.AsNoTracking().FirstOrDefaultAsync(c => c.Id == Id);
-
+        var category = await _categories.FindAsync( Id);
        if (category is null)NotFoundException.ThrowIfNull(category,$"Category '{Id}' not found.");
        return category!;
     }

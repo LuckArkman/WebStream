@@ -2,6 +2,6 @@
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002F6E6236376236047D_002FAzureProjects_002FGit_002FWebStream_002FWebSolution_002FCatalog_002EData_002Fbin_002FDebug_002Fnet8_002E0_002FCatalog_002EData_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002F6E6236376236047D_002FAzureProjects_002FGit_002FWebStream_002FWebSolution_002FCatalog_002EData_002Fbin_002FDebug_002Fnet8_002E0_002FCatalog_002EDomain_002Edll/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002Fmnt_002F6E6236376236047D_002FAzureProjects_002FGit_002FWebStream_002FWebSolution_002FCatalog_002EDomain_002Fbin_002FDebug_002Fnet8_002E0_002FCatalog_002EDomain_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6caadd6c_002D20c7_002D40e2_002Da5f8_002Db0d187279d37/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;Solution /&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6caadd6c_002D20c7_002D40e2_002Da5f8_002Db0d187279d37/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="All tests from Solution" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Solution /&gt;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

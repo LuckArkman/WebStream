@@ -31,7 +31,7 @@ public class GetCategoryTest
         
         
         var input = new GetCategoryInput(_category.Id);
-        var useCase = new GetCategoryUseCase(_categoryMock.Object);
+        var useCase = new Catalog.Application.GetCategoryTest.Categorys.GetCategory(_categoryMock.Object);
         var output = await useCase.Handle(input, CancellationToken.None);
             
         _categoryMock.Verify(x => x.Get(
@@ -62,7 +62,7 @@ public class GetCategoryTest
         
         
         var input = new GetCategoryInput(newGuid);
-        var useCase = new GetCategoryUseCase(_categoryMock.Object);
+        var useCase = new Catalog.Application.GetCategoryTest.Categorys.GetCategory(_categoryMock.Object);
         
         var Task = async () => await useCase.Handle(input, CancellationToken.None);
         

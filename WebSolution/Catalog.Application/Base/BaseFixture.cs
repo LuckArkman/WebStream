@@ -10,7 +10,7 @@ namespace Catalog.Application.Base
 
         protected Faker faker { get; set; }
         
-        public CatalogDbContext CreateDBContext(bool preserveData = false, string _Id = "")
+        public CatalogDbContext CreateDBContext()
         {
             
             var context = new CatalogDbContext(
@@ -18,10 +18,7 @@ namespace Catalog.Application.Base
                     .UseInMemoryDatabase($"integration-tests-db")
                     .Options
             );
-            if (preserveData == false) context.Database.EnsureDeleted();
             return context;
         }
-        
-        public void CleanInMemoryDatabase() => CreateDBContext().Database.EnsureDeleted();
     }
 }

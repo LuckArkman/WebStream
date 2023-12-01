@@ -1,3 +1,4 @@
+using Catalog.Application.Base;
 using Catalog.Domain.Entitys;
 using Xunit;
 using FluentAssertions;
@@ -8,7 +9,7 @@ using Catalog.Domain.Enum;
 namespace Catalog.Application.Repositories
 {
     [Collection(nameof(CategoryRepositoryTestFixture))]
-    public class CategoryRepositoryTest : IDisposable
+    public class CategoryRepositoryTest 
     {
         readonly CategoryRepositoryTestFixture _fixture;
 
@@ -333,11 +334,6 @@ namespace Catalog.Application.Repositories
                 outputItem.Should().NotBeNull();
                 outputItem.Name.Should().Be(expectedItem!.Name);
             }
-        }
-
-        public void Dispose()
-        {
-            _fixture.CleanInMemoryDatabase();
         }
     }
 }

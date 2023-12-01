@@ -1,6 +1,5 @@
-using Catalog.Application.Interfaces;
+using Catalog.Application.Repositories;
 using Catalog.Domain.Entitys;
-using Catalog.Domain.Repository;
 using Catalog.Infra.Base;
 using Moq;
 
@@ -9,7 +8,7 @@ namespace Catalog.Infra.Common;
 public class CategoryUseCaseBaseFixture : BaseFixture
 {
     public Mock<ICategoryRepository> GetcategoryMock() => new ();
-    public Mock<IunityOfWork> GetunityOfWorkMock() => new ();
+    public Mock<IUnityOfWork> GetunityOfWorkMock() => new ();
     
     public bool GetRamdomBool() => (new Random()).NextDouble() < 0.5;
     

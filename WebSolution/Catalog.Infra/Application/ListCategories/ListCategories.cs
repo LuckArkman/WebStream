@@ -1,5 +1,6 @@
 using Catalog.Application.Common;
 using Catalog.Application.Interfaces;
+using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
 using Catalog.Domain.Repository;
 

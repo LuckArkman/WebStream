@@ -1,6 +1,6 @@
 using Catalog.Application.UseCases.Category;
 using Catalog.Application.Interfaces;
-using Catalog.Domain.Repository;
+using Catalog.Application.Repositories;
 using MediatR;
 
 namespace Catalog.Infra.Application.DeleteCategory;
@@ -8,9 +8,9 @@ namespace Catalog.Infra.Application.DeleteCategory;
 public class DeleteCategory : IDeleteCategory
 {
     private readonly ICategoryRepository _categoryRepository;
-    private readonly IunityOfWork _unitOfWork;
+    private readonly IUnityOfWork _unitOfWork;
 
-    public DeleteCategory(ICategoryRepository categoryRepository, IunityOfWork unitOfWork)
+    public DeleteCategory(ICategoryRepository categoryRepository, IUnityOfWork unitOfWork)
         => (_categoryRepository, _unitOfWork) = (categoryRepository, unitOfWork);
 
     public async Task<Unit> Handle(DeleteCategoryInput request, CancellationToken cancellationToken)

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {}
+    "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {}
   },
   "projects": {
-    "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {
+    "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj",
+        "projectUniqueName": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj",
         "projectName": "Catalog.Domain",
-        "projectPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj",
+        "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj",
         "packagesPath": "/home/mauricio/.nuget/packages/",
-        "outputPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/obj/",
+        "outputPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/mauricio/.nuget/NuGet/NuGet.Config"

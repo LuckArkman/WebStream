@@ -5,10 +5,6 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
-    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="7.0.0-alpha.3" />
     <PackageReference Include="FluentValidation" Version="11.8.1" />
     <PackageReference Include="MediatR" Version="11.1.0" />
@@ -19,8 +15,7 @@
     <Folder Include="Extencions\" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Catalog.Domain">
-      <HintPath>..\Catalog.Data\bin\Debug\net8.0\Catalog.Domain.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
+    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
   </ItemGroup>
 </Project>

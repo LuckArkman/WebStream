@@ -1,6 +1,5 @@
-using Catalog.Application.Interfaces;
+using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
-using Catalog.Domain.Repository;
 using Moq;
 using TestProject.Entity.Common;
 using Xunit;
@@ -10,7 +9,7 @@ namespace TestProject.Entity.Categorys;
 public class CreateCategoryTestFixture : BaseFixture
 {
     public Mock<ICategoryRepository> GetcategoryMock() => new Mock<ICategoryRepository>();
-    public Mock<IunityOfWork> GetunityOfWorkMock() => new Mock<IunityOfWork>();
+    public Mock<IUnityOfWork> GetunityOfWorkMock() => new Mock<IUnityOfWork>();
     public string GetValidCategoryName(){
         var categoryName = "";
         while(categoryName.Length < 3)

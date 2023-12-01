@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aFfXGEAFEvyrq0A6+tW3n5jN6d6KlIMDYw1Gfmu0iEKcy1VUKnSmjFGkoWkIaCSBG8UEz0umddKTDSfqWrJDSw==",
+  "dgSpecHash": "Kau4vlioXleq9T0flp9ZDYtT2fhzNA/s3vgezCHNSi1j5cAK6jMJ+uSW/VuFBKbOH0mkzPUcLXfUOd+HGRqN4w==",
   "success": true,
-  "projectFilePath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj",
+  "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj",
   "expectedPackageFiles": [
     "/home/mauricio/.nuget/packages/bogus/34.0.2/bogus.34.0.2.nupkg.sha512",
     "/home/mauricio/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",

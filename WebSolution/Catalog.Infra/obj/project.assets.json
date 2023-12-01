@@ -2401,11 +2401,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj",
+      "projectUniqueName": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj",
       "projectName": "Catalog.Infra",
-      "projectPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj",
+      "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/Catalog.Infra.csproj",
       "packagesPath": "/home/mauricio/.nuget/packages/",
-      "outputPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Infra/obj/",
+      "outputPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Infra/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/mauricio/.nuget/NuGet/NuGet.Config"
@@ -2420,14 +2420,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj": {
-              "projectPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj"
+            "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj": {
+              "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Application/Catalog.Application.csproj"
             },
-            "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj": {
-              "projectPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj"
+            "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj": {
+              "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Data/Catalog.Data.csproj"
             },
-            "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {
-              "projectPath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj"
+            "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj": {
+              "projectPath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj"
             }
           }
         }

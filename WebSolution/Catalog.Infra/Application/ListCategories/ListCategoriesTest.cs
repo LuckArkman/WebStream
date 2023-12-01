@@ -1,3 +1,4 @@
+using Catalog.Application.Base;
 using Catalog.Application.Common;
 using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;

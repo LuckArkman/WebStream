@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N2KIJ1TkmFNKd2BCakMSmEyEsIi6qgmOo/cATmuO0ulnzUo5JF+ROrLF175Z9kJ66hr4m7sdaKEFSB6/QYdtsA==",
+  "dgSpecHash": "6ZnyZdgp+7iJySieCHOzhe32R/ZXNmoL9uMJDBffE18adWndX4Uy2fMdU8RINqw4uZWUQoMoA1IsjZTjQYOIRg==",
   "success": true,
-  "projectFilePath": "/mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj",
+  "projectFilePath": "/home/mauricio/Documents/GitHub/WebStream/WebSolution/Catalog.Domain/Catalog.Domain.csproj",
   "expectedPackageFiles": [
     "/home/mauricio/.nuget/packages/bogus/34.0.2/bogus.34.0.2.nupkg.sha512",
     "/home/mauricio/.nuget/packages/fluentassertions/7.0.0-alpha.3/fluentassertions.7.0.0-alpha.3.nupkg.sha512",

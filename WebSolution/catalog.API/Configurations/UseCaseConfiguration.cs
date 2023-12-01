@@ -1,6 +1,6 @@
-﻿using Catalog.Application.Repositories;
+﻿using Catalog.Application.Base;
+using Catalog.Application.Repositories;
 using Catalog.Application.UseCases.Category;
-using Catalog.Domain.Repository;
 using MediatR;
 
 namespace catalog.API.Configurations;
@@ -17,7 +17,7 @@ public static class UseCaseConfiguration
     public static IServiceCollection AddRepository(this IServiceCollection service)
     {
         service.AddTransient<ICategoryRepository, CategoryRepository>();
-        service.AddTransient<IunityOfWork, UnityOfWork>();
+        service.AddTransient<IUnityOfWork, UnityOfWork>();
         return service;
     }
 }

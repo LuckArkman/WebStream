@@ -12,9 +12,6 @@
     <PackageReference Include="Moq" Version="4.20.69" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Extencions\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
     <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
   </ItemGroup>

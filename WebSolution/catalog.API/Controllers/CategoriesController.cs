@@ -32,6 +32,7 @@ public class CategoriesController : ControllerBase
     [HttpGet("{id:guid}")]
     [ProducesResponseType(typeof(CategoryModelOutput), StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status422UnprocessableEntity)]
     public async Task<IActionResult> GetById([FromRoute] Guid id, CancellationToken cancellationToken
     )
     {

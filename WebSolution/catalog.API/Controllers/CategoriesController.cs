@@ -1,5 +1,7 @@
+using catalog.API.ApiModels;
 using Catalog.Application.Common;
 using Catalog.Application.UseCases.Category;
+using Catalog.Domain.Enum;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,5 +40,37 @@ public class CategoriesController : ControllerBase
     {
         var output = await _mediator.Send(new  GetCategoryInput(id), cancellationToken);
         return Ok(output);
+    }
+    
+    [HttpPut("{id:guid}")]
+    [ProducesResponseType(typeof(ApiResponse<CategoryModelOutput>), StatusCodes.Status200OK)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status422UnprocessableEntity)]
+    public async Task<IActionResult> Update(
+        [FromBody] UpdateCategoryApiInput apiInput,
+        [FromRoute] Guid id,
+        CancellationToken cancellationToken
+    )
+    {
+        var input = new UpdateCategoryInput(
+            id,
+            apiInput.Name,
+            apiInput.Description,
+            apiInput.IsActive
+        );
+        var output = await _mediator.Send(input, cancellationToken);
+        return Ok(new ApiResponse<CategoryModelOutput>(output));
+    }
+    
+    [HttpDelete("{id:guid}")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> Delete(
+        [FromRoute] Guid id,
+        CancellationToken cancellationToken
+    )
+    {
+        await _mediator.Send(new DeleteCategoryInput(id), cancellationToken);
+        return NoContent();
     }
 }

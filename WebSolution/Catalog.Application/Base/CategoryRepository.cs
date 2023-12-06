@@ -43,7 +43,13 @@ public class CategoryRepository : ICategoryRepository
     }
 
     public Task Delete(Category tAggregate, CancellationToken cancellationToken)
-        =>Task.FromResult(_categories.Remove(tAggregate));
+    {
+        lock(Singleton._instance()._Categories)
+        {
+            Singleton._instance()._Categories.Remove(tAggregate);
+        }
+        return Task.FromResult(Singleton._instance()._Categories.Remove(tAggregate));
+    }
 
     public async Task Update(Category _category, CancellationToken cancellationToken) => await Task.FromResult(_categories.Update(_category));
 

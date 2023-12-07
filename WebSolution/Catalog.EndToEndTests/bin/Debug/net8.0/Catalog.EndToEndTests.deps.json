@@ -1605,7 +1605,7 @@
         "runtime": {
           "lib/netstandard2.0/xunit.abstractions.dll": {
             "assemblyVersion": "2.0.0.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "2.0.0.0"
           }
         },
         "compile": {
@@ -1663,6 +1663,7 @@
       "catalog.API/1.0.0": {
         "dependencies": {
           "Catalog.Application": "1.0.0",
+          "Catalog.Data": "1.0.0",
           "Catalog.Infra": "1.0.0",
           "FluentValidation": "11.8.1",
           "MediatR": "11.1.0",

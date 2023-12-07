@@ -1,3 +1,4 @@
+using Catalog.Application.Base;
 using Catalog.Application.Interfaces;
 using Catalog.Application.Repositories;
 using MediatR;

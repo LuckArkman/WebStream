@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  catalog.db:
+   container_name: catalogDB
+   hostname: catalogDB
+   image: mysql
+   ports:
+   - 3306:3306
+   environment:
+    MYSQL_ROOT_PASSWORD: 3702959
+  catalog.api:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: catalog.API/Dockerfile

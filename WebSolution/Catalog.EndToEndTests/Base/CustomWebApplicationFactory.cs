@@ -24,20 +24,17 @@ public class CustomWebApplicationFactory<TStartup>
         IWebHostBuilder builder
     )
     {
+        builder.UseEnvironment("Catalog.EndToEndTests");
         builder.ConfigureServices(services =>
         {
-            var _dbOptions = services.FirstOrDefault(x => x.ServiceType == typeof(
-                DbContextOptions<CatalogDbContext>)
-            );
-            if (_dbOptions is  not  null)
-            {
-                services.Remove(_dbOptions);
-                services.AddDbContext<CatalogDbContext>(options =>
-                {
-                    options.UseInMemoryDatabase("end2end-tests-db");
+            var serviceProvider = services.BuildServiceProvider();
+            using var scope = serviceProvider.CreateScope();
+                var context = scope.ServiceProvider
+                .GetService<CatalogDbContext>();            
+                ArgumentNullException.ThrowIfNull(nameof(context));
+            context.Database.EnsureDeleted();
+            context.Database.EnsureDeleted();
 
-                });
-            }
         });
 
         base.ConfigureWebHost(builder);

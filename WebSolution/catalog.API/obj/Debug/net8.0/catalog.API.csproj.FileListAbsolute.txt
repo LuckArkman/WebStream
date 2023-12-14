@@ -588,3 +588,4 @@ D:\AzureProjects\Git\WebStream\WebSolution\catalog.API\obj\Debug\net8.0\refint\c
 D:\AzureProjects\Git\WebStream\WebSolution\catalog.API\obj\Debug\net8.0\catalog.API.pdb
 D:\AzureProjects\Git\WebStream\WebSolution\catalog.API\obj\Debug\net8.0\catalog.API.genruntimeconfig.cache
 D:\AzureProjects\Git\WebStream\WebSolution\catalog.API\obj\Debug\net8.0\ref\catalog.API.dll
+D:\AzureProjects\Git\WebStream\WebSolution\catalog.API\bin\Debug\net8.0\appsettings.EndToEnd.json

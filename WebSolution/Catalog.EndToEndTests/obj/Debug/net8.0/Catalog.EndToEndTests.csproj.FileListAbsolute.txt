@@ -1410,3 +1410,4 @@ D:\AzureProjects\Git\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net8.
 D:\AzureProjects\Git\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net8.0\Catalog.EndToEndTests.pdb
 D:\AzureProjects\Git\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net8.0\Catalog.EndToEndTests.genruntimeconfig.cache
 D:\AzureProjects\Git\WebStream\WebSolution\Catalog.EndToEndTests\obj\Debug\net8.0\ref\Catalog.EndToEndTests.dll
+D:\AzureProjects\Git\WebStream\WebSolution\Catalog.EndToEndTests\bin\Debug\net8.0\appsettings.EndToEnd.json

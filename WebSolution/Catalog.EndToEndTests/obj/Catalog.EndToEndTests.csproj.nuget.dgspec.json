@@ -77,6 +77,10 @@
               "target": "Package",
               "version": "[1.19.5, )"
             },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
@@ -479,10 +483,6 @@
               "target": "Package",
               "version": "[4.20.69, )"
             },
-            "MySql.Data.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[6.10.9, )"
-            },
             "NUnit": {
               "target": "Package",
               "version": "[3.13.3, )"
@@ -494,6 +494,10 @@
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.4.2, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "coverlet.collector": {
               "target": "Package",

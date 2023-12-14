@@ -73,4 +73,21 @@ public class CategoriesController : ControllerBase
         await _mediator.Send(new DeleteCategoryInput(id), cancellationToken);
         return NoContent();
     }
+    
+    [HttpGet()]
+    [ProducesResponseType(typeof(CategoryModelOutput), StatusCodes.Status200OK)]
+    public async Task<IActionResult> List([FromQuery] int? page,
+        [FromQuery] int? perPage, string? Search,
+        string? Sort,
+        CancellationToken cancellationToken
+    )
+    {
+        var input = new ListCategoriesInput();
+        if (page is not null) input.Page = page.Value;
+        if (perPage is not null) input.PerPage = perPage.Value;
+        if (!string.IsNullOrWhiteSpace(Search)) input.Search = Search;
+        if (!string.IsNullOrWhiteSpace(Sort)) input.Sort = Sort;
+        var output = await _mediator.Send(input, cancellationToken);
+        return Ok(output);
+    }
 }

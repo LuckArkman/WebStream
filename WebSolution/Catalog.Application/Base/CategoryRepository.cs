@@ -30,16 +30,25 @@ public class CategoryRepository : ICategoryRepository
     public async Task<Category> Get(Guid Id, CancellationToken cancellationToken)
     {
         Category? category = null;
-        foreach (var c in Singleton._instance()._Categories)
+        var cat = await _categories.AsNoTracking().FirstOrDefaultAsync(x => x.Id == Id, cancellationToken);
+        if (cat == null)
         {
-            if (c.Id == Id)
+            foreach (var c in Singleton._instance()._Categories)
             {
-                category = c;
-                break;
+                if (c.Id == Id)
+                {
+                    category = c;
+                    break;
+                }
             }
+        }
+        if (cat is not null)
+        {
+            return cat;
         }
         if (category == null)NotFoundException.ThrowIfNull(category,$"Category '{Id}' not found.");
         return category;
+        
     }
 
     public Task Delete(Category tAggregate, CancellationToken cancellationToken)
@@ -48,7 +57,7 @@ public class CategoryRepository : ICategoryRepository
         {
             Singleton._instance()._Categories.Remove(tAggregate);
         }
-        return Task.FromResult(Singleton._instance()._Categories.Remove(tAggregate));
+        return Task.FromResult(_categories.Remove(tAggregate));
     }
 
     public async Task Update(Category _category, CancellationToken cancellationToken) => await Task.FromResult(_categories.Update(_category));

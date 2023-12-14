@@ -1,5 +1,3 @@
-using System;
-using Catalog.Domain.Exceptions;
 using Catalog.Domain.SeedWork;
 using Catalog.Domain.Validation;
 

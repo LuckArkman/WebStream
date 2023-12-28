@@ -13,8 +13,8 @@ public static class ConnectionsConfiguration
     static IServiceCollection addDBConnection(this IServiceCollection service)
     {
         Singleton._instance().CreateDBContext();
-        service.AddDbContext<CatalogDbContext>(options => options.UseMySql(
-                "catalogDB")
+        service.AddDbContext<CatalogDbContext>(options => options.UseInMemoryDatabase(
+            "catalogDB")
             );
         return service;
     }

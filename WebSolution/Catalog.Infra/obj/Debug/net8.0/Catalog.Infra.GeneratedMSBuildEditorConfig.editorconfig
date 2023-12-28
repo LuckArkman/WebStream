@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Catalog.Infra
-build_property.ProjectDir = D:\AzureProjects\Git\WebStream\WebSolution\Catalog.Infra\
+build_property.ProjectDir = /mnt/6E6236376236047D/AzureProjects/Git/WebStream/WebSolution/Catalog.Infra/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
